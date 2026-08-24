@@ -10,6 +10,8 @@ This repository is intended to become a personal LeetCode study guide focused on
 
 Start with the [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md). It explains what to do from the moment a problem is presented: clarify the requirements, show a brute-force baseline, recognize the pattern, state an invariant, code, test, and analyze complexity.
 
+Practice rule: explain your assumptions, complexity, edge cases, and code testing aloud. Correct code matters, but the interviewer also needs to hear why the approach is correct and how you verified it.
+
 Run every included example with one command:
 
 ```bash

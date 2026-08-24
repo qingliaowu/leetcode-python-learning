@@ -117,6 +117,71 @@ Use the method signature given by the interviewer. Then code in the same order a
 
 Use descriptive names such as `left`, `right`, `in_degree`, `running_sum`, and `needed_prefix`. Explain decisions and invariants aloud; there is no need to narrate every character you type.
 
+## Say These Four Things Aloud
+
+Do not leave important reasoning hidden in your head. During every solution, explicitly cover assumptions, complexity, edge cases, and testing.
+
+### 1. Assumptions
+
+State the facts from the question that your solution relies on:
+
+```text
+I am assuming values may repeat, but the two returned indexes must be different.
+The problem guarantees one valid answer, and output pair order does not matter.
+```
+
+Other useful assumption statements include:
+
+- "I am treating horizontal and vertical cells as connected, but not diagonals."
+- "Course prerequisites are directed edges."
+- "Array values are distinct, which lets me identify the sorted half."
+- "A meeting ending at time `t` frees its room for one starting at time `t`."
+- "I may mark the grid temporarily; I will restore it before returning."
+
+If an assumption is not confirmed by the question, ask the interviewer instead of silently choosing it.
+
+### 2. Complexity
+
+Explain why the cost has that Big-O value, not only the final notation:
+
+```text
+Let N be the number of values. I scan the list once, and each hash-map lookup
+is O(1) on average, so time is O(N). The map may store every value, so extra
+space is O(N).
+```
+
+For multiple input dimensions, define every symbol. For example, use `V` and `E` for graph nodes and edges, `R` and `C` for grid dimensions, and `K` for heap size or number of lists.
+
+### 3. Edge Cases
+
+Name the cases most likely to break this specific algorithm:
+
+```text
+I want to check an empty input, a one-item input, duplicate values, and a case
+where the matching pair appears at the end.
+```
+
+Avoid saying only "I would test edge cases." Choose concrete inputs and expected results. Prioritize boundaries in the code, such as `left <= right`, missing dictionary keys, equal interval endpoints, graph cycles, stale sliding-window indexes, and repeated Trie updates.
+
+### 4. Testing the Code
+
+Trace variable changes through the code you actually wrote:
+
+```text
+For nums [3, 2, 4] and target 6, the map is empty at index 0, then stores
+3 -> 0 and 2 -> 1. At index 2, the needed value is 2, which maps to index 1,
+so the function returns [1, 2]. Those values add to 6 and the indexes differ.
+```
+
+After the normal example, test one boundary case aloud. Point to the exact condition that handles it. If the code mutates shared state, confirm that the state is restored or explain why mutation is allowed.
+
+A useful closing summary is:
+
+```text
+The normal example follows the expected path, and the duplicate and missing
+cases are handled by these conditions. Time is O(...) and extra space is O(...).
+```
+
 ## 8. Test Before Declaring Done
 
 Dry-run the code itself, not just the idea. For every solution, test:
