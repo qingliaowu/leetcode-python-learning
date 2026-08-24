@@ -1,140 +1,217 @@
 # LeetCode Python Learning
 
-A practical Python learning repository for solving LeetCode problems, reviewing data structures and algorithms, and building consistent problem-solving habits. Explanations are written for beginners and returning Python learners, so important syntax is reviewed instead of assumed.
+A beginner-first path from forgotten Python syntax to explaining interview solutions clearly and confidently.
 
-## Goal
+This repository assumes nothing. Python syntax, algorithm ideas, time and space complexity, edge cases, tests, and interview reasoning are explained in plain language.
 
-This repository is intended to become a personal LeetCode study guide focused on clear Python solutions. Each solution should explain the approach, analyze complexity, and keep code easy to read.
+## What Is Included
 
-## Start Here: Python 3 Basics
+| Material | Count | Purpose |
+| --- | ---: | --- |
+| Python 3 lessons | 11 | Relearn Python from `print` through recursion and Big-O |
+| Interview problems | 22 | Practice the patterns most often used in coding interviews |
+| Topic guides | 7 | Learn how related problems connect |
+| External packages | 0 | Everything runs with the Python standard library |
 
-New to Python or returning after a long break? Begin with [Python 3 Basics for Complete Beginners](./python_basics/). The eleven short lessons start with `print` and variables, then build gently toward collections, loops, functions, classes, recursion, LeetCode's `Solution` format, and an easy introduction to time and space complexity.
+## Start Here
 
-Every lesson includes:
+Choose the row that sounds most like you:
 
-- plain-language explanations,
-- runnable examples,
-- expected results,
-- a small prediction exercise,
-- common beginner mistakes,
-- links to the next interview material.
+| Your Situation | Start With |
+| --- | --- |
+| "I forgot most Python syntax." | [Python 3 Basics for Complete Beginners](./python_basics/) |
+| "I can code, but Big-O is confusing." | [Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) |
+| "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
+| "I am ready to solve problems." | [Interview Problem Roadmap](#interview-problem-roadmap) |
 
-## Interview Preparation
+No package installation is needed. Check Python and run the first lesson:
 
-Start with the [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md). It explains what to do from the moment a problem is presented: clarify the requirements, show a brute-force baseline, recognize the pattern, state an invariant, code, test, and analyze complexity.
+```bash
+python3 --version
+python3 python_basics/01_first_program.py
+```
 
-Practice rule: explain your assumptions, complexity, edge cases, and code testing aloud. Correct code matters, but the interviewer also needs to hear why the approach is correct and how you verified it.
+## Recommended Learning Path
 
-Run every included example with one command:
+### Phase 1: Relearn Python
+
+Complete the [11 Python lessons](./python_basics/) in order:
+
+```text
+first program
+    -> variables and values
+    -> strings
+    -> lists and tuples
+    -> dictionaries and sets
+    -> conditions and loops
+    -> functions
+    -> classes and objects
+    -> recursion
+    -> Python for LeetCode
+    -> time and space complexity
+```
+
+Every lesson has a plain-English page, runnable examples, prediction exercises, expected answers, and common mistakes.
+
+### Phase 2: Learn One Pattern at a Time
+
+Do not memorize finished code. For each problem:
+
+1. Read the question summary and examples.
+2. Restate the input, output, and assumptions aloud.
+3. Describe a direct or brute-force approach.
+4. Identify its repeated work or bottleneck.
+5. Choose a pattern and state what your variables mean.
+6. Code the solution in small logical blocks.
+7. Trace a normal example and an edge case through the code.
+8. Explain time and space complexity in complete sentences.
+
+The [Interview Playbook](./INTERVIEW_PLAYBOOK.md) provides sentence templates for every step.
+
+### Phase 3: Practice Without Notes
+
+A problem is interview-ready when you can:
+
+- recognize the pattern from the question,
+- derive the approach instead of reciting code,
+- explain why the algorithm is correct,
+- write it without hidden gaps,
+- test assumptions and edge cases aloud,
+- justify time and space complexity.
+
+Repeat difficult problems after one day and again after one week.
+
+## What Every Problem Contains
+
+| File | What It Gives You |
+| --- | --- |
+| Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, and interview explanation |
+| Solution `.py` | Readable Python 3 code, focused comments, type hints, and executable assertions |
+| Topic `README.md` | Pattern introduction, recommended order, and connections between problems |
+
+## Interview Problem Roadmap
+
+The order below moves from common collection patterns toward more specialized structures and dynamic programming.
+
+| Order | Topic | Problems | Guide |
+| ---: | --- | ---: | --- |
+| 1 | Arrays, strings, hash maps, sliding window | 3 | [Open](./arrays_strings/) |
+| 2 | Intervals, sorting, binary search | 3 | [Open](./intervals_search/) |
+| 3 | Trees and graphs | 3 | [Open](./trees_graphs/) |
+| 4 | Heaps and top-k | 3 | [Open](./heaps/) |
+| 5 | Prefix sums and recursion | 2 | [Open](./prefix_recursion/) |
+| 6 | Trie | 5 | [Open](./trie/) |
+| 7 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
+
+## Complete Problem Index
+
+### Arrays, Strings, and Hash Maps
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 1 | [Two Sum](./arrays_strings/0001_two_sum.md) | Complement hash map | [Python](./arrays_strings/0001_two_sum.py) |
+| 49 | [Group Anagrams](./arrays_strings/0049_group_anagrams.md) | Immutable grouping key | [Python](./arrays_strings/0049_group_anagrams.py) |
+| 3 | [Longest Substring Without Repeating Characters](./arrays_strings/0003_longest_substring_without_repeating_characters.md) | Sliding window | [Python](./arrays_strings/0003_longest_substring_without_repeating_characters.py) |
+
+### Intervals and Binary Search
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 56 | [Merge Intervals](./intervals_search/0056_merge_intervals.md) | Sort, then merge | [Python](./intervals_search/0056_merge_intervals.py) |
+| 253 | [Meeting Rooms II](./intervals_search/0253_meeting_rooms_ii.md) | Min-heap of end times | [Python](./intervals_search/0253_meeting_rooms_ii.py) |
+| 33 | [Search in Rotated Sorted Array](./intervals_search/0033_search_in_rotated_sorted_array.md) | Modified binary search | [Python](./intervals_search/0033_search_in_rotated_sorted_array.py) |
+
+### Trees and Graphs
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 200 | [Number of Islands](./trees_graphs/0200_number_of_islands.md) | Grid DFS | [Python](./trees_graphs/0200_number_of_islands.py) |
+| 207 | [Course Schedule](./trees_graphs/0207_course_schedule.md) | Topological sort | [Python](./trees_graphs/0207_course_schedule.py) |
+| 133 | [Clone Graph](./trees_graphs/0133_clone_graph.md) | BFS and clone map | [Python](./trees_graphs/0133_clone_graph.py) |
+
+### Heaps and Top-K
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 215 | [Kth Largest Element](./heaps/0215_kth_largest_element.md) | Min-heap of size `k` | [Python](./heaps/0215_kth_largest_element.py) |
+| 347 | [Top K Frequent Elements](./heaps/0347_top_k_frequent_elements.md) | Frequency map and heap | [Python](./heaps/0347_top_k_frequent_elements.py) |
+| 23 | [Merge K Sorted Lists](./heaps/0023_merge_k_sorted_lists.md) | Heap-based multiway merge | [Python](./heaps/0023_merge_k_sorted_lists.py) |
+
+### Prefix Sums and Recursion
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 560 | [Subarray Sum Equals K](./prefix_recursion/0560_subarray_sum_equals_k.md) | Prefix-sum frequency map | [Python](./prefix_recursion/0560_subarray_sum_equals_k.py) |
+| 79 | [Word Search](./prefix_recursion/0079_word_search.md) | DFS backtracking | [Python](./prefix_recursion/0079_word_search.py) |
+
+### Trie
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 208 | [Implement Trie](./trie/0208_implement_trie.md) | Core Trie operations | [Python](./trie/0208_implement_trie.py) |
+| 1268 | [Search Suggestions System](./trie/1268_search_suggestions_system.md) | Cached prefix suggestions | [Python](./trie/1268_search_suggestions_system.py) |
+| 211 | [Design Add and Search Words](./trie/0211_design_add_and_search_words.md) | Trie and wildcard DFS | [Python](./trie/0211_design_add_and_search_words.py) |
+| 648 | [Replace Words](./trie/0648_replace_words.md) | Shortest saved prefix | [Python](./trie/0648_replace_words.py) |
+| 677 | [Map Sum Pairs](./trie/0677_map_sum_pairs.md) | Cached prefix totals | [Python](./trie/0677_map_sum_pairs.py) |
+
+### Dynamic Programming
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 198 | [House Robber](./dynamic_programming/0198_house_robber.md) | Take or skip | [Python](./dynamic_programming/0198_house_robber.py) |
+| 322 | [Coin Change](./dynamic_programming/0322_coin_change.md) | Minimum result for each amount | [Python](./dynamic_programming/0322_coin_change.py) |
+| 300 | [Longest Increasing Subsequence](./dynamic_programming/0300_longest_increasing_subsequence.md) | Best sequence ending at each index | [Python](./dynamic_programming/0300_longest_increasing_subsequence.py) |
+
+## Test Everything
+
+Each Python file contains assertions for normal examples and important edge cases. Run the complete repository with:
 
 ```bash
 python3 verify_solutions.py
 ```
 
-The repository uses only the Python standard library.
+A successful run ends with:
 
-## Suggested Structure
+```text
+33/33 Python files passed.
+```
 
-As problems are added, organize them by topic or difficulty:
+Run one lesson or solution directly while studying:
+
+```bash
+python3 python_basics/05_dictionaries_and_sets.py
+python3 trie/0208_implement_trie.py
+python3 dynamic_programming/0322_coin_change.py
+```
+
+## Repository Structure
 
 ```text
 .
-├── arrays_strings/
-├── heaps/
-├── intervals_search/
-├── prefix_recursion/
-├── python_basics/
-├── trie/
-├── linked_lists/
-├── trees_graphs/
-├── dynamic_programming/
-├── INTERVIEW_PLAYBOOK.md
-├── verify_solutions.py
+├── python_basics/          # 11 beginner Python lessons
+├── arrays_strings/         # hash maps and sliding window
+├── intervals_search/       # intervals, sorting, binary search
+├── trees_graphs/           # DFS, BFS, topological sort, graph copying
+├── heaps/                  # top-k and multiway merging
+├── prefix_recursion/       # prefix sums and backtracking
+├── trie/                   # prefix-tree design and applications
+├── dynamic_programming/    # saved-state recurrence patterns
+├── INTERVIEW_PLAYBOOK.md   # solve-aloud interview process
+├── verify_solutions.py     # runs every executable example
 └── README.md
 ```
 
-Each problem folder or file can include:
+## Adding Another Problem
 
-- Problem title and LeetCode link
-- Python solution
-- Explanation of the approach
-- Time and space complexity
-- Notes about edge cases
+Keep new material consistent with the beginner-first style:
 
-## Learning Workflow
+1. Name files with the zero-padded LeetCode number and descriptive title.
+2. Write the question in your own words instead of copying the full statement.
+3. Explain new Python syntax before relying on it.
+4. Define the algorithm's state or invariant in one sentence.
+5. Show a dry run with changing variables or data structures.
+6. Explain correctness, assumptions, edge cases, time, and extra space.
+7. Include executable assertions in the Python file.
+8. Add the problem to its topic guide and this index.
 
-1. Read the problem carefully and identify the input, output, and constraints.
-2. Write down a brute-force idea first.
-3. Improve the approach using the right data structure or algorithm.
-4. Implement the solution in Python.
-5. Test with sample cases and edge cases.
-6. Record the final complexity and any lessons learned.
-
-## Python Solution Template
-
-```python
-class Solution:
-    def solve(self, *args):
-        # Implement the solution here.
-        pass
-```
-
-## Topics To Cover
-
-- Arrays and strings
-- Hash maps and sets
-- Two pointers and sliding window
-- Stack and queue
-- Linked lists
-- Trees and graphs
-- Binary search
-- Trie
-- Backtracking
-- Dynamic programming
-- Greedy algorithms
-
-## Interview Practice Sets
-
-### Trie
-
-Start here if you are learning prefix trees for Python interviews:
-
-| Priority | LeetCode | Title | Focus |
-| --- | ---: | --- | --- |
-| 5/5 | 208 | Implement Trie | Core trie operations |
-| 5/5 | 1268 | Search Suggestions System | Prefix search with top 3 results |
-| 4/5 | 211 | Design Add and Search Words | Trie with wildcard DFS |
-| 3/5 | 648 | Replace Words | Shortest prefix lookup |
-| 3/5 | 677 | Map Sum Pairs | Trie with stored prefix totals |
-
-The [Trie learning guide](./trie/) starts with a Python refresher, then provides a full lesson and an executable Python solution for every problem.
-
-### Core Interview Roadmap
-
-| Priority | Topics | Questions | Guide |
-| --- | --- | --- | --- |
-| High | Arrays, strings, hash maps, sliding window | Two Sum; Group Anagrams; Longest Substring Without Repeating Characters | [Start](./arrays_strings/) |
-| High | Trees and graphs | Number of Islands; Course Schedule; Clone Graph | [Start](./trees_graphs/) |
-| High | Intervals, sorting, binary search | Merge Intervals; Meeting Rooms II; Search in Rotated Sorted Array | [Start](./intervals_search/) |
-| High | Dynamic programming | Coin Change; House Robber; Longest Increasing Subsequence | [Start](./dynamic_programming/) |
-| Medium | Heaps and top-k | Kth Largest Element; Top K Frequent Elements; Merge K Sorted Lists | [Start](./heaps/) |
-| Medium | Prefix sums and recursion | Subarray Sum Equals K; Word Search | [Start](./prefix_recursion/) |
-
-## Progress
-
-Use this section to track solved problems as the repository grows.
-
-| Topic | Solved | Notes |
-| --- | ---: | --- |
-| Python 3 basics | 11 lessons | Beginner course complete |
-| Arrays, strings, and hash maps | 3 | Core interview set added |
-| Trie | 5 | Interview practice set added |
-| Trees and graphs | 3 | Core interview set added |
-| Intervals, sorting, and binary search | 3 | Core interview set added |
-| Heaps and top-k | 3 | Core interview set added |
-| Prefix sums and recursion | 2 | Core interview set added |
-| Dynamic programming | 3 | Core interview set added |
-
-## Contributing
-
-When adding a new solution, prefer readable Python code, descriptive filenames, and a short explanation of the reasoning behind the solution.
+Clarity is the goal. A beginner should be able to understand not only what the code does, but why each step exists.
