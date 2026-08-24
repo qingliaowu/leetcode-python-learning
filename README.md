@@ -116,6 +116,7 @@ The [Trie learning guide](./trie/) starts with a Python refresher, then provides
 | High | Arrays, strings, hash maps, sliding window | Two Sum; Group Anagrams; Longest Substring Without Repeating Characters | [Start](./arrays_strings/) |
 | High | Trees and graphs | Number of Islands; Course Schedule; Clone Graph | [Start](./trees_graphs/) |
 | High | Intervals, sorting, binary search | Merge Intervals; Meeting Rooms II; Search in Rotated Sorted Array | [Start](./intervals_search/) |
+| High | Dynamic programming | Coin Change; House Robber; Longest Increasing Subsequence | [Start](./dynamic_programming/) |
 | Medium | Heaps and top-k | Kth Largest Element; Top K Frequent Elements; Merge K Sorted Lists | [Start](./heaps/) |
 | Medium | Prefix sums and recursion | Subarray Sum Equals K; Word Search | [Start](./prefix_recursion/) |
 
@@ -132,7 +133,7 @@ Use this section to track solved problems as the repository grows.
 | Intervals, sorting, and binary search | 3 | Core interview set added |
 | Heaps and top-k | 3 | Core interview set added |
 | Prefix sums and recursion | 2 | Core interview set added |
-| Dynamic programming | 0 | Planned |
+| Dynamic programming | 3 | Core interview set added |
 
 ## Contributing
 

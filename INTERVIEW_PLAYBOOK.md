@@ -78,6 +78,9 @@ Use clues in the question rather than memorizing code:
 | Merge K Lists | Merge several sorted streams | Heap holds one smallest available node per list | `O(N log K)` |
 | Subarray Sum Equals K | Count continuous sums with negatives | Earlier prefix `current - k` creates a valid subarray | `O(N)` |
 | Word Search | Explore board paths without reuse | Mark, explore, and restore each recursive choice | `O(R * C * 4^L)` |
+| House Robber | Maximum total with no adjacent choices | Best current is max of take with two-back or skip with one-back | `O(N)` |
+| Coin Change | Minimum count from unlimited choices | `dp[x]` tries every coin after a solved smaller amount | `O(A * C)` |
+| Longest Increasing Subsequence | Longest ordered selection with skips | `dp[i]` is the best increasing length ending exactly at `i` | `O(N²)` |
 | Implement Trie | Insert, exact lookup, prefix lookup | One node per character; end marker separates word from prefix | `O(L)` per operation |
 | Search Suggestions | Top results after every typed prefix | Sorted insertion caches at most three answers per Trie node | `O(N log N + T + M)` |
 | Add and Search Words | One-character wildcard | Exact letters take one edge; dot runs DFS over every child | Branching worst case |

@@ -366,6 +366,9 @@ Dictionary and set operations are `O(1)` on average, not an absolute guarantee f
 | Rotated binary search | `O(log N)` | `O(1)` | Discard half each step; keep only indexes |
 | Size-K heap | `O(N log K)` | `O(K)` | N items each do heap work on at most K values |
 | Prefix sum map | `O(N)` | `O(N)` | Scan once; map may store each running sum |
+| House Robber | `O(N)` | `O(1)` | Process each house; keep only two previous answers |
+| Coin Change | `O(A * C)` | `O(A)` | Try C coins for each amount; save one answer per amount |
+| Longest Increasing Subsequence DP | `O(N²)` | `O(N)` | Each index checks earlier indexes; save one answer per index |
 | Trie operation | `O(L)` | Depends on stored nodes | Follow one node for every input character |
 | Word Search | `O(R * C * 4^L)` worst case | `O(L)` | Try starts and branching paths; recursion depth is word length |
 

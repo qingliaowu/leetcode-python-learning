@@ -8,6 +8,7 @@ import sys
 ROOT = Path(__file__).parent
 EXAMPLE_FOLDERS = (
     "arrays_strings",
+    "dynamic_programming",
     "heaps",
     "intervals_search",
     "prefix_recursion",
