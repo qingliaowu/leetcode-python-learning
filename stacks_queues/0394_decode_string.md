@@ -184,3 +184,61 @@ State which interpretation you are using. For most interviews, emphasizing that 
 For 3[a2[c]], the inner 2[c] becomes cc, so the current level becomes acc.
 The outer count then repeats acc three times, producing accaccacc.
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. Write down the stack whenever a bracket opens or closes.
+
+### Question 1: Decode a Nested String
+
+What does `2[ab3[c]]x` decode to? Which section is completed first?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `abcccabcccx`.
+
+The innermost section closes first: `3[c]` becomes `ccc`. Its surrounding level is now `abccc`. The outer count repeats that whole section twice, producing `abcccabccc`, and the final literal `x` is appended.
+
+This inside-out order is exactly why a stack fits nested brackets: the most recently opened unfinished level is the first one completed.
+
+**Complexity:** It is commonly described as `O(N + D)` time for encoded length `N` and decoded length `D`. With repeated rebuilding across `H` nested levels, `O(N + D * H)` is a safer worst-case bound for this implementation. Space is `O(N + D)`.
+
+**Edge case:** Repeat counts may have more than one digit, as in `12[a]`.
+
+</details>
+
+### Question 2: Validate Brackets
+
+Return `True` when a string containing only `()[]{}` has correctly matched and nested brackets.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def has_valid_brackets(text: str) -> bool:
+    matching_open = {
+        ")": "(",
+        "]": "[",
+        "}": "{",
+    }
+    stack = []
+
+    for character in text:
+        if character in "([{":
+            stack.append(character)
+        else:
+            if not stack or stack[-1] != matching_open[character]:
+                return False
+            stack.pop()
+
+    return not stack
+```
+
+Opening brackets are unfinished work, so they are pushed. A closing bracket must match the latest unfinished opener at the top. An empty stack on closing means there is no opener; a non-empty stack after scanning means some openers never closed.
+
+**Complexity:** `O(N)` time and `O(N)` extra space in the worst case.
+
+**Tests:** `"([]){}"` is valid, `"([)]"` is invalid, and the empty string is valid.
+
+</details>

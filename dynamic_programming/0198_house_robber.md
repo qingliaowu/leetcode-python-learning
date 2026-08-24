@@ -158,3 +158,68 @@ The best totals after each house are 1, 2, 4, and 4. At the third house,
 taking 3 plus the best two houses back gives 4. The final house is skipped
 because taking it would also give only 3. I return 4.
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. At every house, calculate both “take” and “skip.”
+
+### Question 1: Trace the DP Decisions
+
+What is the maximum amount for houses `[2, 7, 9, 3, 1]`? Give one set of values that produces it.
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `12`, produced by taking values `2`, `9`, and `1`.
+
+The best totals through each position are `2`, `7`, `11`, `11`, and `12`. At value `9`, taking it adds to the best result two positions back: `2 + 9 = 11`. At value `3`, taking gives `7 + 3 = 10`, so skipping keeps `11`. At value `1`, taking gives `11 + 1 = 12`.
+
+The saved state is not “money from the previous house.” It is the best legal total through that earlier position.
+
+**Complexity:** `O(N)` time and `O(1)` extra space with two rolling values.
+
+**Edge case:** An empty list returns `0`; one house returns that house's value under the usual non-negative constraint.
+
+</details>
+
+### Question 2: Houses in a Circle
+
+Solve the version where the first and last houses are adjacent. For `[2, 3, 2]`, the answer is `3` because the two `2` values cannot both be taken.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def rob_circular_houses(nums: list[int]) -> int:
+    if not nums:
+        return 0
+    if len(nums) == 1:
+        return nums[0]
+
+    def rob_range(start: int, end: int) -> int:
+        best_two_back = 0
+        best_one_back = 0
+
+        for index in range(start, end):
+            take = best_two_back + nums[index]
+            skip = best_one_back
+            best_current = max(take, skip)
+            best_two_back = best_one_back
+            best_one_back = best_current
+
+        return best_one_back
+
+    skip_last = rob_range(0, len(nums) - 1)
+    skip_first = rob_range(1, len(nums))
+    return max(skip_last, skip_first)
+```
+
+Every valid answer must exclude at least one of the two adjacent endpoint houses. The function therefore solves two ordinary linear cases: indexes `0` through `N - 2`, and indexes `1` through `N - 1`. The better result covers every legal possibility.
+
+The one-house case is handled separately because excluding either endpoint would otherwise leave an empty range.
+
+**Complexity:** `O(N)` time and `O(1)` extra space.
+
+**Tests:** `[2, 3, 2]` returns `3`; `[1, 2, 3, 1]` returns `4`; `[5]` returns `5`.
+
+</details>

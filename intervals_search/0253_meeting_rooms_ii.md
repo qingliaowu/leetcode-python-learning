@@ -92,3 +92,56 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I process meetings in start-time order and keep allocated room end times in a min-heap. The smallest end tells me whether any room can be reused. If it can, I replace that end with the current meeting's end; otherwise I add another room. The final heap size is the minimum room count.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Track the smallest room end time after every meeting.
+
+### Question 1: Reuse Rooms by Hand
+
+How many rooms are needed for `[[0, 30], [5, 10], [10, 15], [20, 25]]`? A meeting ending at time `10` does not overlap one starting at `10`.
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `2` rooms.
+
+The meetings are already sorted. `[0, 30]` opens the first room, and `[5, 10]` opens a second because the earliest end is `30`. At time `10`, the room ending at `10` can be reused for `[10, 15]`. At time `20`, that same room is free again for `[20, 25]`. The long meeting still occupies the other room until time `30`.
+
+The heap needs only room end times because the smallest end answers the reuse question.
+
+**Complexity:** `O(N log N)` time and `O(N)` space in the worst case.
+
+**Edge case:** No meetings require `0` rooms.
+
+</details>
+
+### Question 2: Can One Person Attend Everything?
+
+Return `True` if one person can attend every meeting. Touching meetings are allowed.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def can_attend_all(intervals: list[list[int]]) -> bool:
+    ordered = sorted(intervals)
+
+    for index in range(1, len(ordered)):
+        previous_end = ordered[index - 1][1]
+        current_start = ordered[index][0]
+        if current_start < previous_end:
+            return False
+
+    return True
+```
+
+After sorting by start time, any overlap must appear between neighboring meetings. If the current start is earlier than the previous end, the person would need to be in two places at once. Equality is allowed because the earlier meeting has just finished.
+
+Using `sorted` keeps the caller's input order unchanged.
+
+**Complexity:** `O(N log N)` time and `O(N)` space for the sorted copy.
+
+**Tests:** `[[0, 5], [5, 8]]` returns `True`; `[[0, 6], [5, 8]]` returns `False`.
+
+</details>

@@ -123,3 +123,94 @@ The no-reuse rule reduces actual branching after the first step, and mismatches 
 ## Interview Explanation
 
 > I try each cell as a starting point and use DFS to match one word character per step. I temporarily mark a matched cell so the current path cannot reuse it, explore four neighbors, and restore it while backtracking. The recursion depth is at most the word length.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Trace both the choice and the undo step.
+
+### Question 1: Can This Path Be Reused?
+
+Given this board, does the word `"ABA"` exist?
+
+```text
+A B
+C A
+```
+
+Why must a visited mark be restored after an unsuccessful path?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** Yes. One path is `(0, 0) -> (0, 1) -> (1, 1)`.
+
+The first `A` matches at the top left, `B` is directly to its right, and the second `A` is directly below that `B`. No cell is reused within this path.
+
+A visited mark belongs only to the current candidate path. If that path fails, another starting position or branch must be allowed to use the cell. Failing to restore it would make later valid searches see a board that was never part of the original input.
+
+**Complexity:** For `R * C` cells and word length `L`, a common upper bound is `O(R * C * 4^L)` time and `O(L)` recursion space.
+
+**Edge case:** If the word is longer than the number of board cells, it cannot fit without reuse.
+
+</details>
+
+### Question 2: Allow Diagonal Steps
+
+Write a version that allows all eight neighboring directions while still forbidding cell reuse in one path.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def exists_with_diagonals(board: list[list[str]], word: str) -> bool:
+    if not word:
+        return True
+    if not board or not board[0]:
+        return False
+
+    rows = len(board)
+    columns = len(board[0])
+    used = set()
+    directions = [
+        (-1, -1), (-1, 0), (-1, 1),
+        (0, -1),            (0, 1),
+        (1, -1),  (1, 0),  (1, 1),
+    ]
+
+    def dfs(row: int, column: int, index: int) -> bool:
+        if board[row][column] != word[index]:
+            return False
+        if index == len(word) - 1:
+            return True
+
+        used.add((row, column))
+        found = False
+
+        for row_change, column_change in directions:
+            next_row = row + row_change
+            next_column = column + column_change
+            inside = 0 <= next_row < rows and 0 <= next_column < columns
+
+            if inside and (next_row, next_column) not in used:
+                if dfs(next_row, next_column, index + 1):
+                    found = True
+                    break
+
+        used.remove((row, column))
+        return found
+
+    for row in range(rows):
+        for column in range(columns):
+            if dfs(row, column, 0):
+                return True
+
+    return False
+```
+
+The state is the current cell, the next word index, and the cells already used by this path. The function adds a cell before exploring and removes it before returning, which is the backtracking step. The only structural change from four-direction search is the direction list.
+
+**Complexity:** A simple upper bound is `O(R * C * 8^L)` time and `O(L)` path and recursion space.
+
+**Test:** On `[['A', 'X'], ['X', 'B']]`, the word `"AB"` is found diagonally.
+
+</details>

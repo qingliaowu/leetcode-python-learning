@@ -168,3 +168,74 @@ Let `C` be cache capacity.
 With capacity 2, after putting keys 1 and 2, getting key 1 moves it to most
 recent. Putting key 3 must therefore evict key 2. A later get(2) returns -1.
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. Say how recency changes after every operation.
+
+### Question 1: Track the Cache Order
+
+A cache has capacity `2`. Run these operations:
+
+```text
+put(1, 10)
+put(2, 20)
+get(1)
+put(3, 30)
+get(2)
+get(3)
+```
+
+What do the three `get` calls return, and which key is evicted?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** The `get` calls return `10`, `-1`, and `30`. Key `2` is evicted.
+
+After the first two puts, key `1` is least recent and key `2` is most recent. `get(1)` returns `10` and moves key `1` to the recent end, making key `2` least recent. Adding key `3` exceeds capacity, so key `2` is removed. The remaining order is key `1`, then key `3`.
+
+Both the dictionary lookup and each linked-list move are constant-time operations.
+
+**Complexity:** Every `get` and `put` is `O(1)` average time; stored nodes use `O(capacity)` space.
+
+**Edge case:** Updating an existing key changes its value and recency but must not increase the cache size.
+
+</details>
+
+### Question 2: Keep Only Recent Unique Items
+
+Create a small tracker that remembers at most `capacity` unique item names. Visiting an existing item makes it newest. `items()` should return names from oldest to newest.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+from collections import OrderedDict
+
+
+class RecentItems:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.order = OrderedDict()
+
+    def visit(self, item: str) -> None:
+        if item in self.order:
+            self.order.move_to_end(item)
+        else:
+            self.order[item] = None
+
+        if len(self.order) > self.capacity:
+            self.order.popitem(last=False)
+
+    def items(self) -> list[str]:
+        return list(self.order)
+```
+
+`OrderedDict` combines key lookup with a maintained order. `move_to_end` marks an existing item as newest. `popitem(last=False)` removes the oldest item when capacity is exceeded. This is the same recency invariant as an LRU cache, expressed with a standard-library data structure.
+
+**Complexity:** `visit` is `O(1)` average time. Creating the returned list is `O(C)`, where `C` is the number of stored items.
+
+**Test:** With capacity `2`, visits `"A", "B", "A", "C"` leave `['A', 'C']`.
+
+</details>

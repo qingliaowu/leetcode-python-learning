@@ -112,3 +112,63 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > A subarray sum is the difference between two prefix sums. At each position, I need an earlier prefix equal to the current sum minus `k`. A hash map stores how many times each earlier sum occurred, so I can count all matching starts in constant average time and finish in `O(N)`.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Write the running prefix sum after every number.
+
+### Question 1: Count Overlapping Answers
+
+How many subarrays sum to `1` in `nums = [1, -1, 1]`? List them by index range.
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `3` subarrays: indexes `0..0`, `0..2`, and `2..2`.
+
+The running prefix sums are `1`, `0`, and `1`. At each position, the algorithm looks for an earlier prefix equal to `running_sum - 1`. The initial prefix sum `0` before the array is essential: it allows ranges beginning at index `0` to be counted.
+
+The prefix sum `0` occurs twice by the time the final `1` is read, so that final position completes two valid subarrays. This is why the map stores frequencies rather than only whether a sum appeared.
+
+**Complexity:** `O(N)` average time and `O(N)` extra space.
+
+**Edge case:** Negative numbers are allowed, so a normal shrinking sliding window is not reliable.
+
+</details>
+
+### Question 2: Find the Longest Matching Subarray
+
+Return the length of the longest subarray summing to `k`. For `[1, -1, 5, -2, 3]` and `k = 3`, return `4` for indexes `0..3`.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def longest_subarray_sum(nums: list[int], k: int) -> int:
+    earliest_index = {0: -1}
+    running_sum = 0
+    best = 0
+
+    for index, number in enumerate(nums):
+        running_sum += number
+        needed = running_sum - k
+
+        if needed in earliest_index:
+            length = index - earliest_index[needed]
+            best = max(best, length)
+
+        if running_sum not in earliest_index:
+            earliest_index[running_sum] = index
+
+    return best
+```
+
+If two prefix sums differ by `k`, the elements between them sum to `k`. To maximize the range length, the dictionary keeps only the earliest index for each prefix sum. Replacing it with a later index could only create a shorter future range.
+
+The entry `0: -1` represents the empty prefix before index `0`.
+
+**Complexity:** `O(N)` average time and `O(N)` extra space.
+
+**Tests:** The example returns `4`; `longest_subarray_sum([], 0)` returns `0`.
+
+</details>

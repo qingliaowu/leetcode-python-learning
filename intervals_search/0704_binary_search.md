@@ -163,3 +163,58 @@ For one value [5], left and right are both 0, so the loop checks index 0. If
 target is 5 it returns 0. Otherwise one boundary crosses the other and it
 returns -1. This confirms the <= loop condition handles the final candidate.
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. State what the search boundaries mean at every step.
+
+### Question 1: Trace a Missing Target
+
+What does binary search return for `nums = [1, 3, 5, 7]` and `target = 6`? Which candidate values does it inspect?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** It returns `-1`.
+
+With the usual lower-middle calculation, it first checks value `3` at index `1`. Since `6` is larger, it keeps indexes `2` through `3`. It then checks value `5` at index `2` and moves left to index `3`. Finally it checks value `7`, moves right to index `2`, and stops because the boundaries crossed.
+
+Every move excludes the middle index because it has already been checked.
+
+**Complexity:** `O(log N)` time and `O(1)` extra space.
+
+**Edge case:** If the input is empty, the initial right boundary is `-1`, so the loop never runs.
+
+</details>
+
+### Question 2: Find an Insertion Position
+
+Return the first index where `target` could be inserted without breaking sorted order. For `[1, 3, 3, 7]`, target `3` returns `1`, and target `4` returns `3`.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def lower_bound(nums: list[int], target: int) -> int:
+    left = 0
+    right = len(nums)
+
+    while left < right:
+        middle = (left + right) // 2
+        if nums[middle] < target:
+            left = middle + 1
+        else:
+            right = middle
+
+    return left
+```
+
+The search range is half-open: `[left, right)`. Values strictly smaller than the target cannot be the answer, so `left` moves past them. A value equal to or larger than the target might be the first valid position, so the code keeps `middle` with `right = middle`.
+
+When the boundaries meet, every earlier value is smaller and every later value is at least the target.
+
+**Complexity:** `O(log N)` time and `O(1)` extra space.
+
+**Tests:** `lower_bound([], 5)` returns `0`; `lower_bound([1, 3, 3, 7], 8)` returns `4`.
+
+</details>

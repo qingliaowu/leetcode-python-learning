@@ -108,3 +108,72 @@ Let `V` be courses and `E` be prerequisite pairs.
 ## Interview Explanation
 
 > This is cycle detection in a directed graph. I use Kahn's topological sort: count each course's prerequisites, queue all zero-in-degree courses, and remove edges as courses complete. If I process every node, no cycle blocks the schedule.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Write every course's in-degree before starting the queue.
+
+### Question 1: Is This Schedule Possible?
+
+For `num_courses = 4` and prerequisites `[[1, 0], [2, 0], [3, 1], [3, 2]]`, can every course be completed? Give one valid order.
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** Yes. One valid order is `[0, 1, 2, 3]`; `[0, 2, 1, 3]` is also valid.
+
+Course `0` has in-degree zero, so it begins in the queue. Completing it removes one prerequisite from courses `1` and `2`, making both available. Course `3` becomes available only after both `1` and `2` are processed.
+
+Different queue orders can produce different valid schedules. The requirement is that every prerequisite appears before the course that needs it.
+
+**Complexity:** `O(V + E)` time and `O(V + E)` space for the graph, in-degrees, and queue.
+
+**Edge case:** A pair such as `[[0, 1], [1, 0]]` is a cycle, so neither course ever reaches in-degree zero.
+
+</details>
+
+### Question 2: Return a Valid Course Order
+
+Return one valid ordering, or an empty list if a cycle makes completion impossible.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+from collections import deque
+
+
+def find_course_order(
+    num_courses: int, prerequisites: list[list[int]]
+) -> list[int]:
+    graph = [[] for _ in range(num_courses)]
+    in_degree = [0] * num_courses
+
+    for course, prerequisite in prerequisites:
+        graph[prerequisite].append(course)
+        in_degree[course] += 1
+
+    queue = deque(
+        course for course in range(num_courses) if in_degree[course] == 0
+    )
+    order = []
+
+    while queue:
+        course = queue.popleft()
+        order.append(course)
+
+        for next_course in graph[course]:
+            in_degree[next_course] -= 1
+            if in_degree[next_course] == 0:
+                queue.append(next_course)
+
+    return order if len(order) == num_courses else []
+```
+
+The graph edge points from prerequisite to unlocked course. In-degree counts how many requirements remain. A course enters the queue exactly when that count becomes zero. If a cycle exists, its courses keep positive in-degree, so the final order is shorter than `num_courses`.
+
+**Complexity:** `O(V + E)` time and `O(V + E)` extra space.
+
+**Tests:** The example can return `[0, 1, 2, 3]`; prerequisites `[[0, 1], [1, 0]]` return `[]`.
+
+</details>

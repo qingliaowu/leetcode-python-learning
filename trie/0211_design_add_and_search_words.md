@@ -140,3 +140,70 @@ search("a..")  -> True
 search("..")   -> True
 search("....") -> False
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. At every dot, list all child branches that remain possible.
+
+### Question 1: Match Wildcard Patterns
+
+After adding `"bad"`, `"dad"`, and `"mad"`, what do these searches return?
+
+```text
+search("pad")
+search("bad")
+search(".ad")
+search("b..")
+search("..")
+```
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `False`, `True`, `True`, `True`, and `False`.
+
+`"pad"` fails because there is no `p` child at the root. `"bad"` follows one exact path. For `".ad"`, the dot tries root children and at least one branch completes `a -> d`. `"b.."` can follow the letters of `"bad"`. The two-dot pattern reaches depth two, but no stored word ends there, so it is false.
+
+A wildcard changes how the next node is selected, but it does not change the exact required pattern length. The base case must still check the end marker.
+
+**Complexity:** Exact search is `O(L)`. With `D` dots, a useful worst-case description is `O(26^D * L)`.
+
+**Edge case:** A dot can match exactly one character, never zero characters.
+
+</details>
+
+### Question 2: Count All Matching Words
+
+Using a Word Dictionary root, return the number of stored words matching a pattern containing letters and dots.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def count_pattern_matches(root: "TrieNode", pattern: str) -> int:
+    def dfs(node: "TrieNode", index: int) -> int:
+        if index == len(pattern):
+            return 1 if node.is_word else 0
+
+        character = pattern[index]
+
+        if character == ".":
+            total = 0
+            for child in node.children.values():
+                total += dfs(child, index + 1)
+            return total
+
+        if character not in node.children:
+            return 0
+        return dfs(node.children[character], index + 1)
+
+    return dfs(root, 0)
+```
+
+The normal search can stop as soon as one branch succeeds. Counting cannot stop early, so a dot adds the results from every child branch. At the end of the pattern, only a complete-word marker contributes one match.
+
+**Complexity:** It may explore `O(26^D * L)` work in the worst case and uses `O(L)` recursion depth.
+
+**Test:** With `"bad"`, `"dad"`, and `"mad"`, pattern `".ad"` returns `3`, `"b.."` returns `1`, and `".."` returns `0`.
+
+</details>

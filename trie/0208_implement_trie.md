@@ -152,3 +152,67 @@ trie.search("ca")        # False
 trie.startsWith("ca")    # True
 trie.search("care")      # False
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. Draw one node per character and mark complete words clearly.
+
+### Question 1: Path Versus Complete Word
+
+After inserting `"app"` and `"apple"`, what should these calls return?
+
+```text
+search("app")
+search("ap")
+startsWith("ap")
+search("apple")
+startsWith("applepie")
+```
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `True`, `False`, `True`, `True`, and `False`.
+
+The characters `a -> p -> p` form a path whose final node is marked as a word. The shorter path `a -> p` exists but has no word marker, so exact search for `"ap"` is false while prefix search is true. `"apple"` has both a complete path and an end marker. The path fails when `"applepie"` reaches its first character beyond `"apple"`.
+
+This is the central Trie distinction: a path proves a prefix exists; an end marker proves a whole inserted word exists.
+
+**Complexity:** Every call takes `O(L)` time for an input string of length `L`.
+
+**Edge case:** The behavior of an empty string depends on whether inserting it is allowed and whether the root can be marked as a word.
+
+</details>
+
+### Question 2: Count Words Under a Prefix
+
+Using the lesson's Trie node structure, count how many stored words begin with a prefix. This version traverses the matching subtree instead of storing counters.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def count_words_with_prefix(trie: "Trie", prefix: str) -> int:
+    node = trie.root
+
+    for character in prefix:
+        if character not in node.children:
+            return 0
+        node = node.children[character]
+
+    def count_words(current: "TrieNode") -> int:
+        total = 1 if current.is_word else 0
+        for child in current.children.values():
+            total += count_words(child)
+        return total
+
+    return count_words(node)
+```
+
+The first loop reaches the node representing the requested prefix. If that path does not exist, no word can match. DFS then counts every end marker in the subtree, including the prefix node itself when the prefix is also a complete word.
+
+**Complexity:** `O(P + S)` time, where `P` is the prefix length and `S` is the number of Trie nodes visited below it. Recursion uses up to the subtree height in stack space.
+
+**Test:** After inserting `"app"`, `"apple"`, and `"apt"`, prefix `"ap"` returns `3`, while `"apple"` returns `1`.
+
+</details>

@@ -173,3 +173,70 @@ insert("car", 1)
 sum("ca")       -> 6
 sum("dog")      -> 0
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. Calculate the update difference before touching any prefix total.
+
+### Question 1: Update an Existing Key
+
+Trace these operations:
+
+```text
+insert("apple", 3)
+insert("app", 2)
+sum("ap")
+insert("apple", 1)
+sum("ap")
+sum("apple")
+```
+
+What do the three sums return?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** The sums return `5`, `3`, and `1`.
+
+Initially, keys `"apple"` and `"app"` contribute `3 + 2 = 5` below prefix `"ap"`. Updating `"apple"` from `3` to `1` produces a difference of `-2`. Every node on the `"apple"` path subtracts `2`, so prefix `"ap"` becomes `3`. Prefix `"apple"` contains only that exact key and returns `1`.
+
+Adding the new value directly would incorrectly make `"apple"` contribute both its old and new values.
+
+**Complexity:** Insert is `O(L)` for key length `L`; sum is `O(P)` for prefix length `P`.
+
+**Edge case:** Querying a missing prefix returns `0`.
+
+</details>
+
+### Question 2: Build a Simple Baseline Without a Trie
+
+Implement the same behavior with only a dictionary. This solution is slower for prefix queries but helps verify the required semantics.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+class SimpleMapSum:
+    def __init__(self):
+        self.values: dict[str, int] = {}
+
+    def insert(self, key: str, value: int) -> None:
+        self.values[key] = value
+
+    def sum(self, prefix: str) -> int:
+        total = 0
+        for key, value in self.values.items():
+            if key.startswith(prefix):
+                total += value
+        return total
+```
+
+The dictionary naturally replaces the old value when the same key is inserted again, so update semantics are easy. A prefix query must inspect every stored key, which shows exactly what the Trie optimization avoids.
+
+This baseline is useful in an interview: first establish correct behavior simply, then optimize the expensive operation when constraints require it.
+
+**Complexity:** Insert takes `O(L)` time to hash a key of length `L`, followed by an average `O(1)` dictionary update. A sum query is `O(K * L)` in a simple bound for `K` keys of average length `L`.
+
+**Test:** Insert `("apple", 3)`, then `("apple", 1)`; `sum("app")` returns `1`, not `4`.
+
+</details>

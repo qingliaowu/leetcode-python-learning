@@ -143,3 +143,60 @@ result = "a a a b"
 ```
 
 The first complete marker always wins.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Stop at each end marker and decide whether the rule says shortest or longest.
+
+### Question 1: Replace a Sentence by Hand
+
+With roots `["cat", "bat", "rat"]`, what is the result for `"the cattle was rattled by the battery"`?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `"the cat was rat by the bat"`.
+
+`"cattle"` follows `c -> a -> t`, reaches the complete root `"cat"`, and stops. `"rattled"` becomes `"rat"`, and `"battery"` becomes `"bat"`. Words such as `"the"`, `"was"`, and `"by"` encounter no complete dictionary root and remain unchanged.
+
+Stopping at the first end marker is correct because traversal reads the word from shortest prefix to longest prefix.
+
+**Complexity:** Building the Trie takes time proportional to dictionary characters, and replacement takes time proportional to sentence characters in the worst case.
+
+**Edge case:** If both `"a"` and `"an"` are roots for `"another"`, the shortest-root rule chooses `"a"`.
+
+</details>
+
+### Question 2: Choose the Longest Root Instead
+
+Using the lesson's Trie root, return the longest dictionary root that prefixes one word. If no root matches, return the original word.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def longest_root_or_word(root: "TrieNode", word: str) -> str:
+    node = root
+    longest_length = 0
+
+    for index, character in enumerate(word):
+        if character not in node.children:
+            break
+
+        node = node.children[character]
+
+        if node.is_word:
+            longest_length = index + 1
+
+    if longest_length == 0:
+        return word
+    return word[:longest_length]
+```
+
+Unlike shortest-root replacement, this function does not return at the first end marker. It remembers the length of each complete root and continues while the word follows the Trie. The last marker reached is the longest matching root.
+
+**Complexity:** `O(L)` time for a word of length `L` and `O(1)` traversal space, excluding the returned string slice.
+
+**Test:** With roots `"a"`, `"an"`, and `"ant"`, word `"anthem"` returns `"ant"`; word `"boat"` remains `"boat"`.
+
+</details>

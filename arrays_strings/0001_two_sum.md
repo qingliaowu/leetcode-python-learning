@@ -96,3 +96,56 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > As I scan the array, I keep a hash map from each previous value to its index. For the current value, I compute the complement needed to reach the target. If that complement is already stored, I return the two indexes. This uses linear time and linear extra space.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Say the approach, complexity, and one edge case aloud.
+
+### Question 1: Trace Duplicate Values
+
+For `nums = [3, 3]` and `target = 6`, which indexes are returned? Why does the algorithm not reuse index `0` twice?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `[0, 1]`.
+
+At index `0`, the needed complement is `3`, but the map is still empty. The algorithm then stores `3 -> 0`. At index `1`, the complement is again `3`, and the map contains index `0`, so the two different indexes form the answer.
+
+Checking before storing the current number prevents one element from matching itself. Duplicate values are still allowed because they occupy different indexes.
+
+**Complexity:** `O(N)` time and `O(N)` extra space in the worst case.
+
+**Edge case:** An input with fewer than two numbers cannot contain a valid pair.
+
+</details>
+
+### Question 2: Does Any Pair Exist?
+
+Write a function that returns `True` when any two different elements add to `target`. It does not need to return their indexes.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def has_pair_with_sum(nums: list[int], target: int) -> bool:
+    seen = set()
+
+    for number in nums:
+        complement = target - number
+        if complement in seen:
+            return True
+        seen.add(number)
+
+    return False
+```
+
+The set stores values from earlier indexes. For each new number, the function asks whether the value needed to complete the target has already appeared. It checks first and inserts second, so one index is never used twice.
+
+For `[4, 1, 7]` and target `8`, the function stores `4`, then `1`. When it reaches `7`, it finds the needed `1` and returns `True`.
+
+**Complexity:** `O(N)` average time and `O(N)` extra space.
+
+**Tests:** `has_pair_with_sum([3, 3], 6)` is `True`; `has_pair_with_sum([3], 6)` is `False`.
+
+</details>

@@ -10,6 +10,7 @@ This repository assumes nothing. Python syntax, algorithm ideas, time and space 
 | --- | ---: | --- |
 | Python 3 lessons | 11 | Relearn Python from `print` through recursion and Big-O |
 | Interview problems | 26 | Practice the patterns most often used in coding interviews |
+| Guided self-check questions | 52 | Transfer each pattern to a new example, then reveal a detailed answer |
 | Topic guides | 9 | Learn how related problems connect |
 | External packages | 0 | Everything runs with the Python standard library |
 
@@ -65,6 +66,7 @@ Do not memorize finished code. For each problem:
 6. Code the solution in small logical blocks.
 7. Trace a normal example and an edge case through the code.
 8. Explain time and space complexity in complete sentences.
+9. Attempt both self-check questions before opening their answers.
 
 The [Interview Playbook](./INTERVIEW_PLAYBOOK.md) provides sentence templates for every step.
 
@@ -86,7 +88,7 @@ Repeat difficult problems after one day and again after one week.
 
 | File | What It Gives You |
 | --- | --- |
-| Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, interview explanation, and possible follow-up questions |
+| Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, interview explanation, follow-ups, and two self-checks with detailed answers |
 | Solution `.py` | Readable Python 3 code, focused comments, type hints, and executable assertions |
 | Topic `README.md` | Pattern introduction, recommended order, and connections between problems |
 

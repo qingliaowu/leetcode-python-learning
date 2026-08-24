@@ -88,3 +88,59 @@ The distinct-values condition makes the sorted-half decision unambiguous.
 ## Interview Explanation
 
 > I use binary search. Rotation breaks global ordering, but one side of the midpoint is always sorted. I identify that side, test whether the target lies in its value range, and keep either that half or the other half. Each step discards half the candidates, so the time is logarithmic.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Name the sorted half before deciding which boundary to move.
+
+### Question 1: Trace a Successful Search
+
+For `nums = [6, 7, 0, 1, 2, 4, 5]` and `target = 4`, which index is returned? What does the first midpoint tell you?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** Index `5` is returned.
+
+The first midpoint is index `3`, whose value is `1`. The right half `[1, 2, 4, 5]` is sorted, and target `4` lies in its value range, so the search discards indexes `0` through `3`. Binary search then narrows the remaining range until it reaches index `5`.
+
+The important order is: identify a sorted side, check whether the target belongs in that side, and only then move a boundary.
+
+**Complexity:** `O(log N)` time and `O(1)` extra space.
+
+**Edge case:** For one element, the loop must still inspect that final candidate.
+
+</details>
+
+### Question 2: Find the Minimum Rotated Value
+
+Given a non-empty sorted array of distinct values that may be rotated, return its minimum value. For `[4, 5, 6, 1, 2, 3]`, return `1`.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def find_rotated_minimum(nums: list[int]) -> int:
+    left = 0
+    right = len(nums) - 1
+
+    while left < right:
+        middle = (left + right) // 2
+
+        if nums[middle] > nums[right]:
+            left = middle + 1
+        else:
+            right = middle
+
+    return nums[left]
+```
+
+The right endpoint provides a sorted-array reference. If the middle value is greater than the right value, the rotation point and minimum must be strictly to the right of `middle`. Otherwise, `middle` may itself be the minimum, so the code keeps it with `right = middle`.
+
+The loop stops when both boundaries point to the only possible minimum.
+
+**Complexity:** `O(log N)` time and `O(1)` extra space.
+
+**Tests:** `[4, 5, 1, 2, 3]` returns `1`; `[1, 2, 3]` returns `1`; `[7]` returns `7`.
+
+</details>

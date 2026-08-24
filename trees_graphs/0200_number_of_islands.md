@@ -96,3 +96,83 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I scan the grid. Each unvisited land cell begins a new connected component, so I increment the answer and run DFS to mark its entire island. Every cell is visited at most once, giving linear time in the grid size.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Mark every cell reached by one traversal before counting again.
+
+### Question 1: Count Components by Hand
+
+How many islands are in this grid when only up, down, left, and right connections count?
+
+```text
+1 1 0 0
+0 1 0 0
+0 0 1 1
+```
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `2` islands.
+
+The top-left land cells `(0, 0)`, `(0, 1)`, and `(1, 1)` are connected and form one island. The two land cells in the final row form the second island. They touch the first group only diagonally, which does not count under the stated rules.
+
+The outer scan increments the answer only when it finds land that no earlier traversal visited. The traversal then marks that island's complete component.
+
+**Complexity:** `O(R * C)` time because each cell is processed at most once, with up to `O(R * C)` stack space in the worst case.
+
+**Edge case:** A grid containing only water has `0` islands.
+
+</details>
+
+### Question 2: Find the Largest Island Area
+
+Return the number of cells in the largest island. This version may change land from `1` to `0` as its visited mark.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def largest_island_area(grid: list[list[int]]) -> int:
+    if not grid or not grid[0]:
+        return 0
+
+    rows = len(grid)
+    columns = len(grid[0])
+    largest = 0
+
+    for row in range(rows):
+        for column in range(columns):
+            if grid[row][column] != 1:
+                continue
+
+            area = 0
+            stack = [(row, column)]
+            grid[row][column] = 0
+
+            while stack:
+                current_row, current_column = stack.pop()
+                area += 1
+
+                for row_change, column_change in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    next_row = current_row + row_change
+                    next_column = current_column + column_change
+                    inside = 0 <= next_row < rows and 0 <= next_column < columns
+
+                    if inside and grid[next_row][next_column] == 1:
+                        grid[next_row][next_column] = 0
+                        stack.append((next_row, next_column))
+
+            largest = max(largest, area)
+
+    return largest
+```
+
+Each new land component starts an area counter. Marking a neighbor when it enters the stack prevents the same cell from being added more than once. After one component finishes, its area can update the global maximum.
+
+**Complexity:** `O(R * C)` time and up to `O(R * C)` stack space.
+
+**Tests:** The grid in Question 1 returns `3`; an all-water grid returns `0`.
+
+</details>

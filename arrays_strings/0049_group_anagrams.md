@@ -95,3 +95,61 @@ A character-count key can reduce sorting work to `O(N * K)`, but the sorted-key 
 ## Interview Explanation
 
 > Anagrams become identical when their characters are sorted. I use that immutable sorted tuple as a hash-map key and append each original word to the corresponding list. The solution is dominated by sorting each word, giving `O(N * K log K)` time.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Say the approach, complexity, and one edge case aloud.
+
+### Question 1: Build the Groups
+
+Ignoring the order of groups, what groups should be produced from `['eat', 'tea', 'tan', 'ate', 'nat', 'bat']`? What key does `"tea"` use?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** The groups are `['eat', 'tea', 'ate']`, `['tan', 'nat']`, and `['bat']`.
+
+Sorting `"tea"` produces the characters `['a', 'e', 't']`. A list cannot be a dictionary key, so the implementation uses the tuple `('a', 'e', 't')`. The words `"eat"` and `"ate"` produce the same key and therefore enter the same list.
+
+The exact order of groups normally does not matter unless the problem explicitly requires one.
+
+**Complexity:** For `N` words of maximum length `K`, sorting keys takes `O(N * K log K)` time. The groups and keys use `O(N * K)` space.
+
+**Edge case:** Empty strings are anagrams of one another because each has the same empty key.
+
+</details>
+
+### Question 2: Check Two Words
+
+Write a function that decides whether two lowercase or Unicode strings are anagrams without sorting them.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def are_anagrams(first: str, second: str) -> bool:
+    if len(first) != len(second):
+        return False
+
+    counts: dict[str, int] = {}
+
+    for character in first:
+        counts[character] = counts.get(character, 0) + 1
+
+    for character in second:
+        if character not in counts:
+            return False
+        counts[character] -= 1
+        if counts[character] == 0:
+            del counts[character]
+
+    return not counts
+```
+
+The first loop records how many copies of every character are required. The second loop removes those requirements. A missing character fails immediately. Deleting zero counts makes an empty dictionary mean that every required character was matched exactly.
+
+**Complexity:** `O(A + B)` average time and `O(U)` extra space, where `U` is the number of distinct characters.
+
+**Tests:** `are_anagrams("listen", "silent")` is `True`; `are_anagrams("rat", "car")` is `False`.
+
+</details>

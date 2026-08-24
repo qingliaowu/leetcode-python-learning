@@ -148,3 +148,70 @@ Think through these cases:
 - No product matches the first character.
 - One product is itself a prefix of another product.
 - All products share a long prefix.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Sort the products first, then write the prefix after every typed character.
+
+### Question 1: Produce Suggestions by Hand
+
+Products are `["bags", "baggage", "banner", "box"]` and the search word is `"bag"`. What suggestion list is returned after each typed character when at most three lexicographically smallest products are shown?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:**
+
+```text
+"b"   -> ["baggage", "bags", "banner"]
+"ba"  -> ["baggage", "bags", "banner"]
+"bag" -> ["baggage", "bags"]
+```
+
+Sorted order is `"baggage"`, `"bags"`, `"banner"`, `"box"`. All four match `"b"`, but only the first three are kept. `"box"` stops matching at prefix `"ba"`. At prefix `"bag"`, `"banner"` also stops matching.
+
+Because products enter the Trie in sorted order, the first three saved at a node are already that prefix's correct suggestions.
+
+**Complexity:** With cached node suggestions, querying a search word of length `M` takes `O(M)` after preprocessing.
+
+**Edge case:** Once a prefix has no Trie path, that prefix and every longer prefix produce an empty list.
+
+</details>
+
+### Question 2: A Simple Sorted-Scan Version
+
+Write a beginner-friendly version that returns at most `limit` suggestions per prefix by scanning sorted products instead of building a Trie.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def suggested_products_simple(
+    products: list[str], search_word: str, limit: int = 3
+) -> list[list[str]]:
+    ordered_products = sorted(products)
+    answer = []
+    prefix = ""
+
+    for character in search_word:
+        prefix += character
+        matches = []
+
+        for product in ordered_products:
+            if product.startswith(prefix):
+                matches.append(product)
+                if len(matches) == limit:
+                    break
+
+        answer.append(matches)
+
+    return answer
+```
+
+Sorting once guarantees that the first matching products are lexicographically smallest. For each typed prefix, the function scans until it collects enough matches or reaches the end. This version is easy to verify but repeats work across prefixes.
+
+**Complexity:** Sorting costs `O(N log N)` comparisons. The repeated scan can inspect all `N` products for each of `M` prefixes, with prefix comparisons adding character work. The sorted copy uses `O(N)` references, and the suggestion lists use output-sized space.
+
+**Test:** The input from Question 1 produces the three listed suggestion lists; a search word starting with `"z"` produces empty lists.
+
+</details>

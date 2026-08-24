@@ -146,3 +146,62 @@ Let `M` be the number of values stored for the requested key and `S` the total n
 For history [(1, bar), (4, bar2)] and request 3, timestamp 1 is the newest
 valid entry. Timestamp 4 is too new, so the method returns bar.
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. State the binary-search condition in plain English.
+
+### Question 1: Query Several Times
+
+After `set("mode", "day", 1)` and `set("mode", "night", 4)`, what should `get` return at timestamps `0`, `1`, `3`, `4`, and `8`?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** The results are `""`, `"day"`, `"day"`, `"night"`, and `"night"`.
+
+The query wants the value with the greatest stored timestamp that is less than or equal to the requested time. There is no valid entry at time `0`. Times `1` and `3` use the entry from time `1`. Starting at time `4`, the newer value is valid.
+
+This is a rightmost-valid binary search, not a search for an exact timestamp.
+
+**Complexity:** Each query takes `O(log M)` time for `M` versions of that key and `O(1)` extra space.
+
+**Edge case:** A missing key or a time before its first value returns the required empty default.
+
+</details>
+
+### Question 2: Look Up Historical Prices
+
+Complete a function that receives one sorted history of `(timestamp, price)` pairs and returns the newest price at or before `query_time`, or `None` if there is none.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def price_at_or_before(
+    history: list[tuple[int, float]], query_time: int
+) -> float | None:
+    left = 0
+    right = len(history) - 1
+    answer = None
+
+    while left <= right:
+        middle = (left + right) // 2
+        timestamp, price = history[middle]
+
+        if timestamp <= query_time:
+            answer = price
+            left = middle + 1
+        else:
+            right = middle - 1
+
+    return answer
+```
+
+Whenever `timestamp <= query_time`, that price is valid, but a newer valid price may exist to the right. The function saves the candidate and continues right. If the middle timestamp is too new, every timestamp to its right is also too new, so it searches left.
+
+**Complexity:** `O(log M)` time and `O(1)` extra space.
+
+**Tests:** For `[(2, 10.0), (5, 12.5)]`, time `4` returns `10.0`, time `5` returns `12.5`, and time `1` returns `None`.
+
+</details>

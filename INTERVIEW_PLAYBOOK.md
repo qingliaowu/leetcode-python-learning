@@ -257,6 +257,22 @@ Common follow-up types include:
 
 Do not immediately code. First explain why the existing invariant is insufficient and state the new invariant. The follow-up tables in every problem lesson provide realistic questions and short answer directions for practice.
 
+## Use the Lesson Self-Checks
+
+Every problem lesson ends with two similar questions under **Check Your Understanding**. Their answers are hidden in expandable sections so you can make a real attempt first.
+
+For each question:
+
+1. Restate the input, output, and assumptions before opening the answer.
+2. Write or say the expected result.
+3. Name the pattern and the state your algorithm must remember.
+4. Trace one example without skipping variable changes.
+5. State time and space complexity in complete sentences.
+6. Name one edge case and its expected result.
+7. Open the answer and compare reasoning, not only the final output.
+
+When your answer differs, find the first changed assumption, invariant, or state update. Close the answer and solve the question again from the beginning. Being able to transfer a pattern to a nearby problem is stronger evidence of understanding than recognizing finished code.
+
 ## A Practical Interview Timeline
 
 For a 35-minute coding problem:
@@ -296,7 +312,8 @@ For each problem:
 3. Write the baseline and optimized complexity.
 4. Code for at most 30 minutes.
 5. Run the file and compare it with the lesson.
-6. Explain the invariant and three edge cases without notes.
-7. Repeat the problem after one day and again after one week.
+6. Complete both self-check questions before revealing their answers.
+7. Explain the invariant and three edge cases without notes.
+8. Repeat the problem after one day and again after one week.
 
 A problem is interview-ready when you can recognize the pattern, derive the approach rather than recite code, explain why it works, implement it without hidden gaps, and test it calmly.

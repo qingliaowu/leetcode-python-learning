@@ -162,3 +162,55 @@ Amount 1 stays impossible. Amount 2 becomes one coin using dp[0]. Amount 3
 cannot use a saved reachable remainder, so its marker never changes. The code
 returns -1.
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. Define `dp[x]` and its impossible marker before tracing the table.
+
+### Question 1: Why Greedy Fails
+
+For coins `[1, 3, 4]` and amount `6`, what is the minimum number of coins? What answer would repeatedly choosing the largest possible coin produce?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** The minimum is `2`, using `3 + 3`. Greedy choice produces `4 + 1 + 1`, which uses `3` coins.
+
+Dynamic programming compares all possible final coins. For amount `6`, choosing final coin `3` uses `1 + dp[3] = 2`, while choosing final coin `4` uses `1 + dp[2] = 3`. Saving the best result for every smaller amount makes this comparison possible.
+
+Greedy choice is correct only for coin systems with additional properties, so it cannot be assumed here.
+
+**Complexity:** `O(A * C)` time and `O(A)` extra space for amount `A` and `C` coin types.
+
+**Edge case:** Amount `0` needs zero coins, even when the coin list is empty.
+
+</details>
+
+### Question 2: Count Coin Combinations
+
+Assume the coin values are positive and distinct. Return the number of combinations that make an amount. Different orders of the same coins count once. For coins `[1, 2, 5]` and amount `5`, return `4`.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def count_coin_combinations(coins: list[int], amount: int) -> int:
+    dp = [0] * (amount + 1)
+    dp[0] = 1
+
+    for coin in coins:
+        for current_amount in range(coin, amount + 1):
+            dp[current_amount] += dp[current_amount - coin]
+
+    return dp[amount]
+```
+
+Here `dp[x]` means the number of combinations that build amount `x` using the coin types processed so far. `dp[0] = 1` represents one way to make zero: choose nothing. Appending the current coin to every way of making `x - coin` creates ways to make `x`.
+
+Coins are the outer loop, so each combination is introduced in one consistent coin-type order. Reversing the loops would count sequences such as `1 + 2` and `2 + 1` separately.
+
+**Complexity:** `O(A * C)` time and `O(A)` extra space.
+
+**Tests:** Coins `[1, 2, 5]`, amount `5`, return `4`; coins `[2]`, amount `3`, return `0`; amount `0` returns `1` empty combination.
+
+</details>

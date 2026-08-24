@@ -106,3 +106,66 @@ Let `N` be the total number of nodes and `K` the number of lists.
 ## Interview Explanation
 
 > Each sorted list exposes its smallest remaining node at its head. I keep those at most `K` candidates in a min-heap, pop the smallest into the result, and replace it with its successor. A dummy head simplifies result construction. Every node performs `O(log K)` heap work, for `O(N log K)` total time.
+
+## Check Your Understanding
+
+Try each question before opening its answer. List the one candidate contributed by every non-empty input.
+
+### Question 1: Merge by Heap Order
+
+What sequence is produced by merging `[1, 4]`, `[1, 3]`, and `[2, 6]`? Why does a Python heap entry need a tie-breaker when the first two values are equal?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `[1, 1, 2, 3, 4, 6]`.
+
+Initially the heap exposes `1`, `1`, and `2`, one value from each list. After a value is removed, only its successor from the same list is added. Therefore the heap always contains the smallest not-yet-used candidate from each active list.
+
+Tuples are compared from left to right. If two entries contain the same value and the next tuple item is a `ListNode`, Python may try to compare node objects and raise `TypeError`. A unique integer counter or list index resolves the tie before Python reaches the node.
+
+**Complexity:** `O(N log K)` time and `O(K)` heap space.
+
+**Edge case:** Empty input lists contribute no heap entry.
+
+</details>
+
+### Question 2: Merge Sorted Arrays
+
+Return one sorted list from `K` sorted arrays. Do not place every value in the heap at once.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+import heapq
+
+
+def merge_sorted_arrays(arrays: list[list[int]]) -> list[int]:
+    heap = []
+
+    for array_index, array in enumerate(arrays):
+        if array:
+            heapq.heappush(heap, (array[0], array_index, 0))
+
+    merged = []
+
+    while heap:
+        value, array_index, element_index = heapq.heappop(heap)
+        merged.append(value)
+
+        next_index = element_index + 1
+        if next_index < len(arrays[array_index]):
+            next_value = arrays[array_index][next_index]
+            heapq.heappush(heap, (next_value, array_index, next_index))
+
+    return merged
+```
+
+Each tuple says which value is available and where its successor lives. Because every array is sorted, no later value from an array can be needed before its current candidate. The heap therefore needs at most one entry per array.
+
+**Complexity:** `O(N log K)` time for `N` total values and `O(K)` heap space, plus the required output.
+
+**Test:** `[[1, 4], [1, 3], [], [2, 6]]` returns `[1, 1, 2, 3, 4, 6]`.
+
+</details>

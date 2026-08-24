@@ -95,3 +95,65 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I sort by start time, which makes all overlapping ranges adjacent. I keep a result of already merged intervals. Each new interval either starts after the last result ends, so it is appended, or overlaps, so I extend the last end. Sorting dominates at `O(N log N)`.
+
+## Check Your Understanding
+
+Try each question before opening its answer. State whether touching endpoints count as overlap.
+
+### Question 1: Merge by Hand
+
+What is the merged result for `[[1, 4], [4, 5], [8, 10], [2, 3]]` when touching endpoints overlap?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** `[[1, 5], [8, 10]]`.
+
+Sorting by start gives `[[1, 4], [2, 3], [4, 5], [8, 10]]`. Interval `[2, 3]` is contained inside `[1, 4]`, so the end stays `4`. Interval `[4, 5]` touches the current end and therefore extends it to `5`. Interval `[8, 10]` begins after `5`, so it starts a new merged interval.
+
+Using `max(current_end, next_end)` is important because an interval may be completely contained inside the current one.
+
+**Complexity:** `O(N log N)` time for sorting and up to `O(N)` output space.
+
+**Edge case:** An empty input returns an empty list.
+
+</details>
+
+### Question 2: Insert One New Interval
+
+The existing intervals are already sorted and non-overlapping. Insert one interval and merge where needed. For `[[1, 2], [5, 7]]` and `[2, 6]`, return `[[1, 7]]`.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def insert_interval(
+    intervals: list[list[int]], new_interval: list[int]
+) -> list[list[int]]:
+    result = []
+    index = 0
+    start, end = new_interval
+
+    while index < len(intervals) and intervals[index][1] < start:
+        result.append(intervals[index])
+        index += 1
+
+    while index < len(intervals) and intervals[index][0] <= end:
+        start = min(start, intervals[index][0])
+        end = max(end, intervals[index][1])
+        index += 1
+
+    result.append([start, end])
+    result.extend(intervals[index:])
+    return result
+```
+
+The first loop copies intervals completely before the new one. The second loop combines every overlap into one growing `[start, end]`. Once an interval starts after the merged end, all remaining intervals are also later because the input is sorted.
+
+No new sort is needed.
+
+**Complexity:** `O(N)` time and `O(N)` output space.
+
+**Tests:** Inserting `[2, 6]` into `[[1, 2], [5, 7]]` returns `[[1, 7]]`; inserting `[3, 4]` returns `[[1, 2], [3, 4], [5, 7]]`.
+
+</details>

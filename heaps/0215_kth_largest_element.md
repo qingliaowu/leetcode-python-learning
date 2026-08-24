@@ -85,3 +85,63 @@ Sorting the whole array is simpler but costs `O(N log N)` time.
 ## Interview Explanation
 
 > I maintain a min-heap containing the largest `k` values seen. Whenever its size exceeds `k`, I remove the smallest. At the end, the heap's minimum is the kth largest overall. This uses `O(N log K)` time and `O(K)` space.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Remember that duplicates occupy separate ranks.
+
+### Question 1: Keep the Largest Four
+
+What is the fourth largest value in `[3, 2, 3, 1, 2, 4, 5, 5, 6]`? Which four values remain in a size-`4` min-heap?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** The fourth largest value is `4`. The retained values are `4`, `5`, `5`, and `6`.
+
+Duplicates count as separate elements, so descending order begins `6, 5, 5, 4`. The heap does not have to store these values in fully sorted list order. It guarantees only that its smallest retained value, `heap[0]`, is at the root.
+
+Whenever a fifth value enters, removing the smallest restores the invariant: the heap contains the largest four values seen so far.
+
+**Complexity:** `O(N log K)` time and `O(K)` extra space.
+
+**Edge case:** Valid input requires `1 <= k <= len(nums)`.
+
+</details>
+
+### Question 2: Kth Largest in a Stream
+
+Build a class for a positive integer `k` that receives numbers one at a time. After at least `k` values have been seen, `add` returns the current kth largest value; otherwise it returns `None`.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+import heapq
+
+
+class KthLargestStream:
+    def __init__(self, k: int):
+        self.k = k
+        self.heap: list[int] = []
+
+    def add(self, value: int) -> int | None:
+        heapq.heappush(self.heap, value)
+
+        if len(self.heap) > self.k:
+            heapq.heappop(self.heap)
+
+        if len(self.heap) < self.k:
+            return None
+        return self.heap[0]
+```
+
+The class never needs values below the largest `k` seen so far. Once the heap has `k` items, its root is the boundary between retained and discarded values, which is exactly the kth largest.
+
+Each new value causes one push and at most one pop.
+
+**Complexity:** `O(log K)` time per `add` and `O(K)` space.
+
+**Test:** With `k = 3`, adding `4, 1, 7, 5` returns `None, None, 1, 4`.
+
+</details>

@@ -102,3 +102,67 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I run BFS over the original graph and keep a map from each original node to its single clone. When I inspect an edge, I create the neighbor clone if necessary, then connect the two cloned nodes. The map also prevents cycles from causing repeated work.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Draw the original-to-clone map as it grows.
+
+### Question 1: Clone a Cycle
+
+Three nodes form the undirected cycle `1 - 2 - 3 - 1`. How many clone objects should be created, and why does BFS stop instead of circling forever?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** Exactly `3` clone objects should be created, one for each original node.
+
+The map starts with `original 1 -> clone 1`. When node `1` discovers nodes `2` and `3`, each receives one clone and enters the queue. Later, edges back to node `1` or between nodes `2` and `3` find originals already present in the map, so the algorithm reuses their clones instead of creating or queuing them again.
+
+The map has two jobs: it finds the correct clone for every edge and also acts as the visited set.
+
+**Complexity:** `O(V + E)` time and `O(V)` extra space.
+
+**Edge case:** A self-loop must connect the cloned node to itself, not to the original node.
+
+</details>
+
+### Question 2: Clone While Transforming Values
+
+Clone a graph, but make every cloned node's value twice its original value. Assume the lesson's `Node` class is available.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+from collections import deque
+
+
+def clone_with_doubled_values(node: "Node | None") -> "Node | None":
+    if node is None:
+        return None
+
+    clones = {node: Node(node.val * 2)}
+    queue = deque([node])
+
+    while queue:
+        original = queue.popleft()
+
+        for neighbor in original.neighbors:
+            if neighbor not in clones:
+                clones[neighbor] = Node(neighbor.val * 2)
+                queue.append(neighbor)
+
+            clones[original].neighbors.append(clones[neighbor])
+
+    return clones[node]
+```
+
+Only node construction changes; the graph-copying invariant stays the same. Each original has exactly one mapped clone. Every original edge `original -> neighbor` becomes the clone edge `clones[original] -> clones[neighbor]`.
+
+Cycles are safe because a mapped node is never created or queued a second time.
+
+**Complexity:** `O(V + E)` time and `O(V)` extra space, excluding the required cloned output.
+
+**Test:** A two-node cycle with values `2` and `5` becomes a separate two-node cycle with values `4` and `10`.
+
+</details>

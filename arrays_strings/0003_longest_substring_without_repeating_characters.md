@@ -88,3 +88,68 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I maintain a sliding window with no duplicate characters. A map stores each character's latest index. When the current character already appears inside the window, I jump the left boundary past that occurrence. Each character is processed once, so the solution runs in linear time.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Say the approach, complexity, and one edge case aloud.
+
+### Question 1: Trace `abba`
+
+What answer should the algorithm return for `s = "abba"`? When it reads the final `a`, should the left boundary move backward?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** The longest length is `2`, from either `"ab"` or `"ba"`. The left boundary must never move backward.
+
+After reading the second `b`, the window moves past the earlier `b`, so `left` becomes `2`. The final `a` was last seen at index `0`, which is outside the current window. Moving `left` to `1` would incorrectly make the window larger by including duplicate `b` values.
+
+The safe update is:
+
+```python
+left = max(left, last_seen[character] + 1)
+```
+
+**Complexity:** `O(N)` time and up to `O(U)` extra space, where `U` is the number of distinct characters.
+
+**Edge case:** The empty string has answer `0`.
+
+</details>
+
+### Question 2: At Most Two Distinct Characters
+
+Find the length of the longest substring containing at most two distinct characters. For example, `"eceba"` should return `3` for `"ece"`.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def longest_with_at_most_two_distinct(s: str) -> int:
+    counts: dict[str, int] = {}
+    left = 0
+    best = 0
+
+    for right, character in enumerate(s):
+        counts[character] = counts.get(character, 0) + 1
+
+        while len(counts) > 2:
+            left_character = s[left]
+            counts[left_character] -= 1
+            if counts[left_character] == 0:
+                del counts[left_character]
+            left += 1
+
+        best = max(best, right - left + 1)
+
+    return best
+```
+
+The window may contain repeated characters, so the map stores counts rather than only latest indexes. When a third distinct character enters, the left side shrinks until only two dictionary keys remain. After that repair, the window is valid and can update `best`.
+
+Each character enters the window once and leaves at most once.
+
+**Complexity:** `O(N)` time and `O(U)` extra space; because this version keeps at most two keys, its working map is `O(1)`.
+
+**Tests:** `"eceba"` returns `3`, `"aaaa"` returns `4`, and `""` returns `0`.
+
+</details>

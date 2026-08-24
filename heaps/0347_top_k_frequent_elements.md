@@ -93,3 +93,63 @@ Let `N` be input length and `U` be unique values.
 ## Interview Explanation
 
 > First I count values with a hash map. Then I keep a min-heap of at most `k` `(frequency, value)` pairs. If the heap grows too large, I remove its smallest frequency. The remaining values are the top `k`, using `O(N log K)` time.
+
+## Check Your Understanding
+
+Try each question before opening its answer. Separate the counting phase from the selection phase.
+
+### Question 1: Count Before Selecting
+
+For `nums = [1, 1, 1, 2, 2, 3]` and `k = 2`, which values are returned? What frequency pairs are compared?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** Values `1` and `2` are returned, in either order unless sorted output is requested.
+
+The frequency map is `{1: 3, 2: 2, 3: 1}`. Selection compares `(3, 1)`, `(2, 2)`, and `(1, 3)` conceptually, where frequency is the priority. A size-`2` min-heap discards the pair with frequency `1` and keeps the two higher frequencies.
+
+Counting occurrences and finding the largest values are separate jobs. Pushing each raw occurrence would do unnecessary heap work.
+
+**Complexity:** `O(N log K)` time with the heap approach and `O(U + K)` extra space for `U` unique values.
+
+**Edge case:** Ask how ties should be handled when several values have the same boundary frequency.
+
+</details>
+
+### Question 2: Solve With Frequency Buckets
+
+Assume `1 <= k <= number of unique values`. Return the top `k` frequent values in `O(N)` time using buckets instead of a heap.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def top_k_frequent_bucket(nums: list[int], k: int) -> list[int]:
+    counts: dict[int, int] = {}
+    for number in nums:
+        counts[number] = counts.get(number, 0) + 1
+
+    buckets = [[] for _ in range(len(nums) + 1)]
+    for number, frequency in counts.items():
+        buckets[frequency].append(number)
+
+    answer = []
+    for frequency in range(len(buckets) - 1, 0, -1):
+        for number in buckets[frequency]:
+            answer.append(number)
+            if len(answer) == k:
+                return answer
+
+    return answer
+```
+
+No value can occur more than `N` times, so frequency itself can be used as a bucket index. Scanning from the largest index visits values from highest to lowest frequency and stops after collecting `k` values.
+
+Building counts, filling buckets, and scanning all bucket positions each take linear time.
+
+**Complexity:** `O(N)` time and `O(N)` extra space.
+
+**Test:** `[1, 1, 1, 2, 2, 3]` with `k = 2` returns `[1, 2]`.
+
+</details>

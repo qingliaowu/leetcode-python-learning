@@ -169,3 +169,58 @@ For `[7, 7, 7]`, say:
 Every state begins at 1. The strict comparison is previous value less than
 current value, so equal sevens never extend one another. max(dp) is 1.
 ```
+
+## Check Your Understanding
+
+Try each question before opening its answer. Say what `dp[i]` means before calculating any values.
+
+### Question 1: Find One Increasing Subsequence
+
+What is the LIS length for `[10, 9, 2, 5, 3, 7, 101, 18]`? Give one valid subsequence of that length.
+
+<details>
+<summary>Show answer and explanation</summary>
+
+**Answer:** The length is `4`. Examples include `[2, 3, 7, 18]` and `[2, 5, 7, 101]`.
+
+For each index, `dp[i]` means the longest increasing subsequence ending exactly at that value. Value `7` can extend a subsequence ending at `2`, `5`, or `3`. Value `18` can then extend a length-three subsequence ending at `7`, producing length four.
+
+The answer is `max(dp)`, not necessarily a state chosen in advance, because the best subsequence may end at any index.
+
+**Complexity:** The beginner DP uses `O(N^2)` time and `O(N)` extra space.
+
+**Edge case:** Equal values do not extend a strictly increasing subsequence.
+
+</details>
+
+### Question 2: Longest Non-Decreasing Subsequence
+
+Change the rule so equal neighboring choices are allowed. Return the longest non-decreasing subsequence length. For `[1, 2, 2, 1]`, return `3` for `[1, 2, 2]`.
+
+<details>
+<summary>Show answer and detailed solution</summary>
+
+```python
+def longest_non_decreasing_subsequence(nums: list[int]) -> int:
+    if not nums:
+        return 0
+
+    dp = [1] * len(nums)
+
+    for current in range(len(nums)):
+        for previous in range(current):
+            if nums[previous] <= nums[current]:
+                dp[current] = max(dp[current], dp[previous] + 1)
+
+    return max(dp)
+```
+
+The state remains “best valid subsequence ending exactly at `current`.” The only transition change is `<=` instead of `<`, because an equal current value may now extend the earlier sequence.
+
+Every state starts at one because a value by itself is a valid non-decreasing subsequence.
+
+**Complexity:** `O(N^2)` time and `O(N)` extra space.
+
+**Tests:** `[1, 2, 2, 1]` returns `3`; `[7, 7, 7]` now returns `3`; an empty list returns `0`.
+
+</details>
