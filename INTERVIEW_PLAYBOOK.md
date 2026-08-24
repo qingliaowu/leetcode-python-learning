@@ -1,5 +1,7 @@
 # Interview Problem-Solving Playbook
 
+[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md)
+
 An interview is not only a test of whether the final code works. The interviewer is also evaluating how you clarify uncertainty, improve an initial idea, explain tradeoffs, and verify your own work.
 
 Use this process for every problem in the repository.
@@ -307,7 +309,7 @@ If any syntax in this checklist feels unfamiliar, complete the [Python 3 Basics 
 
 ## How to Practice This Repository
 
-Use the [interview study plans](./INTERVIEW_STUDY_PLANS.md) when you want a complete daily schedule.
+Use the [interview study plans](./INTERVIEW_STUDY_PLANS.md) when you want a complete daily schedule, and record attempts in the [progress tracker](./PROGRESS_TRACKER.md).
 
 For each problem:
 

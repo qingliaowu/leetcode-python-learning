@@ -1,6 +1,6 @@
 # 1268. Search Suggestions System
 
-[LeetCode problem](https://leetcode.com/problems/search-suggestions-system/) | [Python solution](./1268_search_suggestions_system.py)
+[LeetCode problem](https://leetcode.com/problems/search-suggestions-system/) | [Python solution](./1268_search_suggestions_system.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

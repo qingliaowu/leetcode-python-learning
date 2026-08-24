@@ -1,5 +1,7 @@
 # Dynamic Programming for Beginners
 
+[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+
 Dynamic programming sounds advanced, but its central idea is simple:
 
 > Solve a smaller problem once, save its answer, and reuse that answer.
@@ -107,3 +109,7 @@ Say these points before writing code:
 7. "Space is... because..."
 
 Then dry-run a tiny input and show each state changing.
+
+## Ready for Mixed Practice
+
+You are ready when you can state the DP state, base case, transition, fill order, final-answer location, and complexity before coding. Return to the [study plan](../INTERVIEW_STUDY_PLANS.md) for spaced review and mock interviews, and record results in the [progress tracker](../PROGRESS_TRACKER.md).

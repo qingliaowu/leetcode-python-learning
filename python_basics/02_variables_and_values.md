@@ -1,6 +1,6 @@
 # Lesson 2: Variables and Basic Values
 
-[Run this lesson](./02_variables_and_values.py) | [Course home](./README.md)
+[Run this lesson](./02_variables_and_values.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

@@ -1,6 +1,6 @@
 # 207. Course Schedule
 
-[LeetCode problem](https://leetcode.com/problems/course-schedule/) | [Python solution](./0207_course_schedule.py)
+[LeetCode problem](https://leetcode.com/problems/course-schedule/) | [Python solution](./0207_course_schedule.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

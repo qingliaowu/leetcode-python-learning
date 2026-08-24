@@ -1,6 +1,6 @@
 # 322. Coin Change
 
-[LeetCode problem](https://leetcode.com/problems/coin-change/) | [Python solution](./0322_coin_change.py) | [DP guide](./README.md)
+[LeetCode problem](https://leetcode.com/problems/coin-change/) | [Python solution](./0322_coin_change.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

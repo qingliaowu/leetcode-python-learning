@@ -1,6 +1,6 @@
 # 200. Number of Islands
 
-[LeetCode problem](https://leetcode.com/problems/number-of-islands/) | [Python solution](./0200_number_of_islands.py)
+[LeetCode problem](https://leetcode.com/problems/number-of-islands/) | [Python solution](./0200_number_of_islands.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

@@ -1,6 +1,6 @@
 # 146. LRU Cache
 
-[LeetCode problem](https://leetcode.com/problems/lru-cache/) | [Python solution](./0146_lru_cache.py) | [Design guide](./README.md)
+[LeetCode problem](https://leetcode.com/problems/lru-cache/) | [Python solution](./0146_lru_cache.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

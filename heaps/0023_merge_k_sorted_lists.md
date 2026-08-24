@@ -1,6 +1,6 @@
 # 23. Merge K Sorted Lists
 
-[LeetCode problem](https://leetcode.com/problems/merge-k-sorted-lists/) | [Python solution](./0023_merge_k_sorted_lists.py)
+[LeetCode problem](https://leetcode.com/problems/merge-k-sorted-lists/) | [Python solution](./0023_merge_k_sorted_lists.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

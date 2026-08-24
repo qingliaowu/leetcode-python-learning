@@ -1,6 +1,6 @@
 # 347. Top K Frequent Elements
 
-[LeetCode problem](https://leetcode.com/problems/top-k-frequent-elements/) | [Python solution](./0347_top_k_frequent_elements.py)
+[LeetCode problem](https://leetcode.com/problems/top-k-frequent-elements/) | [Python solution](./0347_top_k_frequent_elements.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

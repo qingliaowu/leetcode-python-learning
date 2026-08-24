@@ -1,6 +1,6 @@
 # Lesson 1: Your First Python Program
 
-[Run this lesson](./01_first_program.py) | [Course home](./README.md)
+[Run this lesson](./01_first_program.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

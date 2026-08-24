@@ -1,6 +1,6 @@
 # 208. Implement Trie
 
-[LeetCode problem](https://leetcode.com/problems/implement-trie-prefix-tree/) | [Python solution](./0208_implement_trie.py)
+[LeetCode problem](https://leetcode.com/problems/implement-trie-prefix-tree/) | [Python solution](./0208_implement_trie.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

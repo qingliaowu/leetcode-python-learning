@@ -1,6 +1,6 @@
 # 215. Kth Largest Element in an Array
 
-[LeetCode problem](https://leetcode.com/problems/kth-largest-element-in-an-array/) | [Python solution](./0215_kth_largest_element.py)
+[LeetCode problem](https://leetcode.com/problems/kth-largest-element-in-an-array/) | [Python solution](./0215_kth_largest_element.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

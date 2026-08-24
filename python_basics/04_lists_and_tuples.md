@@ -1,6 +1,6 @@
 # Lesson 4: Lists and Tuples
 
-[Run this lesson](./04_lists_and_tuples.py) | [Course home](./README.md)
+[Run this lesson](./04_lists_and_tuples.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

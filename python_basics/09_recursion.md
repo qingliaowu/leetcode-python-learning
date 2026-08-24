@@ -1,6 +1,6 @@
 # Lesson 9: Recursion
 
-[Run this lesson](./09_recursion.py) | [Course home](./README.md)
+[Run this lesson](./09_recursion.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

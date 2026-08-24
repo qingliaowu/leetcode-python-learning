@@ -1,6 +1,6 @@
 # Lesson 6: Conditions and Loops
 
-[Run this lesson](./06_conditions_and_loops.py) | [Course home](./README.md)
+[Run this lesson](./06_conditions_and_loops.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

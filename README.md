@@ -12,7 +12,8 @@ This repository assumes nothing. Python syntax, algorithm ideas, time and space 
 | Interview problems | 26 | Practice the patterns most often used in coding interviews |
 | Guided self-check questions | 52 | Transfer each pattern to a new example, then reveal a detailed answer |
 | Interview study schedules | 5 | Choose a 5-, 10-, 14-, 30-, or 60-day preparation plan |
-| Topic guides | 9 | Learn how related problems connect |
+| Course guides | 10 | Navigate Python foundations and nine interview topics |
+| Progress tracker | 1 | Record lessons, problem scores, review dates, and mock results |
 | External packages | 0 | Everything runs with the Python standard library |
 
 ## Start Here
@@ -25,6 +26,7 @@ Choose the row that sounds most like you:
 | "I can code, but Big-O is confusing." | [Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) |
 | "My interview is in 5-60 days." | [Choose an Interview Study Plan](./INTERVIEW_STUDY_PLANS.md) |
 | "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
+| "I want one checklist for everything." | [Open the Learning Progress Tracker](./PROGRESS_TRACKER.md) |
 | "I am ready to solve problems." | [Interview Problem Roadmap](#interview-problem-roadmap) |
 
 No package installation is needed. Check Python and run the first lesson:
@@ -70,7 +72,7 @@ Do not memorize finished code. For each problem:
 8. Explain time and space complexity in complete sentences.
 9. Attempt both self-check questions before opening their answers.
 
-The [Interview Playbook](./INTERVIEW_PLAYBOOK.md) provides sentence templates for every step. The [5-, 10-, 14-, 30-, and 60-day study plans](./INTERVIEW_STUDY_PLANS.md) turn this process into a daily schedule.
+The [Interview Playbook](./INTERVIEW_PLAYBOOK.md) provides sentence templates for every step. The [5-, 10-, 14-, 30-, and 60-day study plans](./INTERVIEW_STUDY_PLANS.md) turn this process into a daily schedule. Record attempts and review dates in the [progress tracker](./PROGRESS_TRACKER.md).
 
 ### Phase 3: Practice Without Notes
 
@@ -92,7 +94,7 @@ Repeat difficult problems after one day and again after one week.
 | --- | --- |
 | Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, interview explanation, follow-ups, and two self-checks with detailed answers |
 | Solution `.py` | Readable Python 3 code, focused comments, type hints, and executable assertions |
-| Topic `README.md` | Pattern introduction, recommended order, and connections between problems |
+| Topic `README.md` | Shared navigation, prerequisites, recommended order, pattern recognition, and a move-on checkpoint |
 
 ## Core 15-Problem Checklist
 
@@ -126,7 +128,7 @@ The order below moves from common collection patterns toward more specialized st
 | 4 | Data structure design | 2 | [Open](./design_data_structures/) |
 | 5 | Trees and graphs | 3 | [Open](./trees_graphs/) |
 | 6 | Heaps and top-k | 3 | [Open](./heaps/) |
-| 7 | Prefix sums and recursion | 2 | [Open](./prefix_recursion/) |
+| 7 | Prefix sums and backtracking | 2 | [Open](./prefix_recursion/) |
 | 8 | Trie | 5 | [Open](./trie/) |
 | 9 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
 
@@ -146,13 +148,6 @@ The order below moves from common collection patterns toward more specialized st
 | ---: | --- | --- | --- |
 | 394 | [Decode String](./stacks_queues/0394_decode_string.md) | Stack of paused nested states | [Python](./stacks_queues/0394_decode_string.py) |
 
-### Data Structure Design
-
-| LeetCode | Problem | Main Pattern | Solution |
-| ---: | --- | --- | --- |
-| 981 | [Time Based Key-Value Store](./design_data_structures/0981_time_based_key_value_store.md) | Hash map and binary search | [Python](./design_data_structures/0981_time_based_key_value_store.py) |
-| 146 | [LRU Cache](./design_data_structures/0146_lru_cache.md) | Hash map and doubly linked list | [Python](./design_data_structures/0146_lru_cache.py) |
-
 ### Intervals and Binary Search
 
 | LeetCode | Problem | Main Pattern | Solution |
@@ -162,13 +157,20 @@ The order below moves from common collection patterns toward more specialized st
 | 704 | [Binary Search](./intervals_search/0704_binary_search.md) | Discard half of a sorted array | [Python](./intervals_search/0704_binary_search.py) |
 | 33 | [Search in Rotated Sorted Array](./intervals_search/0033_search_in_rotated_sorted_array.md) | Modified binary search | [Python](./intervals_search/0033_search_in_rotated_sorted_array.py) |
 
+### Data Structure Design
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 981 | [Time Based Key-Value Store](./design_data_structures/0981_time_based_key_value_store.md) | Hash map and binary search | [Python](./design_data_structures/0981_time_based_key_value_store.py) |
+| 146 | [LRU Cache](./design_data_structures/0146_lru_cache.md) | Hash map and doubly linked list | [Python](./design_data_structures/0146_lru_cache.py) |
+
 ### Trees and Graphs
 
 | LeetCode | Problem | Main Pattern | Solution |
 | ---: | --- | --- | --- |
 | 200 | [Number of Islands](./trees_graphs/0200_number_of_islands.md) | Grid DFS | [Python](./trees_graphs/0200_number_of_islands.py) |
-| 207 | [Course Schedule](./trees_graphs/0207_course_schedule.md) | Topological sort | [Python](./trees_graphs/0207_course_schedule.py) |
 | 133 | [Clone Graph](./trees_graphs/0133_clone_graph.md) | BFS and clone map | [Python](./trees_graphs/0133_clone_graph.py) |
+| 207 | [Course Schedule](./trees_graphs/0207_course_schedule.md) | Topological sort | [Python](./trees_graphs/0207_course_schedule.py) |
 
 ### Heaps and Top-K
 
@@ -178,7 +180,7 @@ The order below moves from common collection patterns toward more specialized st
 | 347 | [Top K Frequent Elements](./heaps/0347_top_k_frequent_elements.md) | Frequency map and heap | [Python](./heaps/0347_top_k_frequent_elements.py) |
 | 23 | [Merge K Sorted Lists](./heaps/0023_merge_k_sorted_lists.md) | Heap-based multiway merge | [Python](./heaps/0023_merge_k_sorted_lists.py) |
 
-### Prefix Sums and Recursion
+### Prefix Sums and Backtracking
 
 | LeetCode | Problem | Main Pattern | Solution |
 | ---: | --- | --- | --- |
@@ -205,7 +207,7 @@ The order below moves from common collection patterns toward more specialized st
 
 ## Test Everything
 
-Each Python file contains assertions for normal examples and important edge cases. Run the complete repository with:
+Each Python file contains assertions for normal examples and important edge cases. The verifier first checks required root files, topic guides, filename conventions, and every Markdown/Python lesson pair. It then runs all examples in learning order:
 
 ```bash
 python3 verify_solutions.py
@@ -239,9 +241,11 @@ python3 dynamic_programming/0322_coin_change.py
 ├── prefix_recursion/       # prefix sums and backtracking
 ├── trie/                   # prefix-tree design and applications
 ├── dynamic_programming/    # saved-state recurrence patterns
-├── INTERVIEW_STUDY_PLANS.md # 5/10/14/30/60-day preparation tracks
 ├── INTERVIEW_PLAYBOOK.md   # solve-aloud interview process
-├── verify_solutions.py     # runs every executable example
+├── INTERVIEW_STUDY_PLANS.md # 5/10/14/30/60-day preparation tracks
+├── PROGRESS_TRACKER.md     # lesson, review, and mock checklist
+├── verify_solutions.py     # validates structure and runs every example
+├── .gitignore              # ignores local Python and OS artifacts
 └── README.md
 ```
 
@@ -256,6 +260,7 @@ Keep new material consistent with the beginner-first style:
 5. Show a dry run with changing variables or data structures.
 6. Explain correctness, assumptions, edge cases, time, and extra space.
 7. Include executable assertions in the Python file.
-8. Add the problem to its topic guide and this index.
+8. Add the problem to its topic guide, the progress tracker, this index, and the ordered `COURSE_SECTIONS` entry in `verify_solutions.py`.
+9. Run `python3 verify_solutions.py` to check naming, file pairing, and assertions.
 
 Clarity is the goal. A beginner should be able to understand not only what the code does, but why each step exists.

@@ -1,6 +1,6 @@
 # 1. Two Sum
 
-[LeetCode problem](https://leetcode.com/problems/two-sum/) | [Python solution](./0001_two_sum.py)
+[LeetCode problem](https://leetcode.com/problems/two-sum/) | [Python solution](./0001_two_sum.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

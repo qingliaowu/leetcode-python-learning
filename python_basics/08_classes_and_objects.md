@@ -1,6 +1,6 @@
 # Lesson 8: Classes and Objects
 
-[Run this lesson](./08_classes_and_objects.py) | [Course home](./README.md)
+[Run this lesson](./08_classes_and_objects.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

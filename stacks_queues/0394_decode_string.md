@@ -1,6 +1,6 @@
 # 394. Decode String
 
-[LeetCode problem](https://leetcode.com/problems/decode-string/) | [Python solution](./0394_decode_string.py) | [Stack guide](./README.md)
+[LeetCode problem](https://leetcode.com/problems/decode-string/) | [Python solution](./0394_decode_string.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

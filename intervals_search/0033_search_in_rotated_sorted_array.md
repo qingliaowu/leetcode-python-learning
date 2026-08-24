@@ -1,6 +1,6 @@
 # 33. Search in Rotated Sorted Array
 
-[LeetCode problem](https://leetcode.com/problems/search-in-rotated-sorted-array/) | [Python solution](./0033_search_in_rotated_sorted_array.py)
+[LeetCode problem](https://leetcode.com/problems/search-in-rotated-sorted-array/) | [Python solution](./0033_search_in_rotated_sorted_array.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

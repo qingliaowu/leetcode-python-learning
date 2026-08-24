@@ -1,6 +1,6 @@
 # Lesson 11: Time and Space Complexity
 
-[Run this lesson](./11_time_and_space_complexity.py) | [Course home](./README.md)
+[Run this lesson](./11_time_and_space_complexity.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

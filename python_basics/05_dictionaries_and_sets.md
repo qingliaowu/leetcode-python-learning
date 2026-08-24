@@ -1,6 +1,6 @@
 # Lesson 5: Dictionaries and Sets
 
-[Run this lesson](./05_dictionaries_and_sets.py) | [Course home](./README.md)
+[Run this lesson](./05_dictionaries_and_sets.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

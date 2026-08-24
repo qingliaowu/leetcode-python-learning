@@ -1,5 +1,7 @@
 # Python 3 Basics for Complete Beginners
 
+[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+
 This course assumes you have forgotten Python or have never used it. It teaches only one small group of ideas at a time, using examples related to LeetCode.
 
 You do not need to install any package. Python 3 and a terminal are enough.
@@ -65,7 +67,7 @@ Do not try to memorize every method. Learn what each data type is good for, then
 | `#` | Start a comment |
 | `->` | Show a function's return type hint |
 
-## When You Are Ready for Interview Problems
+## Ready to Move On
 
 You are ready to start the problem folders when you can:
 
@@ -74,10 +76,10 @@ You are ready to start the problem folders when you can:
 - write an `if` statement and a loop,
 - write a function that returns a value,
 - explain what a class object stores,
-- trace a short recursive function.
+- trace a short recursive function,
 - explain how time and memory grow as input grows.
 
-Then use the [Interview Problem-Solving Playbook](../INTERVIEW_PLAYBOOK.md) to practice solving aloud.
+Record your progress in the [tracker](../PROGRESS_TRACKER.md), then continue to [Arrays, Strings, Hash Maps, and Sliding Window](../arrays_strings/README.md). Use the [Interview Problem-Solving Playbook](../INTERVIEW_PLAYBOOK.md) to practice solving aloud.
 
 ## Getting Help From Errors
 

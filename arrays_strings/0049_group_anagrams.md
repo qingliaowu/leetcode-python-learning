@@ -1,6 +1,6 @@
 # 49. Group Anagrams
 
-[LeetCode problem](https://leetcode.com/problems/group-anagrams/) | [Python solution](./0049_group_anagrams.py)
+[LeetCode problem](https://leetcode.com/problems/group-anagrams/) | [Python solution](./0049_group_anagrams.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

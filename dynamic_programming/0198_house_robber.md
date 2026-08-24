@@ -1,6 +1,6 @@
 # 198. House Robber
 
-[LeetCode problem](https://leetcode.com/problems/house-robber/) | [Python solution](./0198_house_robber.py) | [DP guide](./README.md)
+[LeetCode problem](https://leetcode.com/problems/house-robber/) | [Python solution](./0198_house_robber.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

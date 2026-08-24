@@ -1,6 +1,6 @@
 # Lesson 3: Strings
 
-[Run this lesson](./03_strings.py) | [Course home](./README.md)
+[Run this lesson](./03_strings.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

@@ -1,6 +1,6 @@
 # Lesson 7: Functions
 
-[Run this lesson](./07_functions.py) | [Course home](./README.md)
+[Run this lesson](./07_functions.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

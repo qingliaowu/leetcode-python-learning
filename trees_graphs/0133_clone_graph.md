@@ -1,6 +1,6 @@
 # 133. Clone Graph
 
-[LeetCode problem](https://leetcode.com/problems/clone-graph/) | [Python solution](./0133_clone_graph.py)
+[LeetCode problem](https://leetcode.com/problems/clone-graph/) | [Python solution](./0133_clone_graph.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

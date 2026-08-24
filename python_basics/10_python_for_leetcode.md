@@ -1,6 +1,6 @@
 # Lesson 10: Python for LeetCode
 
-[Run this lesson](./10_python_for_leetcode.py) | [Course home](./README.md)
+[Run this lesson](./10_python_for_leetcode.py) | [Course home](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## Goal
 

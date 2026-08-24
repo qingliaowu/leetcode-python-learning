@@ -1,6 +1,6 @@
 # 79. Word Search
 
-[LeetCode problem](https://leetcode.com/problems/word-search/) | [Python solution](./0079_word_search.py)
+[LeetCode problem](https://leetcode.com/problems/word-search/) | [Python solution](./0079_word_search.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

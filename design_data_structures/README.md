@@ -1,5 +1,7 @@
 # Design Data Structures for Beginners
 
+[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+
 Design questions ask you to create a class that supports several operations efficiently. The important skill is choosing stored state that makes every required operation fast.
 
 Use the [Python 3 Basics course](../python_basics/) if classes or dictionaries feel unfamiliar. Read the [complexity guide](../python_basics/11_time_and_space_complexity.md) for Big-O help and the [Interview Playbook](../INTERVIEW_PLAYBOOK.md) for solve-aloud practice.
@@ -36,3 +38,7 @@ runs from least recently used to most recently used.
 ```
 
 When an operation changes state, check that the invariant is still true before moving on.
+
+## Ready to Move On
+
+You are ready when you can list the public operations, justify each operation's complexity, and trace updates without breaking stored invariants. Continue to [Trees and Graphs](../trees_graphs/README.md).

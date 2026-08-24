@@ -1,6 +1,6 @@
 # 981. Time Based Key-Value Store
 
-[LeetCode problem](https://leetcode.com/problems/time-based-key-value-store/) | [Python solution](./0981_time_based_key_value_store.py) | [Design guide](./README.md)
+[LeetCode problem](https://leetcode.com/problems/time-based-key-value-store/) | [Python solution](./0981_time_based_key_value_store.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

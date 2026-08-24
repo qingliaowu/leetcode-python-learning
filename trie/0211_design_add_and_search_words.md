@@ -1,6 +1,6 @@
 # 211. Design Add and Search Words
 
-[LeetCode problem](https://leetcode.com/problems/design-add-and-search-words-data-structure/) | [Python solution](./0211_design_add_and_search_words.py)
+[LeetCode problem](https://leetcode.com/problems/design-add-and-search-words-data-structure/) | [Python solution](./0211_design_add_and_search_words.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

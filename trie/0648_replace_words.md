@@ -1,6 +1,6 @@
 # 648. Replace Words
 
-[LeetCode problem](https://leetcode.com/problems/replace-words/) | [Python solution](./0648_replace_words.py)
+[LeetCode problem](https://leetcode.com/problems/replace-words/) | [Python solution](./0648_replace_words.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

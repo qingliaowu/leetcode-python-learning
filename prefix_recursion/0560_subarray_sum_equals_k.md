@@ -1,6 +1,6 @@
 # 560. Subarray Sum Equals K
 
-[LeetCode problem](https://leetcode.com/problems/subarray-sum-equals-k/) | [Python solution](./0560_subarray_sum_equals_k.py)
+[LeetCode problem](https://leetcode.com/problems/subarray-sum-equals-k/) | [Python solution](./0560_subarray_sum_equals_k.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

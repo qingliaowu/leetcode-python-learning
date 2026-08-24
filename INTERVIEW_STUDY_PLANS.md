@@ -1,5 +1,7 @@
 # Coding Interview Study Plans: 5, 10, 14, 30, or 60 Days
 
+[Repository home](./README.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md)
+
 Choose the plan that matches the number of full study days before your interview. Each plan uses the same Python course, 26 problem lessons, self-check exercises, and [solve-aloud interview process](./INTERVIEW_PLAYBOOK.md).
 
 No schedule can guarantee an offer. Interview results also depend on the questions, role, communication, and hiring process. These plans are designed to maximize readiness with the time available.
@@ -34,7 +36,7 @@ If you cannot do steps 5-7, mark the problem for review. Do not pretend that rec
 
 ## Score Every Problem
 
-Use this score after each attempt:
+Use this score after each attempt and record it in the [progress tracker](./PROGRESS_TRACKER.md):
 
 | Score | Meaning | Next Action |
 | ---: | --- | --- |
@@ -393,7 +395,7 @@ Interpret the score consistently:
 
 ## Error Log Template
 
-Keep one short row after each problem or mock:
+Keep one short row after each problem or mock. The [progress tracker](./PROGRESS_TRACKER.md) provides a reusable problem checklist and mock log.
 
 | Date | Problem | Score | First Mistake | Correct Rule | Next Review |
 | --- | --- | ---: | --- | --- | --- |

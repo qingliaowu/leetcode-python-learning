@@ -1,5 +1,7 @@
 # Stacks and Queues for Beginners
 
+[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+
 A stack removes the most recently added item first. A queue removes the earliest added item first.
 
 ```text
@@ -9,7 +11,7 @@ queue: first in, first out
 
 Use the [Python 3 Basics course](../python_basics/) if lists or loops feel unfamiliar. The [complexity guide](../python_basics/11_time_and_space_complexity.md) explains stack memory, and the [Interview Playbook](../INTERVIEW_PLAYBOOK.md) helps with solve-aloud practice.
 
-## Problems
+## Recommended Order
 
 | LeetCode | Lesson | Python Solution | Main Pattern |
 | ---: | --- | --- | --- |
@@ -31,3 +33,7 @@ stack = []
 stack.append(item)  # push
 item = stack.pop()  # remove the most recent item
 ```
+
+## Ready to Move On
+
+You are ready when you can explain why nested work closes in last-in-first-out order, trace the stack after every bracket, and test malformed or deeply nested input. Continue to [Intervals, Sorting, and Binary Search](../intervals_search/README.md).

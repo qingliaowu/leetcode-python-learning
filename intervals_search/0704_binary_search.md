@@ -1,6 +1,6 @@
 # 704. Binary Search
 
-[LeetCode problem](https://leetcode.com/problems/binary-search/) | [Python solution](./0704_binary_search.py) | [Sorting and search guide](./README.md)
+[LeetCode problem](https://leetcode.com/problems/binary-search/) | [Python solution](./0704_binary_search.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

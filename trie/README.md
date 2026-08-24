@@ -1,5 +1,7 @@
 # Trie Interview Practice
 
+[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+
 This folder is a guided interview course for someone who is new to Python or has not used it recently. Read this page first, then study the problems in the recommended order. Every problem has:
 
 - a plain-English problem summary
@@ -8,6 +10,8 @@ This folder is a guided interview course for someone who is new to Python or has
 - a dry run with a small example
 - time and space complexity
 - interview talking points and common mistakes
+- possible follow-up questions
+- two self-check exercises with detailed answers
 - an executable Python solution with assertions
 
 Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) to practice turning these ideas into a clear solve-out-loud interview answer.
@@ -259,3 +263,7 @@ Before coding, explain:
 5. What marks a complete word or stores extra state.
 
 While coding, use descriptive names such as `node`, `char`, `prefix`, and `suggestions`. After coding, test an exact word, a prefix, a missing path, and any update or wildcard behavior required by the problem.
+
+## Ready to Move On
+
+You are ready when you can implement the basic Trie without notes, distinguish a path from a complete word, and explain how wildcard or cached node state changes complexity. Continue to [Dynamic Programming](../dynamic_programming/README.md).

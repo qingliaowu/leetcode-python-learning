@@ -1,6 +1,6 @@
 # 253. Meeting Rooms II
 
-[LeetCode problem](https://leetcode.com/problems/meeting-rooms-ii/) | [Python solution](./0253_meeting_rooms_ii.py)
+[LeetCode problem](https://leetcode.com/problems/meeting-rooms-ii/) | [Python solution](./0253_meeting_rooms_ii.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

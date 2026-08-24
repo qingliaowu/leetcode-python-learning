@@ -1,6 +1,6 @@
 # 677. Map Sum Pairs
 
-[LeetCode problem](https://leetcode.com/problems/map-sum-pairs/) | [Python solution](./0677_map_sum_pairs.py)
+[LeetCode problem](https://leetcode.com/problems/map-sum-pairs/) | [Python solution](./0677_map_sum_pairs.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 

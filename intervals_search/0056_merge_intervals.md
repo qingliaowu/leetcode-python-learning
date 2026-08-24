@@ -1,6 +1,6 @@
 # 56. Merge Intervals
 
-[LeetCode problem](https://leetcode.com/problems/merge-intervals/) | [Python solution](./0056_merge_intervals.py)
+[LeetCode problem](https://leetcode.com/problems/merge-intervals/) | [Python solution](./0056_merge_intervals.py) | [Topic guide](./README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What the Question Asks
 
