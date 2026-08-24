@@ -8,7 +8,7 @@ This repository is intended to become a personal LeetCode study guide focused on
 
 ## Start Here: Python 3 Basics
 
-New to Python or returning after a long break? Begin with [Python 3 Basics for Complete Beginners](./python_basics/). The ten short lessons start with `print` and variables, then build gently toward collections, loops, functions, classes, recursion, and LeetCode's `Solution` format.
+New to Python or returning after a long break? Begin with [Python 3 Basics for Complete Beginners](./python_basics/). The eleven short lessons start with `print` and variables, then build gently toward collections, loops, functions, classes, recursion, LeetCode's `Solution` format, and an easy introduction to time and space complexity.
 
 Every lesson includes:
 
@@ -125,7 +125,7 @@ Use this section to track solved problems as the repository grows.
 
 | Topic | Solved | Notes |
 | --- | ---: | --- |
-| Python 3 basics | 10 lessons | Beginner course complete |
+| Python 3 basics | 11 lessons | Beginner course complete |
 | Arrays, strings, and hash maps | 3 | Core interview set added |
 | Trie | 5 | Interview practice set added |
 | Trees and graphs | 3 | Core interview set added |

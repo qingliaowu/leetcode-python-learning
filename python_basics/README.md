@@ -22,7 +22,7 @@ The file prints examples and checks its answers with `assert`. If no error appea
 
 ## Learning Path
 
-Complete the lessons in order. Each one should take about 15 to 25 minutes.
+Complete the lessons in order. Most should take about 15 to 25 minutes. Lesson 11 is longer, so its page divides the material into three short passes.
 
 | Lesson | Read | Run | You Will Learn |
 | ---: | --- | --- | --- |
@@ -36,6 +36,7 @@ Complete the lessons in order. Each one should take about 15 to 25 minutes.
 | 8 | [Classes and Objects](./08_classes_and_objects.md) | [Code](./08_classes_and_objects.py) | `class`, `self`, `__init__`, and nodes |
 | 9 | [Recursion](./09_recursion.md) | [Code](./09_recursion.py) | Base cases, recursive calls, and backtracking |
 | 10 | [Python for LeetCode](./10_python_for_leetcode.md) | [Code](./10_python_for_leetcode.py) | Solution classes, tests, and common tools |
+| 11 | [Time and Space Complexity](./11_time_and_space_complexity.md) | [Code](./11_time_and_space_complexity.py) | Big-O explained with simple counting |
 
 ## The Best Way to Study
 
@@ -74,6 +75,7 @@ You are ready to start the problem folders when you can:
 - write a function that returns a value,
 - explain what a class object stores,
 - trace a short recursive function.
+- explain how time and memory grow as input grows.
 
 Then use the [Interview Problem-Solving Playbook](../INTERVIEW_PLAYBOOK.md) to practice solving aloud.
 

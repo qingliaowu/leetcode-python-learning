@@ -95,6 +95,8 @@ For `.at`, DFS may try several first letters, but every branch eventually fails 
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let `L` be the word or pattern length.
 
 - `addWord`: `O(L)` time.

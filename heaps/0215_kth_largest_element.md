@@ -56,6 +56,8 @@ For `[3, 2, 1, 5, 6, 4]`, `k = 2`:
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Each of `N` numbers performs a heap push and possibly a pop, each `O(log K)`.
 - Time: `O(N log K)`.
 - Space: `O(K)`.

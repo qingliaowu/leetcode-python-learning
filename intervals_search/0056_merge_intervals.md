@@ -70,6 +70,8 @@ For a contained interval such as `[2, 3]` after `[1, 10]`, `max(10, 3)` keeps th
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Time: `O(N log N)` for sorting, followed by an `O(N)` scan.
 - Space: `O(N)` for the result and sorting storage.
 

@@ -127,6 +127,8 @@ total: 4
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let `L` be the key length and `P` be the prefix length.
 
 - `insert`: `O(L)` time.

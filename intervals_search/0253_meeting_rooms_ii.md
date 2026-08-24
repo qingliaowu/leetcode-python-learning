@@ -64,6 +64,8 @@ For `[1,5]` followed by `[5,8]`, end `5 <= start 5`, so one room is enough.
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Sorting: `O(N log N)`.
 - Each heap push or pop: `O(log N)`.
 - Total time: `O(N log N)`.

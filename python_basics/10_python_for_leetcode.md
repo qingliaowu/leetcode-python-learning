@@ -172,4 +172,4 @@ You can now read the syntax used throughout this repository:
 - recursion and backtracking,
 - standard LeetCode class format.
 
-Next, start with [Two Sum](../arrays_strings/0001_two_sum.md), then follow the interview roadmap in the main README.
+Next, complete [Time and Space Complexity](./11_time_and_space_complexity.md). Then start with [Two Sum](../arrays_strings/0001_two_sum.md) and follow the interview roadmap in the main README.

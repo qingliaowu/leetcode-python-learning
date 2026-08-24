@@ -61,6 +61,8 @@ Search for `0` in `[4, 5, 6, 7, 0, 1, 2]`:
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Time: `O(log N)` because every iteration discards about half the range.
 - Space: `O(1)` because only a few index variables are stored.
 

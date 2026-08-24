@@ -86,6 +86,8 @@ For `[1, -1, 0]` and `k = 0`, prefix sum `0` appears multiple times. Its stored 
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Time: `O(N)` average because each element performs constant-time dictionary work.
 - Space: `O(N)` for prefix sums in the worst case.
 

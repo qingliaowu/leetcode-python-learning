@@ -66,6 +66,8 @@ An empty string has an empty tuple key `()`, so empty strings correctly group to
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let `N` be the number of words and `K` the maximum word length.
 
 - Sorting one word costs `O(K log K)`.

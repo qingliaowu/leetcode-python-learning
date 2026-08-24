@@ -63,6 +63,8 @@ Without the `>= left` condition, the last step would incorrectly move `left` bac
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Time: `O(N)`. `right` visits every character once, and `left` only moves forward.
 - Space: `O(U)`, where `U` is the number of distinct characters stored in the dictionary.
 

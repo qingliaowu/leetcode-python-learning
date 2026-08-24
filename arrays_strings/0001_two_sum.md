@@ -72,6 +72,8 @@ For `[3, 3]`, the first `3` is saved. The second `3` finds it, so the answer cor
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Time: `O(N)` because the list is scanned once.
 - Space: `O(N)` in the worst case for the dictionary.
 

@@ -94,6 +94,8 @@ If both `cat` and `c` are dictionary roots, traversal reaches `c` first and retu
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let:
 
 - `T` be the total characters in all dictionary roots,

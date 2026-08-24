@@ -101,6 +101,8 @@ If the next typed character were `"z"`, the `mousez` path would be missing. That
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let:
 
 - `N` be the number of products,

@@ -76,6 +76,8 @@ The constructor avoids `neighbors=[]` as a default argument because a mutable de
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Time: `O(V + E)` because each node and edge is processed once.
 - Space: `O(V)` for the map and BFS queue, excluding the required cloned output.
 

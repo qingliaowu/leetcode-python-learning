@@ -76,6 +76,8 @@ At every step, the heap contains the smallest unmerged node from each non-empty 
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let `N` be the total number of nodes and `K` the number of lists.
 
 - Every node enters and leaves the heap once.

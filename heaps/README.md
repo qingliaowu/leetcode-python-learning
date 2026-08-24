@@ -2,7 +2,7 @@
 
 These medium-priority problems use a heap when only the smallest, largest, or next available item matters. Python's `heapq` module implements a min-heap.
 
-Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python 3 Basics course](../python_basics/) when needed.
+Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python 3 Basics course](../python_basics/) when needed. The course includes a plain-English [time and space complexity lesson](../python_basics/11_time_and_space_complexity.md).
 
 | LeetCode | Lesson | Python Solution | Main Pattern |
 | ---: | --- | --- | --- |

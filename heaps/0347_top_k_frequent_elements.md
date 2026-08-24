@@ -63,6 +63,8 @@ For frequencies `{1: 3, 2: 2, 3: 1}` and `k = 2`:
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let `N` be input length and `U` be unique values.
 
 - Counting: `O(N)`.

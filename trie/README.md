@@ -24,7 +24,7 @@ Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) to practice turning these
 
 ## 1. Python Refresher
 
-This section is a quick reference. For slower, step-by-step lessons with runnable examples, start with the full [Python 3 Basics course](../python_basics/).
+This section is a quick reference. For slower, step-by-step lessons with runnable examples, start with the full [Python 3 Basics course](../python_basics/). Its [time and space complexity lesson](../python_basics/11_time_and_space_complexity.md) explains every common Big-O term without assuming advanced math.
 
 ### Variables and basic values
 

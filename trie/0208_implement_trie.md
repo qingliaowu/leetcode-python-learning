@@ -105,6 +105,8 @@ After inserting `app`, its final `p` node is marked, so `search("app")` becomes 
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let `L` be the length of the word or prefix.
 
 - `insert`: `O(L)` time because every character is visited once.

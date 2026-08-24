@@ -205,6 +205,8 @@ When tracing, watch for:
 
 ## 9. Finish With Complexity
 
+If Big-O is new or confusing, read [Time and Space Complexity for Beginners](./python_basics/11_time_and_space_complexity.md) before practicing this step.
+
 Name what each symbol means:
 
 ```text

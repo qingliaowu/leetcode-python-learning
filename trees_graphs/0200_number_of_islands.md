@@ -70,6 +70,8 @@ Python allows chained comparisons. The expression means the row and column are b
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 - Time: `O(ROWS * COLS)` because each cell is processed at most a constant number of times.
 - Space: up to `O(ROWS * COLS)` for the stack when one island is very large.
 

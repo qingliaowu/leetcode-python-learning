@@ -81,6 +81,8 @@ For `0 -> 1 -> 0`, no node starts with in-degree zero. The queue is empty and co
 
 ## Complexity
 
+New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
+
 Let `V` be courses and `E` be prerequisite pairs.
 
 - Time: `O(V + E)` because each course and edge is processed once.
