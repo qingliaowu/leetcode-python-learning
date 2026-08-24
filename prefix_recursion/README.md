@@ -2,7 +2,7 @@
 
 These medium-priority problems practice two different ways to carry state: a running prefix sum for numeric ranges and recursive backtracking for a board search.
 
-Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python refresher](../trie/README.md#1-python-refresher), especially dictionaries and recursion, before starting.
+Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python 3 Basics course](../python_basics/), especially dictionaries and recursion, before starting.
 
 | LeetCode | Lesson | Python Solution | Main Pattern |
 | ---: | --- | --- | --- |

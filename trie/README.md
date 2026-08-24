@@ -24,6 +24,8 @@ Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) to practice turning these
 
 ## 1. Python Refresher
 
+This section is a quick reference. For slower, step-by-step lessons with runnable examples, start with the full [Python 3 Basics course](../python_basics/).
+
 ### Variables and basic values
 
 Python creates a variable when a value is assigned with `=`:

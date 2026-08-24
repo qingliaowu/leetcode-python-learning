@@ -6,6 +6,19 @@ A practical Python learning repository for solving LeetCode problems, reviewing 
 
 This repository is intended to become a personal LeetCode study guide focused on clear Python solutions. Each solution should explain the approach, analyze complexity, and keep code easy to read.
 
+## Start Here: Python 3 Basics
+
+New to Python or returning after a long break? Begin with [Python 3 Basics for Complete Beginners](./python_basics/). The ten short lessons start with `print` and variables, then build gently toward collections, loops, functions, classes, recursion, and LeetCode's `Solution` format.
+
+Every lesson includes:
+
+- plain-language explanations,
+- runnable examples,
+- expected results,
+- a small prediction exercise,
+- common beginner mistakes,
+- links to the next interview material.
+
 ## Interview Preparation
 
 Start with the [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md). It explains what to do from the moment a problem is presented: clarify the requirements, show a brute-force baseline, recognize the pattern, state an invariant, code, test, and analyze complexity.
@@ -30,6 +43,7 @@ As problems are added, organize them by topic or difficulty:
 ├── heaps/
 ├── intervals_search/
 ├── prefix_recursion/
+├── python_basics/
 ├── trie/
 ├── linked_lists/
 ├── trees_graphs/
@@ -111,6 +125,7 @@ Use this section to track solved problems as the repository grows.
 
 | Topic | Solved | Notes |
 | --- | ---: | --- |
+| Python 3 basics | 10 lessons | Beginner course complete |
 | Arrays, strings, and hash maps | 3 | Core interview set added |
 | Trie | 5 | Interview practice set added |
 | Trees and graphs | 3 | Core interview set added |

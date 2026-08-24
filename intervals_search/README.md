@@ -2,7 +2,7 @@
 
 These high-priority problems use ordering to reveal structure. Sorting places related intervals together, while binary search repeatedly discards half of the remaining search space.
 
-Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python refresher](../trie/README.md#1-python-refresher) when needed.
+Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python 3 Basics course](../python_basics/) when needed.
 
 | LeetCode | Lesson | Python Solution | Main Pattern |
 | ---: | --- | --- | --- |

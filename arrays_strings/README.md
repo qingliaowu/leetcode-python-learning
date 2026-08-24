@@ -2,7 +2,7 @@
 
 These high-priority problems teach patterns that appear constantly in interviews. Study them in order: first dictionary lookup, then dictionary grouping, then a sliding window that tracks positions.
 
-Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python refresher](../trie/README.md#1-python-refresher) whenever syntax feels unfamiliar.
+Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python 3 Basics course](../python_basics/) whenever syntax feels unfamiliar.
 
 | LeetCode | Lesson | Python Solution | Main Pattern |
 | ---: | --- | --- | --- |

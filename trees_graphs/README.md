@@ -2,7 +2,7 @@
 
 These high-priority problems practice graph traversal in three forms: exploring a grid, ordering directed dependencies, and copying an object graph.
 
-Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python refresher](../trie/README.md#1-python-refresher) before starting if classes, dictionaries, or loops feel rusty.
+Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud process. Review the [Python 3 Basics course](../python_basics/) before starting if classes, dictionaries, or loops feel rusty.
 
 | LeetCode | Lesson | Python Solution | Main Pattern |
 | ---: | --- | --- | --- |

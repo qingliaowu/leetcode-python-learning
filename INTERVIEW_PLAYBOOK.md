@@ -232,6 +232,8 @@ Do not silently think for a long stretch. If stuck, return to a small example an
 
 ## Python Interview Checklist
 
+If any syntax in this checklist feels unfamiliar, complete the [Python 3 Basics course](./python_basics/) first.
+
 - Import standard-library tools before using them: `deque`, `heapq`, and `List`.
 - Remember that `=` assigns and `==` compares.
 - Use `is None` for `None` checks.
