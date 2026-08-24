@@ -9,8 +9,8 @@ This repository assumes nothing. Python syntax, algorithm ideas, time and space 
 | Material | Count | Purpose |
 | --- | ---: | --- |
 | Python 3 lessons | 11 | Relearn Python from `print` through recursion and Big-O |
-| Interview problems | 22 | Practice the patterns most often used in coding interviews |
-| Topic guides | 7 | Learn how related problems connect |
+| Interview problems | 26 | Practice the patterns most often used in coding interviews |
+| Topic guides | 9 | Learn how related problems connect |
 | External packages | 0 | Everything runs with the Python standard library |
 
 ## Start Here
@@ -89,6 +89,26 @@ Repeat difficult problems after one day and again after one week.
 | Solution `.py` | Readable Python 3 code, focused comments, type hints, and executable assertions |
 | Topic `README.md` | Pattern introduction, recommended order, and connections between problems |
 
+## Core 15-Problem Checklist
+
+This requested interview set is fully included. Use the links to open each beginner lesson:
+
+1. [1 Two Sum](./arrays_strings/0001_two_sum.md)
+2. [49 Group Anagrams](./arrays_strings/0049_group_anagrams.md)
+3. [3 Longest Substring Without Repeating Characters](./arrays_strings/0003_longest_substring_without_repeating_characters.md)
+4. [208 Implement Trie](./trie/0208_implement_trie.md)
+5. [1268 Search Suggestions System](./trie/1268_search_suggestions_system.md)
+6. [981 Time Based Key-Value Store](./design_data_structures/0981_time_based_key_value_store.md)
+7. [146 LRU Cache](./design_data_structures/0146_lru_cache.md)
+8. [394 Decode String](./stacks_queues/0394_decode_string.md)
+9. [200 Number of Islands](./trees_graphs/0200_number_of_islands.md)
+10. [133 Clone Graph](./trees_graphs/0133_clone_graph.md)
+11. [207 Course Schedule](./trees_graphs/0207_course_schedule.md)
+12. [347 Top K Frequent Elements](./heaps/0347_top_k_frequent_elements.md)
+13. [215 Kth Largest Element](./heaps/0215_kth_largest_element.md)
+14. [56 Merge Intervals](./intervals_search/0056_merge_intervals.md)
+15. [704 Binary Search](./intervals_search/0704_binary_search.md)
+
 ## Interview Problem Roadmap
 
 The order below moves from common collection patterns toward more specialized structures and dynamic programming.
@@ -96,12 +116,14 @@ The order below moves from common collection patterns toward more specialized st
 | Order | Topic | Problems | Guide |
 | ---: | --- | ---: | --- |
 | 1 | Arrays, strings, hash maps, sliding window | 3 | [Open](./arrays_strings/) |
-| 2 | Intervals, sorting, binary search | 3 | [Open](./intervals_search/) |
-| 3 | Trees and graphs | 3 | [Open](./trees_graphs/) |
-| 4 | Heaps and top-k | 3 | [Open](./heaps/) |
-| 5 | Prefix sums and recursion | 2 | [Open](./prefix_recursion/) |
-| 6 | Trie | 5 | [Open](./trie/) |
-| 7 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
+| 2 | Stacks and queues | 1 | [Open](./stacks_queues/) |
+| 3 | Intervals, sorting, binary search | 4 | [Open](./intervals_search/) |
+| 4 | Data structure design | 2 | [Open](./design_data_structures/) |
+| 5 | Trees and graphs | 3 | [Open](./trees_graphs/) |
+| 6 | Heaps and top-k | 3 | [Open](./heaps/) |
+| 7 | Prefix sums and recursion | 2 | [Open](./prefix_recursion/) |
+| 8 | Trie | 5 | [Open](./trie/) |
+| 9 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
 
 ## Complete Problem Index
 
@@ -113,12 +135,26 @@ The order below moves from common collection patterns toward more specialized st
 | 49 | [Group Anagrams](./arrays_strings/0049_group_anagrams.md) | Immutable grouping key | [Python](./arrays_strings/0049_group_anagrams.py) |
 | 3 | [Longest Substring Without Repeating Characters](./arrays_strings/0003_longest_substring_without_repeating_characters.md) | Sliding window | [Python](./arrays_strings/0003_longest_substring_without_repeating_characters.py) |
 
+### Stacks and Queues
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 394 | [Decode String](./stacks_queues/0394_decode_string.md) | Stack of paused nested states | [Python](./stacks_queues/0394_decode_string.py) |
+
+### Data Structure Design
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 981 | [Time Based Key-Value Store](./design_data_structures/0981_time_based_key_value_store.md) | Hash map and binary search | [Python](./design_data_structures/0981_time_based_key_value_store.py) |
+| 146 | [LRU Cache](./design_data_structures/0146_lru_cache.md) | Hash map and doubly linked list | [Python](./design_data_structures/0146_lru_cache.py) |
+
 ### Intervals and Binary Search
 
 | LeetCode | Problem | Main Pattern | Solution |
 | ---: | --- | --- | --- |
 | 56 | [Merge Intervals](./intervals_search/0056_merge_intervals.md) | Sort, then merge | [Python](./intervals_search/0056_merge_intervals.py) |
 | 253 | [Meeting Rooms II](./intervals_search/0253_meeting_rooms_ii.md) | Min-heap of end times | [Python](./intervals_search/0253_meeting_rooms_ii.py) |
+| 704 | [Binary Search](./intervals_search/0704_binary_search.md) | Discard half of a sorted array | [Python](./intervals_search/0704_binary_search.py) |
 | 33 | [Search in Rotated Sorted Array](./intervals_search/0033_search_in_rotated_sorted_array.md) | Modified binary search | [Python](./intervals_search/0033_search_in_rotated_sorted_array.py) |
 
 ### Trees and Graphs
@@ -173,7 +209,7 @@ python3 verify_solutions.py
 A successful run ends with:
 
 ```text
-33/33 Python files passed.
+37/37 Python files passed.
 ```
 
 Run one lesson or solution directly while studying:
@@ -190,7 +226,9 @@ python3 dynamic_programming/0322_coin_change.py
 .
 ├── python_basics/          # 11 beginner Python lessons
 ├── arrays_strings/         # hash maps and sliding window
+├── stacks_queues/          # nested parsing with a stack
 ├── intervals_search/       # intervals, sorting, binary search
+├── design_data_structures/ # stateful APIs and operation guarantees
 ├── trees_graphs/           # DFS, BFS, topological sort, graph copying
 ├── heaps/                  # top-k and multiway merging
 ├── prefix_recursion/       # prefix sums and backtracking

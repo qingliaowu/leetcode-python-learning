@@ -8,6 +8,7 @@ Use the [interview playbook](../INTERVIEW_PLAYBOOK.md) for the solve-out-loud pr
 | ---: | --- | --- | --- |
 | 56 | [Merge Intervals](./0056_merge_intervals.md) | [Code](./0056_merge_intervals.py) | Sort, then merge overlaps |
 | 253 | [Meeting Rooms II](./0253_meeting_rooms_ii.md) | [Code](./0253_meeting_rooms_ii.py) | Sort starts and track end times |
+| 704 | [Binary Search](./0704_binary_search.md) | [Code](./0704_binary_search.py) | Discard half of a sorted array |
 | 33 | [Search in Rotated Sorted Array](./0033_search_in_rotated_sorted_array.md) | [Code](./0033_search_in_rotated_sorted_array.py) | Modified binary search |
 
 ## Pattern Summary

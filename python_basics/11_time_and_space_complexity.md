@@ -360,9 +360,13 @@ Dictionary and set operations are `O(1)` on average, not an absolute guarantee f
 | --- | --- | --- | --- |
 | Two Sum | `O(N)` | `O(N)` | Scan once; map may remember every value |
 | Sliding window | `O(N)` | `O(U)` | Right and left only move forward; map stores unique characters |
+| Decode String | Output-dependent | `O(N + D)` | Read encoded text and store paused plus decoded characters |
+| TimeMap get | `O(log M)` | Stored history | Binary search one key's M timestamped values |
+| LRU Cache operation | `O(1)` average | `O(C)` total cache | Map lookup and a fixed number of linked-list pointer changes |
 | Grid DFS | `O(R * C)` | `O(R * C)` worst case | Visit each cell; stack may hold a large island |
 | Course Schedule | `O(V + E)` | `O(V + E)` | Process each course and prerequisite edge once |
 | Merge Intervals | `O(N log N)` | `O(N)` output | Sort, then scan once |
+| Binary Search | `O(log N)` | `O(1)` | Keep half the sorted range and store only indexes |
 | Rotated binary search | `O(log N)` | `O(1)` | Discard half each step; keep only indexes |
 | Size-K heap | `O(N log K)` | `O(K)` | N items each do heap work on at most K values |
 | Prefix sum map | `O(N)` | `O(N)` | Scan once; map may store each running sum |

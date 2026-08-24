@@ -67,11 +67,15 @@ Use clues in the question rather than memorizing code:
 | Two Sum | Pair reaches a target | Map earlier values to indexes; current item only pairs with earlier items | `O(N)` |
 | Group Anagrams | Group equivalent rearrangements | Sorted characters form one immutable group key | `O(N * K log K)` |
 | Longest Substring | Longest continuous valid range | Sliding window contains no duplicate; left never moves backward | `O(N)` |
+| Decode String | Nested count-and-bracket encoding | Stack saves the outer text and repeat count until inner text closes | Output-dependent |
+| Time Based Key-Value Store | Historical value at or before a time | Each key has sorted history; binary search for rightmost valid time | `O(log M)` get |
+| LRU Cache | Constant-time lookup and recency eviction | Map finds nodes; doubly linked list orders least to most recent | `O(1)` average operations |
 | Number of Islands | Count connected grid regions | Each DFS marks one complete component visited | `O(R * C)` |
 | Course Schedule | Directed prerequisites may cycle | Queue zero-in-degree nodes; completed count proves acyclic graph | `O(V + E)` |
 | Clone Graph | Deep-copy a cyclic structure | One map entry and one clone per original node | `O(V + E)` |
 | Merge Intervals | Combine overlapping ranges | After sorting, compare only with the last merged interval | `O(N log N)` |
 | Meeting Rooms II | Maximum simultaneous intervals | Min-heap exposes the earliest reusable room | `O(N log N)` |
+| Binary Search | Find target in sorted data | Inclusive range contains every possible target index | `O(log N)` |
 | Rotated Array Search | Sorted data, rotation, logarithmic requirement | At least one half around the midpoint is sorted | `O(log N)` |
 | Kth Largest | Keep only the best `k` values | Size-`k` min-heap contains the largest values seen | `O(N log K)` |
 | Top K Frequent | Rank values by occurrence count | Count first; size-`k` heap keeps highest frequencies | `O(N log K)` |
