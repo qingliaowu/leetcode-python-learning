@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parent
 BASIC_STEM_PATTERN = re.compile(r"\d{2}_[a-z0-9_]+")
 PROBLEM_STEM_PATTERN = re.compile(r"\d{4}_[a-z0-9_]+")
+SYSTEM_DESIGN_STEM_PATTERN = re.compile(r"[a-z0-9_]+")
 COURSE_SECTIONS = (
     (
         "Python Basics",
@@ -116,6 +117,13 @@ COURSE_SECTIONS = (
         ),
     ),
 )
+SYSTEM_DESIGN_SECTIONS = (
+    (
+        "System Design",
+        "system_design",
+        ("image_generation_platform",),
+    ),
+)
 REQUIRED_ROOT_FILES = (
     ".gitignore",
     "INTERVIEW_PLAYBOOK.md",
@@ -177,6 +185,36 @@ def inspect_structure():
         example_files = [folder / f"{stem}.py" for stem in ordered_stems]
         examples_by_section.append((section_name, example_files))
 
+    for section_name, folder_name, ordered_stems in SYSTEM_DESIGN_SECTIONS:
+        folder = ROOT / folder_name
+
+        if not folder.is_dir():
+            errors.append(f"missing course folder: {folder_name}")
+            continue
+
+        if not (folder / "README.md").is_file():
+            errors.append(f"missing topic guide: {folder_name}/README.md")
+
+        discovered_stems = {
+            path.stem
+            for path in folder.glob("*.md")
+            if path.name != "README.md"
+        }
+        expected_stems = set(ordered_stems)
+
+        if len(expected_stems) != len(ordered_stems):
+            errors.append(f"duplicate curriculum entry in: {folder_name}")
+
+        for stem in sorted(expected_stems - discovered_stems):
+            errors.append(f"missing system design case: {folder_name}/{stem}.md")
+
+        for stem in sorted(discovered_stems - expected_stems):
+            errors.append(f"unlisted system design case: {folder_name}/{stem}.md")
+
+        for stem in sorted(discovered_stems):
+            if SYSTEM_DESIGN_STEM_PATTERN.fullmatch(stem) is None:
+                errors.append(f"invalid system design filename: {folder_name}/{stem}")
+
     return examples_by_section, errors
 
 
@@ -191,7 +229,18 @@ def main() -> int:
         return 1
 
     total_examples = sum(len(files) for _, files in examples_by_section)
-    print(f"PASS repository structure ({total_examples} lesson/solution pairs).")
+    total_design_cases = sum(
+        len(ordered_stems)
+        for _, _, ordered_stems in SYSTEM_DESIGN_SECTIONS
+    )
+    design_case_label = (
+        "case study" if total_design_cases == 1 else "case studies"
+    )
+    print(
+        "PASS repository structure "
+        f"({total_examples} lesson/solution pairs; "
+        f"{total_design_cases} system design {design_case_label})."
+    )
 
     failures = []
 

@@ -1,8 +1,8 @@
 # Coding Interview Study Plans: 5, 10, 14, 30, or 60 Days
 
-[Repository home](./README.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md)
+[Repository home](./README.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md)
 
-Choose the plan that matches the number of full study days before your interview. Each plan uses the same Python course, 26 problem lessons, self-check exercises, and [solve-aloud interview process](./INTERVIEW_PLAYBOOK.md).
+Choose the plan that matches the number of full study days before your interview. Each plan uses the same Python course, 26 problem lessons, self-check exercises, and [solve-aloud interview process](./INTERVIEW_PLAYBOOK.md). Roles with a system design round should also use the [system design add-on](#system-design-add-on).
 
 No schedule can guarantee an offer. Interview results also depend on the questions, role, communication, and hiring process. These plans are designed to maximize readiness with the time available.
 
@@ -73,6 +73,30 @@ Longer plans add these problems to broaden pattern coverage.
 | Prefix sum and backtracking | [560 Subarray Sum Equals K](./prefix_recursion/0560_subarray_sum_equals_k.md), [79 Word Search](./prefix_recursion/0079_word_search.md) |
 | Trie variations | [211 Add and Search Words](./trie/0211_design_add_and_search_words.md), [648 Replace Words](./trie/0648_replace_words.md), [677 Map Sum Pairs](./trie/0677_map_sum_pairs.md) |
 | Dynamic programming | [198 House Robber](./dynamic_programming/0198_house_robber.md), [322 Coin Change](./dynamic_programming/0322_coin_change.md), [300 Longest Increasing Subsequence](./dynamic_programming/0300_longest_increasing_subsequence.md) |
+
+## System Design Add-On
+
+Use this add-on when the target role includes a system design round. Study [Design an Image-Generation Platform](./system_design/image_generation_platform.md), then practice from the prompt without looking at its diagram.
+
+| Plan | Add-On Schedule | Required Result |
+| --- | --- | --- |
+| 5 days | Read the case after Day 3; give one 30-minute verbal walkthrough on Day 4. | Explain the asynchronous job flow, idempotency, safety, and one failure. |
+| 10 days | Read on Day 6; run a 45-minute mock on Day 9. | Score at least `6/10` and repair the two missed scorecard areas. |
+| 14 days | Read on Day 8; redraw on Day 10; mock on Day 13. | Recalculate capacity and handle one changed assumption. |
+| 30 days | Learn during Days 18-20; run mocks during Days 24 and 29. | Score at least `7/10` on the second mock. |
+| 60 days | Learn during Days 36-40; revisit on Day 50; run two final-week mocks. | Score at least `7/10` twice with different assumptions. |
+
+For each attempt:
+
+1. Clarify the customer, outcome, requirements, and scope.
+2. State scale assumptions and calculate throughput, concurrent work, and storage.
+3. Define APIs, durable state, and the normal request flow.
+4. Deep-dive on slow inference, duplicate work and billing, policy, and tenant isolation.
+5. Test worker failure, unsafe output, cancellation, and a traffic spike aloud.
+6. Cover model rollout, usefulness metrics, observability, and cost.
+7. Record the [10-point score](./system_design/image_generation_platform.md#28-system-design-mock-scorecard) in the [progress tracker](./PROGRESS_TRACKER.md).
+
+Do not memorize the finished diagram. Change candidate count, latency, tenant isolation, retention, or traffic in every later attempt and adapt the design.
 
 ## Daily Study Method
 
@@ -414,6 +438,8 @@ You are reasonably prepared to interview when most of these statements are true:
 - I test empty or smallest input, normal input, duplicates, missing answers, and relevant boundary behavior.
 - I justify both time and extra space instead of naming Big-O without explanation.
 - I can adapt at least one known solution when an assumption changes.
+- If my role includes system design, I can design the image-generation platform in 45 minutes and score at least `7/10` twice.
+- I can explain asynchronous jobs, idempotency, policy enforcement, tenant isolation, evaluation, and cost without hiding behind service names.
 - At least two of my last three mock scores are `7/10` or higher.
 - I can recover calmly after a hint or mistake.
 

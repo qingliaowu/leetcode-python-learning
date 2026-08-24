@@ -1,6 +1,6 @@
 # Intervals, Sorting, and Binary Search
 
-[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md) | [System design](../system_design/README.md)
 
 These high-priority problems use ordering to reveal structure. Sorting places related intervals together, while binary search repeatedly discards half of the remaining search space.
 

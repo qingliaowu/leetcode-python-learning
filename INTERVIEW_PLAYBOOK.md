@@ -1,10 +1,12 @@
 # Interview Problem-Solving Playbook
 
-[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md)
+[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md)
 
 An interview is not only a test of whether the final code works. The interviewer is also evaluating how you clarify uncertainty, improve an initial idea, explain tradeoffs, and verify your own work.
 
 Use this process for every problem in the repository.
+
+For architecture interviews, use [System Design for Beginners](./system_design/). It applies the same habits of stating assumptions, explaining tradeoffs, and testing edge cases to a production image-generation platform.
 
 If you have a fixed interview date, first choose the matching [5-, 10-, 14-, 30-, or 60-day study plan](./INTERVIEW_STUDY_PLANS.md). The schedule tells you when to learn, review, and run mock interviews; this playbook tells you how to perform each attempt.
 

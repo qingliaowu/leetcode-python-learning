@@ -1,18 +1,19 @@
 # LeetCode Python Learning
 
-A beginner-first path from forgotten Python syntax to explaining interview solutions clearly and confidently.
+A beginner-first path from forgotten Python syntax to explaining coding and system design interview solutions clearly and confidently.
 
-This repository assumes nothing. Python syntax, algorithm ideas, time and space complexity, edge cases, tests, and interview reasoning are explained in plain language.
+This repository assumes nothing. Python syntax, algorithm ideas, system architecture, complexity, edge cases, tests, and interview reasoning are explained in plain language.
 
 ## What Is Included
 
 | Material | Count | Purpose |
 | --- | ---: | --- |
 | Python 3 lessons | 11 | Relearn Python from `print` through recursion and Big-O |
-| Interview problems | 26 | Practice the patterns most often used in coding interviews |
-| Guided self-check questions | 52 | Transfer each pattern to a new example, then reveal a detailed answer |
+| Coding interview problems | 26 | Practice the patterns most often used in coding interviews |
+| System design case studies | 1 | Design a production image-generation platform from requirements through operations |
+| Guided self-check questions | 54 | Transfer each coding or design pattern, then reveal a detailed answer |
 | Interview study schedules | 5 | Choose a 5-, 10-, 14-, 30-, or 60-day preparation plan |
-| Course guides | 10 | Navigate Python foundations and nine interview topics |
+| Course guides | 11 | Navigate Python foundations, nine coding topics, and system design |
 | Progress tracker | 1 | Record lessons, problem scores, review dates, and mock results |
 | External packages | 0 | Everything runs with the Python standard library |
 
@@ -26,8 +27,9 @@ Choose the row that sounds most like you:
 | "I can code, but Big-O is confusing." | [Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) |
 | "My interview is in 5-60 days." | [Choose an Interview Study Plan](./INTERVIEW_STUDY_PLANS.md) |
 | "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
+| "I need to prepare for a system design interview." | [System Design for Beginners](./system_design/) |
 | "I want one checklist for everything." | [Open the Learning Progress Tracker](./PROGRESS_TRACKER.md) |
-| "I am ready to solve problems." | [Interview Problem Roadmap](#interview-problem-roadmap) |
+| "I am ready to solve problems." | [Interview Roadmap](#interview-roadmap) |
 
 No package installation is needed. Check Python and run the first lesson:
 
@@ -88,13 +90,20 @@ A problem is interview-ready when you can:
 
 Repeat difficult problems after one day and again after one week.
 
-## What Every Problem Contains
+### Phase 4: Practice System Design
+
+If your target role includes system design, study [Design an Image-Generation Platform](./system_design/image_generation_platform.md). It shows how to turn a broad product question into requirements, estimates, APIs, durable state, architecture, deep dives, failures, metrics, and tradeoffs.
+
+Run the case aloud in 45 minutes. Redraw it without notes, change one assumption, and use the [system design scorecard](./system_design/image_generation_platform.md#28-system-design-mock-scorecard) to find the next area to repair.
+
+## What Each Lesson Contains
 
 | File | What It Gives You |
 | --- | --- |
 | Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, interview explanation, follow-ups, and two self-checks with detailed answers |
 | Solution `.py` | Readable Python 3 code, focused comments, type hints, and executable assertions |
 | Topic `README.md` | Shared navigation, prerequisites, recommended order, pattern recognition, and a move-on checkpoint |
+| System design case | Requirements, assumptions, estimates, API and data model, architecture, production deep dives, failures, testing, follow-ups, scorecard, and two transfer designs |
 
 ## Core 15-Problem Checklist
 
@@ -116,11 +125,11 @@ This requested interview set is fully included. Use the links to open each begin
 14. [56 Merge Intervals](./intervals_search/0056_merge_intervals.md)
 15. [704 Binary Search](./intervals_search/0704_binary_search.md)
 
-## Interview Problem Roadmap
+## Interview Roadmap
 
-The order below moves from common collection patterns toward more specialized structures and dynamic programming.
+The order below moves from common collection patterns toward specialized structures, dynamic programming, and a production system design case.
 
-| Order | Topic | Problems | Guide |
+| Order | Topic | Lessons | Guide |
 | ---: | --- | ---: | --- |
 | 1 | Arrays, strings, hash maps, sliding window | 3 | [Open](./arrays_strings/) |
 | 2 | Stacks and queues | 1 | [Open](./stacks_queues/) |
@@ -131,6 +140,7 @@ The order below moves from common collection patterns toward more specialized st
 | 7 | Prefix sums and backtracking | 2 | [Open](./prefix_recursion/) |
 | 8 | Trie | 5 | [Open](./trie/) |
 | 9 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
+| 10 | System design | 1 | [Open](./system_design/) |
 
 ## Complete Problem Index
 
@@ -205,9 +215,15 @@ The order below moves from common collection patterns toward more specialized st
 | 322 | [Coin Change](./dynamic_programming/0322_coin_change.md) | Minimum result for each amount | [Python](./dynamic_programming/0322_coin_change.py) |
 | 300 | [Longest Increasing Subsequence](./dynamic_programming/0300_longest_increasing_subsequence.md) | Best sequence ending at each index | [Python](./dynamic_programming/0300_longest_increasing_subsequence.py) |
 
+### System Design
+
+| Case Study | Main Production Concerns |
+| --- | --- |
+| [Design an Image-Generation Platform](./system_design/image_generation_platform.md) | Long-running jobs, safety, idempotency, billing, scheduling, tenant isolation, storage, model rollout, evaluation, observability, and cost |
+
 ## Test Everything
 
-Each Python file contains assertions for normal examples and important edge cases. The verifier first checks required root files, topic guides, filename conventions, and every Markdown/Python lesson pair. It then runs all examples in learning order:
+Each Python file contains assertions for normal examples and important edge cases. The verifier first checks required root files, topic guides, the system design case, filename conventions, and every Markdown/Python lesson pair. It then runs all examples in learning order:
 
 ```bash
 python3 verify_solutions.py
@@ -241,6 +257,7 @@ python3 dynamic_programming/0322_coin_change.py
 ├── prefix_recursion/       # prefix sums and backtracking
 ├── trie/                   # prefix-tree design and applications
 ├── dynamic_programming/    # saved-state recurrence patterns
+├── system_design/          # production architecture case studies
 ├── INTERVIEW_PLAYBOOK.md   # solve-aloud interview process
 ├── INTERVIEW_STUDY_PLANS.md # 5/10/14/30/60-day preparation tracks
 ├── PROGRESS_TRACKER.md     # lesson, review, and mock checklist
@@ -249,7 +266,7 @@ python3 dynamic_programming/0322_coin_change.py
 └── README.md
 ```
 
-## Adding Another Problem
+## Adding Another Coding Problem
 
 Keep new material consistent with the beginner-first style:
 
@@ -263,4 +280,16 @@ Keep new material consistent with the beginner-first style:
 8. Add the problem to its topic guide, the progress tracker, this index, and the ordered `COURSE_SECTIONS` entry in `verify_solutions.py`.
 9. Run `python3 verify_solutions.py` to check naming, file pairing, and assertions.
 
-Clarity is the goal. A beginner should be able to understand not only what the code does, but why each step exists.
+## Adding Another System Design Case
+
+1. Begin with the customer, outcome, scope, and explicit assumptions.
+2. Estimate request rate, concurrent work, storage, and dominant cost.
+3. Define APIs, durable records, state transitions, and correctness invariants.
+4. Draw the smallest architecture that satisfies the requirements.
+5. Deep-dive on the hardest reliability, security, and scaling decisions.
+6. Explain policy, tenant isolation, observability, evaluation, and operations where relevant.
+7. Include failures, edge cases, tradeoffs, an interview summary, follow-ups, and two transfer exercises with detailed answers.
+8. Add the case to its course guide, this index, the progress tracker, and `SYSTEM_DESIGN_SECTIONS` in `verify_solutions.py`.
+9. Run `python3 verify_solutions.py` and the Markdown integrity checks.
+
+Clarity is the goal. A beginner should understand not only what the code or architecture does, but why each step and design decision exists.

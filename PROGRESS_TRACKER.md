@@ -1,6 +1,6 @@
 # Learning Progress Tracker
 
-[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Python basics](./python_basics/README.md) | [Run checks](./verify_solutions.py)
+[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md) | [Run checks](./verify_solutions.py)
 
 Use this page with the study plan matching your deadline. A checked box means you completed the work without copying the answer. Record a problem score using the [0-4 scoring guide](./INTERVIEW_STUDY_PLANS.md#score-every-problem).
 
@@ -101,7 +101,24 @@ Use these columns consistently:
 | [322 Coin Change](./dynamic_programming/0322_coin_change.md) | Expansion | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 | [300 Longest Increasing Subsequence](./dynamic_programming/0300_longest_increasing_subsequence.md) | Expansion | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 
-## Mock Interview Log
+## System Design
+
+Use the [10-point system design scorecard](./system_design/image_generation_platform.md#28-system-design-mock-scorecard). A complete attempt includes a normal request, duplicate request, unsafe output, worker failure, traffic spike, and changed assumption.
+
+| Case | Clarify | Estimate | Architecture | Deep Dives | Failure Test | Score | Next Review |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | --- |
+| [Image-Generation Platform](./system_design/image_generation_platform.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
+
+### System Design Mock Log
+
+| Mock | Date | Changed Assumption | Score /10 | Weakest Area | Repair Date |
+| ---: | --- | --- | :---: | --- | --- |
+| 1 |  |  |  |  |  |
+| 2 |  |  |  |  |  |
+| 3 |  |  |  |  |  |
+| 4 |  |  |  |  |  |
+
+## Coding Mock Interview Log
 
 Use the [45-minute format and 10-point scorecard](./INTERVIEW_STUDY_PLANS.md#how-to-run-a-45-minute-mock).
 
@@ -125,4 +142,6 @@ Use the [45-minute format and 10-point scorecard](./INTERVIEW_STUDY_PLANS.md#how
 - [ ] I test normal, smallest, boundary, duplicate, and missing-result cases when relevant.
 - [ ] I justify time and extra space in complete sentences.
 - [ ] I can adapt a known solution to one follow-up requirement.
+- [ ] If my role includes system design, I can clarify, estimate, draw, deep-dive, and failure-test the image platform in 45 minutes.
+- [ ] I can explain idempotency, asynchronous work, tenant isolation, and useful outcome metrics in plain language.
 - [ ] I can recover calmly after a mistake or hint.
