@@ -148,6 +148,16 @@ Let `C` be cache capacity.
 - Evicting the most recent node instead of the least recent node.
 - Mishandling first or last nodes by not using sentinels.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Can you implement it with Python's standard library? | `collections.OrderedDict` supports moving a key to the recent end and removing the oldest item, but explain the same underlying ordering idea. |
+| What changes for an LFU cache? | Track frequency as well as recency, usually with frequency buckets of linked lists and a minimum-frequency value. |
+| Add expiration time or TTL. | Store expiry timestamps and check them on access; a min-heap or background cleanup can locate expired entries. |
+| Make the cache thread-safe. | Protect dictionary and linked-list changes with one lock so another thread never observes half of an update. |
+| What if capacity changes at runtime? | Update capacity and repeatedly evict from the least-recent end until size fits. |
+
 ## Interview Explanation
 
 > I need constant-time key lookup and constant-time ordering updates, so I combine a hash map with a doubly linked list. The map points keys to nodes. The list runs from least to most recent, and sentinels simplify pointer changes. Every get or put moves one node to the recent end, and overflow removes the leftmost real node. Both operations are `O(1)` average time with `O(capacity)` space.

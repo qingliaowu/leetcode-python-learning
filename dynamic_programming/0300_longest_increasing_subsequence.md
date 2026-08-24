@@ -141,6 +141,16 @@ There is an `O(N log N)` solution using a `tails` list and binary search. It is 
 - Checking later indexes and breaking the calculation order.
 - Calling the nested loops `O(N)` instead of `O(N²)`.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Can you improve the time to `O(N log N)`? | Maintain `tails`, where each position stores the smallest ending value for a subsequence of that length, and use binary search to replace the first value greater than or equal to the current number. |
+| How would you return an actual subsequence? | Store each index's predecessor and track the ending index of the best length, then follow predecessors backward and reverse the result. |
+| What if the subsequence may be non-decreasing? | Allow equal values. In the quadratic DP use `<=`; in the `tails` method replace the first value strictly greater than the current number. |
+| How would you count how many longest subsequences exist? | Store both the best length and the number of ways to reach that length at every index, combining counts when equal best lengths are found. |
+| What if numbers arrive one at a time? | Maintain the `tails` structure as the stream arrives. Each new value updates it in `O(log N)` and its length gives the current LIS length. |
+
 ## Interview Explanation
 
 > I define `dp[i]` as the longest increasing subsequence ending exactly at index `i`. Every state starts at one. For each index, I inspect earlier smaller values and extend their best saved lengths. I return the maximum state. The nested scan takes `O(N²)` time and the table uses `O(N)` space.

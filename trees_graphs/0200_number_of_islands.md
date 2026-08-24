@@ -83,6 +83,16 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Marking visited only after popping, allowing duplicate stack entries.
 - Forgetting that this version modifies the input grid.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Do not modify the input grid. | Keep a separate set of visited `(row, column)` tuples, using up to `O(R * C)` extra space. |
+| Count diagonal connections too. | Add the four diagonal direction pairs, giving eight possible neighbors per cell. |
+| Return the largest island area. | Count cells during each DFS and update a maximum after completing the component. |
+| Islands are added one cell at a time. | Use Union-Find to connect new land with existing neighboring components and maintain a running island count. |
+| The grid is too large for recursion. | Use the explicit stack solution shown here, or process chunks when the full grid cannot fit in memory. |
+
 ## Interview Explanation
 
 > I scan the grid. Each unvisited land cell begins a new connected component, so I increment the answer and run DFS to mark its entire island. Every cell is visited at most once, giving linear time in the grid size.

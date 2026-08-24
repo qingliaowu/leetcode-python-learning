@@ -142,6 +142,16 @@ For about one million sorted values, binary search needs only about 20 compariso
 - Returning an insertion position when the question requires `-1`.
 - Saying time is `O(N)` instead of recognizing repeated halving.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Find the first or last occurrence when duplicates exist. | Save a match, then continue searching left for the first occurrence or right for the last occurrence. |
+| Return the insertion position when target is missing. | Use a lower-bound search; when the loop ends, `left` is the first index where target can be inserted. |
+| What if the array is sorted in descending order? | Reverse the comparison directions while keeping the same range invariant. |
+| What if the sorted input has unknown length? | Use exponential search to find a containing range, then binary-search that range. |
+| Can you write it recursively? | Pass smaller left/right boundaries recursively; time stays `O(log N)`, but stack space becomes `O(log N)`. |
+
 ## Interview Explanation
 
 > I keep an inclusive range of possible indexes. I compare the target with its middle value. Sorted order lets me discard the middle and one entire half, so the range shrinks by about half each iteration. I return the matching index or `-1` when the range becomes empty. Time is `O(log N)` and extra space is `O(1)`.

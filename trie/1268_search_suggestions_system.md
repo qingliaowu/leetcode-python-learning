@@ -126,6 +126,16 @@ String comparisons during sorting can inspect multiple characters, but `O(N log 
 - Stopping the answer when a prefix is missing; the result still needs one list per typed character.
 - Re-sorting every node's suggestions during the search.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| What if products can be added or removed often? | Update every node on that product's path. Each node may need an ordered set or a larger candidate collection so its top three can be repaired after deletion. |
+| What if suggestions are ranked by popularity? | Store each product's score and cache the three highest-ranked products at every prefix node. A score change must update all nodes on that product's path. |
+| What if the interviewer asks for the top `K` suggestions? | Keep up to `K` suggestions per node. Queries remain fast, but cached memory grows from three references per node to as many as `K`. |
+| Can you avoid caching suggestions in every node? | Walk to the prefix node, then perform lexicographic DFS until three words are found. This saves cached lists but makes each query do more traversal work. |
+| How would you support one typing mistake? | Combine Trie traversal with edit-distance state, or use dynamic programming while exploring branches. First clarify whether insertion, deletion, replacement, or all three edits are allowed. |
+
 ## How to Explain It in an Interview
 
 > I will sort the products first and build a Trie. Every Trie node represents a prefix and stores at most the first three products that pass through it. Since insertion happens in sorted order, those are already the correct three suggestions. Querying then follows the search word one character at a time and reads the cached list at each node.

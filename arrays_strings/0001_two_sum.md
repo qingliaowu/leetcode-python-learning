@@ -84,6 +84,15 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Looking for `number - target` instead of `target - number`.
 - Using nested loops without discussing the `O(N^2)` cost.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| What if the input is already sorted? | Use left and right pointers. Move the pointer whose value makes the sum too small or too large. Time stays `O(N)` and extra space becomes `O(1)`. |
+| What if you must return every unique pair? | Continue after a match, store normalized value pairs in a set, and define how duplicate indexes or values should be handled. |
+| What if numbers arrive as a stream? | Keep the same complement map. Each new number can pair only with values already seen. |
+| What if the same array receives many target queries? | Discuss sorting once for repeated two-pointer queries or precomputing pair sums, trading preprocessing time and memory for faster queries. |
+
 ## Interview Explanation
 
 > As I scan the array, I keep a hash map from each previous value to its index. For the current value, I compute the complement needed to reach the target. If that complement is already stored, I return the two indexes. This uses linear time and linear extra space.

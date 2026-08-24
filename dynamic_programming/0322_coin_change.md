@@ -139,6 +139,16 @@ This is pseudo-polynomial time because it depends on the numeric amount, not onl
 - Counting combinations instead of minimizing coin count.
 - Saying time is only `O(A)` while ignoring the inner coin loop.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| How would you return the coins used? | Save which final coin produced each best `dp` value, then follow those choices backward from `amount` to zero. |
+| What if each coin has a limited supply? | The unlimited-use recurrence is no longer enough. Add remaining counts to the state or use a bounded-knapsack transition for each coin's allowed copies. |
+| How would you count combinations instead of finding a minimum? | Let `dp[x]` be the number of ways to make `x`, start with `dp[0] = 1`, and loop over coins before amounts so different orders are not counted twice. |
+| What if different coin orders count as different answers? | Loop over amounts before coins. Then every reachable previous amount can append each coin as a distinct final step. |
+| What if `amount` is extremely large? | Point out that the DP is amount-dependent. Discuss whether BFS, number-theory properties of the coin system, or extra constraints can reduce the work. |
+
 ## Interview Explanation
 
 > I define `dp[x]` as the minimum coins needed for amount `x`, with `dp[0] = 0`. For every amount, I try each coin as the final coin and use one plus the saved answer for the remaining amount. There are `A` amounts and `C` coin choices, so time is `O(A * C)` and space is `O(A)`.

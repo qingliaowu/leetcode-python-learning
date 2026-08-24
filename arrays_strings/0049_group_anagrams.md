@@ -83,6 +83,15 @@ A character-count key can reduce sorting work to `O(N * K)`, but the sorted-key 
 - Making one list and accidentally sharing it between every group.
 - Assuming the output group order must match one exact arrangement.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Can you avoid sorting every word? | For lowercase English letters, use a 26-number character-count tuple as the key. This changes time to `O(N * K)`. |
+| What if words contain Unicode characters? | Sorting remains simple, or build a sorted tuple of `(character, count)` pairs rather than assuming 26 letters. |
+| What if output groups must be sorted? | Sort words inside each group and then sort groups by the required rule, adding sorting cost. |
+| Can groups be produced from a stream? | Update the grouping dictionary as words arrive, but complete groups cannot be finalized until the stream ends unless later updates are allowed. |
+
 ## Interview Explanation
 
 > Anagrams become identical when their characters are sorted. I use that immutable sorted tuple as a hash-map key and append each original word to the corresponding list. The solution is dominated by sorting each word, giving `O(N * K log K)` time.

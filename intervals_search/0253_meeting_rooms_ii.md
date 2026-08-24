@@ -79,6 +79,16 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Forgetting to sort by start time.
 - Popping every available room even though only one room is needed now.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Assign an actual room number to every meeting. | Store `(end_time, room_id)` in the heap and reuse the popped room ID; allocate a new ID when none is free. |
+| Return when the maximum overlap occurs. | Sweep sorted start/end events and record timestamps whenever the active count reaches a new maximum. |
+| Meetings arrive online and cannot all be sorted first. | Insert each start into an ordered event structure or maintain available rooms if arrivals are guaranteed in start order. |
+| Do equal end and start times overlap? | Clarify interval semantics. In this solution, end `<=` start means the room is reusable. |
+| What if meetings can be cancelled? | Keep meeting IDs and support lazy deletion or an indexed heap so cancelled end times do not occupy rooms. |
+
 ## Interview Explanation
 
 > I process meetings in start-time order and keep allocated room end times in a min-heap. The smallest end tells me whether any room can be reused. If it can, I replace that end with the current meeting's end; otherwise I add another room. The final heap size is the minimum room count.

@@ -72,6 +72,16 @@ Sorting the whole array is simpler but costs `O(N log N)` time.
 - Removing duplicate values as though only distinct values counted.
 - Assuming the internal heap list is completely sorted.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Can you achieve `O(N)` average time? | Use Quickselect to partition around a pivot and continue only in the section containing the target rank. |
+| Values arrive as a stream. | Keep the same size-`K` min-heap; after each arrival, `heap[0]` is the kth largest seen when at least `K` values exist. |
+| Find the kth smallest instead. | Keep a size-`K` max-heap, or Quickselect index `k - 1` in ascending order. Python can simulate a max-heap with negative values. |
+| Support deletions as well as insertions. | A plain heap cannot delete arbitrary values efficiently; use lazy deletion with counts or an ordered multiset. |
+| What if `K` is close to `N`? | A heap of the smaller side or Quickselect may be preferable; explain the time-space tradeoff. |
+
 ## Interview Explanation
 
 > I maintain a min-heap containing the largest `k` values seen. Whenever its size exceeds `k`, I remove the smallest. At the end, the heap's minimum is the kth largest overall. This uses `O(N log K)` time and `O(K)` space.

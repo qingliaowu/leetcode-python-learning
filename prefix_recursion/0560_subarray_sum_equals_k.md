@@ -99,6 +99,16 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Looking up `k - running_sum` instead of `running_sum - k`.
 - Recording the current prefix before counting.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Return the actual subarrays instead of only the count. | Map each prefix sum to all indexes where it occurred, then emit ranges from each matching earlier index. Output can be `O(N²)`. |
+| Find the longest subarray summing to `K`. | Store the earliest index for each prefix sum and maximize the distance to an earlier `current_sum - K`. |
+| All values are positive. | A sliding window can grow and shrink monotonically in `O(N)` time with `O(1)` extra space. |
+| Answer many different `K` queries for the same array. | Prefix sums help calculate any one range quickly, but counting all ranges for many targets needs extra preprocessing or `O(N²)` pair sums. |
+| Process numbers as a stream. | Keep the running sum, prior prefix counts, and answer; each new number adds the count of new valid subarrays ending there. |
+
 ## Interview Explanation
 
 > A subarray sum is the difference between two prefix sums. At each position, I need an earlier prefix equal to the current sum minus `k`. A hash map stores how many times each earlier sum occurred, so I can count all matching starts in constant average time and finish in `O(N)`.

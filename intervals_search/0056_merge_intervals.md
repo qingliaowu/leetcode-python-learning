@@ -82,6 +82,16 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Replacing the previous end with `end` instead of `max(previous_end, end)`.
 - Comparing only with the original previous input interval rather than the last merged interval.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Insert one interval into already sorted non-overlapping intervals. | Append intervals before it, merge every overlap with the new interval, then append the remainder in `O(N)` time. |
+| Preserve the input list and inner intervals. | Use `sorted` and create new `[start, end]` lists instead of sorting or updating input objects in place. |
+| Find intersections between two interval lists. | Use two pointers; record overlap and advance the interval that ends first. |
+| Return total covered length. | Merge first, then sum `end - start`, clarifying whether integer endpoints or continuous ranges are intended. |
+| What if intervals arrive online? | A balanced interval tree or ordered map can locate nearby overlaps without sorting the entire history again. |
+
 ## Interview Explanation
 
 > I sort by start time, which makes all overlapping ranges adjacent. I keep a result of already merged intervals. Each new interval either starts after the last result ends, so it is appended, or overlaps, so I extend the last end. Sorting dominates at `O(N log N)`.

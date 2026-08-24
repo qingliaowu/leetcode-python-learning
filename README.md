@@ -77,7 +77,8 @@ A problem is interview-ready when you can:
 - explain why the algorithm is correct,
 - write it without hidden gaps,
 - test assumptions and edge cases aloud,
-- justify time and space complexity.
+- justify time and space complexity,
+- adapt the solution when an interviewer changes one requirement.
 
 Repeat difficult problems after one day and again after one week.
 
@@ -85,7 +86,7 @@ Repeat difficult problems after one day and again after one week.
 
 | File | What It Gives You |
 | --- | --- |
-| Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, and interview explanation |
+| Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, interview explanation, and possible follow-up questions |
 | Solution `.py` | Readable Python 3 code, focused comments, type hints, and executable assertions |
 | Topic `README.md` | Pattern introduction, recommended order, and connections between problems |
 

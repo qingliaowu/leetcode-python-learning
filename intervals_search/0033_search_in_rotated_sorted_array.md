@@ -76,6 +76,15 @@ The distinct-values condition makes the sorted-half decision unambiguous.
 - Setting a boundary to `middle` instead of excluding the checked index.
 - Forgetting the single-element case.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| What if duplicate values are allowed? | When left, middle, and right values are equal, sorted-side detection is ambiguous. Move boundaries inward; worst-case time can become `O(N)`. |
+| Find the rotation index or minimum value. | Compare middle with the right endpoint and keep the half containing the rotation point. |
+| Return the first target occurrence with duplicates. | Continue after a match and account for ambiguity; logarithmic worst-case time may no longer be possible. |
+| What if the target is queried many times? | Find the pivot once, then binary-search the appropriate sorted section for each query. |
+
 ## Interview Explanation
 
 > I use binary search. Rotation breaks global ordering, but one side of the midpoint is always sorted. I identify that side, test whether the target lies in its value range, and keep either that half or the other half. Each step discards half the candidates, so the time is logarithmic.

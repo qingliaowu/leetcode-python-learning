@@ -80,6 +80,16 @@ Let `N` be input length and `U` be unique values.
 - Requiring a specific answer order when the problem does not.
 - Sorting all unique values without discussing the higher `O(U log U)` cost.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Can you improve beyond `O(U log K)` heap work? | Use frequency buckets indexed from `1` through `N`, then scan buckets backward for `O(N)` total time. |
+| Values arrive continuously. | Maintain counts and update ranking structures; exact top-k updates are more complex because frequencies change repeatedly. |
+| The stream is too large for exact counts. | Discuss approximate heavy-hitter algorithms such as Count-Min Sketch, with an accuracy-memory tradeoff. |
+| Return results in frequency order. | Sort the final `K` pairs or pop them and reverse the order, adding `O(K log K)`. |
+| Frequencies tie at the boundary. | Clarify whether any `K` values are accepted or whether a deterministic value-based tie rule is required. |
+
 ## Interview Explanation
 
 > First I count values with a hash map. Then I keep a min-heap of at most `k` `(frequency, value)` pairs. If the heap grows too large, I remove its smallest frequency. The remaining values are the top `k`, using `O(N log K)` time.

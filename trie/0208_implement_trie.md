@@ -124,6 +124,16 @@ Shared prefixes reduce the number of nodes in practice. For example, `app` and `
 - Creating nodes during `search`; query methods should only follow existing nodes.
 - Returning `False` too early during insertion when one child already exists.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| How would you delete a word? | Follow its path, unmark the final `is_word`, and remove nodes from the end only while they have no children and do not end another word. The work is `O(L)`. |
+| How would you count words that start with a prefix? | Store a `prefix_count` in every node and update it during insert and delete. A query then takes `O(P)`, where `P` is the prefix length. |
+| How would you return autocomplete suggestions? | Reach the prefix node, then run DFS below it and collect complete words. The time includes the prefix walk plus the characters in the returned results. |
+| What changes for Unicode or a very large alphabet? | A dictionary of children still works because it creates entries only for characters that appear. A fixed 26-slot list is faster only when the alphabet is known and small. |
+| How could you reduce memory for long paths with no branches? | Use a compressed Trie, also called a radix tree, which stores a whole string segment on one edge instead of one node per character. |
+
 ## How to Explain It in an Interview
 
 > I will use a Trie node with a dictionary of children and a boolean end marker. Insert follows or creates one node per character, then marks the last node as a complete word. Search and prefix search share the same traversal, but exact search also checks the end marker. Each operation takes linear time in the input string length.

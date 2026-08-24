@@ -224,6 +224,39 @@ O(N log K) and extra space is O(K).
 
 Mention important side effects, such as sorting or modifying a grid, and offer a non-mutating version if the interviewer requires one.
 
+## Handle Follow-up Questions
+
+Interviewers often change one requirement after the first solution works. This is usually a chance to extend your reasoning, not a signal that the first answer was wrong.
+
+Use this five-step response:
+
+1. Restate the new requirement.
+2. Name the old assumption that changed.
+3. Say which parts of the current solution still work.
+4. Change the data structure, state, or invariant that no longer works.
+5. Recalculate complexity and test one case created by the new requirement.
+
+Example:
+
+```text
+The original Two Sum input was unsorted, so I used a hash map and O(N) extra
+space. If the input is now sorted, I can replace the map with left and right
+pointers. Their sum tells me which pointer to move. Time remains O(N), while
+extra space improves to O(1).
+```
+
+Common follow-up types include:
+
+- improve time complexity,
+- reduce extra space,
+- return the actual choices instead of only a count,
+- support updates, deletion, or streaming input,
+- handle duplicates or a removed constraint,
+- preserve input instead of modifying it,
+- make a stateful design concurrent or persistent.
+
+Do not immediately code. First explain why the existing invariant is insufficient and state the new invariant. The follow-up tables in every problem lesson provide realistic questions and short answer directions for practice.
+
 ## A Practical Interview Timeline
 
 For a 35-minute coding problem:

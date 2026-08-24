@@ -93,6 +93,16 @@ Let `N` be the total number of nodes and `K` the number of lists.
 - Returning `dummy` instead of `dummy.next`.
 - Advancing `tail` incorrectly and losing part of the result.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Can you solve it without a heap? | Merge lists in pairs using divide and conquer, still taking `O(N log K)` time with `O(log K)` recursive stack space. |
+| Inputs are sorted arrays instead of linked lists. | Store `(value, array_index, element_index)` in the heap and push the next index from the popped array. |
+| Lists are infinite streams. | Keep one available item per active stream; define blocking, stream completion, and how output is consumed. |
+| Must the input nodes remain unchanged? | Create new output nodes instead of reconnecting existing nodes, using `O(N)` additional output-node space. |
+| Some input lists are empty or arrive later. | Skip empty heads and define whether later lists may contain values smaller than output already emitted. |
+
 ## Interview Explanation
 
 > Each sorted list exposes its smallest remaining node at its head. I keep those at most `K` candidates in a min-heap, pop the smallest into the result, and replace it with its successor. A dummy head simplifies result construction. Every node performs `O(log K)` heap work, for `O(N log K)` total time.

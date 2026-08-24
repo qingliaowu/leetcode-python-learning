@@ -135,6 +135,16 @@ An explicit `dp` list would use `O(N)` space. The two-variable version keeps the
 - Returning the last house value instead of the best result.
 - Building a full table without explaining that only two states are needed.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| What if the houses form a circle? | The first and last houses cannot both be used. Solve twice: once without the last house and once without the first, then take the larger answer. |
+| How would you return the indexes of the robbed houses? | Keep the full DP table and backtrack through the take-or-skip decisions. This changes extra space from `O(1)` to `O(N)`. |
+| What if house values can be negative? | Allow skipping every house, so the answer never has to drop below zero. The current zero-valued base state already supports that rule. |
+| What if robbing a house blocks the next `D` houses? | Taking index `i` adds its value to the best result at index `i - D - 1`; skipping keeps the result from `i - 1`. |
+| What if the houses are arranged as a binary tree? | Use tree DP. For each node, return two values: the best total when taking that node and the best total when skipping it. |
+
 ## Interview Explanation
 
 > At each house I either take it, which adds its money to the best result two houses back, or skip it, which keeps the best result through the previous house. I store only those two earlier answers. Each house is processed once, so time is `O(N)` and extra space is `O(1)`.

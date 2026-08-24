@@ -95,6 +95,16 @@ Let `V` be courses and `E` be prerequisite pairs.
 - Adding a course to the queue before its in-degree reaches zero.
 - Returning `True` just because some courses were completed.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Return one valid course order. | Append each popped zero-in-degree course and return the list if it contains all courses; this is LeetCode 210. |
+| Return the actual cycle when completion is impossible. | Use DFS colors and parent pointers; a back edge to a currently visiting node identifies a cycle path. |
+| Find the minimum number of semesters with unlimited parallel courses. | Process topological BFS one queue layer per semester and count layers. |
+| Only a limited number of courses can be taken each semester. | Available-course selection becomes a harder scheduling problem; discuss constraints and possibly state-search DP. |
+| Prerequisites are added dynamically. | Rechecking from scratch is simplest; maintaining a dynamic topological order requires more advanced graph structures. |
+
 ## Interview Explanation
 
 > This is cycle detection in a directed graph. I use Kahn's topological sort: count each course's prerequisites, queue all zero-in-degree courses, and remove edges as courses complete. If I process every node, no cycle blocks the schedule.

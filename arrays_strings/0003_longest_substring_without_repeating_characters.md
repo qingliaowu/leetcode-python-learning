@@ -76,6 +76,15 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Clearing the whole dictionary after a duplicate, which repeats work.
 - Returning the best substring when the question asks for its length.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Return the substring instead of only its length. | Save `best_start` whenever a longer window is found, then return `s[best_start:best_start + best_length]`. |
+| Find the longest substring with at most `K` distinct characters. | Store character frequencies and shrink the left side while the map has more than `K` keys. |
+| Can the input arrive as a stream? | Keep the latest index map, left boundary, current index, and best length. The full text is unnecessary when only length is required. |
+| What if characters are Unicode? | The dictionary-based algorithm already works because Python string iteration produces Unicode characters. Clarify whether normalization or case folding is required. |
+
 ## Interview Explanation
 
 > I maintain a sliding window with no duplicate characters. A map stores each character's latest index. When the current character already appears inside the window, I jump the left boundary past that occurrence. Each character is processed once, so the solution runs in linear time.

@@ -115,6 +115,16 @@ The actual search is usually smaller because the Trie contains only paths for sa
 - Forgetting `index + 1`, which causes recursion never to progress.
 - Using slicing such as `word[1:]` on every recursive call; an index avoids repeatedly creating new strings.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| What if `*` means zero or more characters? | At `*`, either advance the pattern without moving in the Trie, or move to a child without advancing the pattern. Memoize `(node, pattern_index)` states to avoid repeating work. |
+| How would you delete a word? | Traverse to the word, clear its end marker, and prune childless nodes that no other word needs. This takes `O(L)`. |
+| How would you return every matching word? | Carry the built prefix during DFS, collect instead of returning after the first match, and include the output size in the complexity. |
+| Can wildcard search avoid repeated recursive work? | Memoize each `(node, index)` result. It helps when richer wildcard rules reach the same state more than once, although one `.` can still branch widely. |
+| Can you write the search without recursion? | Use a stack of `(node, index)` pairs. Push one next state for a letter or one state per child for a dot. |
+
 ## How to Explain It in an Interview
 
 > I will store words in a normal Trie. Exact letters follow one child. A dot can match any child, so search becomes DFS from that position. The base case checks both that the pattern is consumed and that the current node marks a complete word. Exact search is linear, while wildcard search can branch exponentially in the number of dots.

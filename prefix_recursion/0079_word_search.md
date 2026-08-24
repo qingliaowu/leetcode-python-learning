@@ -110,6 +110,16 @@ The no-reuse rule reduces actual branching after the first step, and mismatches 
 - Forgetting bounds checks before indexing the board.
 - Passing the same `index` to the next recursive call.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| Return the path of board coordinates. | Append each chosen coordinate, copy or return the path on success, and pop it while backtracking on failure. |
+| Search for many words in one board. | Build a Trie of all words and run board DFS once while following Trie paths; this is Word Search II. |
+| Allow diagonal movement. | Add four diagonal directions, increasing each call's possible branches from four to eight. |
+| Allow each cell to be reused up to `K` times. | Replace the temporary marker with a per-cell usage count and backtrack the count. |
+| How can you prune faster? | Reject words longer than the board, compare board/word character counts, or start from the rarer end of the word. |
+
 ## Interview Explanation
 
 > I try each cell as a starting point and use DFS to match one word character per step. I temporarily mark a matched cell so the current path cannot reuse it, explore four neighbors, and restore it while backtracking. The recursion depth is at most the word length.

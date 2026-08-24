@@ -89,6 +89,16 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Marking a node only when it leaves the queue, allowing duplicate clones.
 - Failing to handle `None` input.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| The graph may be disconnected and all nodes must be cloned. | Start BFS or DFS from every unvisited node supplied in the full node list. |
+| Edges have weights or labels. | Copy edge objects or metadata while connecting the already mapped clone nodes. |
+| Can you use DFS instead of BFS? | Yes. The same original-to-clone map prevents cycles; recursive DFS adds `O(V)` worst-case call-stack space. |
+| How do self-loops and duplicate edges behave? | Append the mapped clone for every original neighbor entry, including the node itself, preserving exact adjacency. |
+| Clone only nodes within distance `K`. | Add BFS depth to queue entries and stop expanding neighbors at depth `K`. |
+
 ## Interview Explanation
 
 > I run BFS over the original graph and keep a map from each original node to its single clone. When I inspect an edge, I create the neighbor clone if necessary, then connect the two cloned nodes. The map also prevents cycles from causing repeated work.

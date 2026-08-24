@@ -127,6 +127,15 @@ Let `M` be the number of values stored for the requested key and `S` the total n
 - Mixing histories from different keys.
 - Sorting on every `set` despite the increasing-timestamp guarantee.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| What if timestamps arrive out of order? | Plain append no longer preserves sorting. Insert with `bisect` in `O(M)` list time or use an ordered-tree data structure. |
+| Return every value in a timestamp range. | Use two binary searches to find the first and last relevant indexes, then return that slice. |
+| How would deletion work? | Define whether deletion removes history or adds a timestamped tombstone. A tombstone preserves historical queries. |
+| How would you make it persistent or thread-safe? | Store histories in durable storage and protect each read-update sequence with appropriate locking or transactional operations. |
+
 ## Interview Explanation
 
 > I map each key to a list of timestamp-value pairs. Set timestamps arrive in increasing order, so appending keeps each list sorted in constant average time. Get runs a modified binary search for the rightmost timestamp no greater than the request. It takes `O(log M)` time for `M` values under that key.

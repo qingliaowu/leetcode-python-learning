@@ -165,6 +165,15 @@ State which interpretation you are using. For most interviews, emphasizing that 
 - Appending expanded text in the wrong order.
 - Analyzing complexity using only encoded length while ignoring a much larger decoded output.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| What if the encoded input may be invalid? | Detect missing counts, unmatched brackets, illegal characters, and leftover stack entries; return an error instead of assuming validity. |
+| What if decoded output is too large for memory? | Produce characters incrementally with an iterator or writer, though nested repeats still require storing or replaying inner sections. |
+| Support escaped brackets such as `\[` as literal text. | Add an escape state so the character after `\` is appended without being treated as syntax. |
+| Can you solve it recursively? | Write a parser that decodes one bracket level and returns both its text and the next unread index. Recursion depth becomes nesting depth. |
+
 ## Interview Explanation
 
 > I scan once and use a stack for paused outer states. Digits build a possibly multi-digit repeat count. At `[`, I save the current characters and count, then start a fresh inner buffer. At `]`, I pop the outer state, repeat the completed inner text, and combine them. The stack correctly handles nested brackets because the latest opened level closes first.

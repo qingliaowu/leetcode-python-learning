@@ -145,6 +145,16 @@ This design makes both operations fast by doing the sum maintenance during inser
 - Storing totals only on final key nodes; every prefix node needs its own total.
 - Searching every descendant during `sum`, which throws away the benefit of cached totals.
 
+## Possible Follow-up Questions
+
+| Follow-up | Answer Direction |
+| --- | --- |
+| How would you delete a key? | Look up its old value, propagate the negative of that value through its Trie path, remove it from the exact-value map, and optionally prune unused nodes. |
+| Do negative values still work? | Yes. The update difference can be positive or negative, and every prefix total changes by that exact difference. |
+| How would you return the matching keys as well as their sum? | Walk to the prefix node and DFS through its descendants to collect complete keys. Runtime must include the number and length of returned keys. |
+| What if the same key is updated very frequently? | The difference technique already handles this in `O(L)` per update without rescanning other keys. Explain why storing the old exact value is essential. |
+| How would wildcard prefix queries work? | Search all Trie branches allowed by each wildcard and add the totals of the matching prefix nodes, taking care not to count one subtree twice. |
+
 ## How to Explain It in an Interview
 
 > I will store a running sum at every Trie node, so a prefix query only traverses the prefix and returns one number. To support replacing a key, I keep its current value in a hash map and propagate only `new minus old` along the key path. Both insert and sum are linear in the length of their input string.
