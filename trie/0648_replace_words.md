@@ -92,6 +92,15 @@ Now try `dog`. If root child `d` is missing, return `dog` immediately.
 
 If both `cat` and `c` are dictionary roots, traversal reaches `c` first and returns it. This correctly chooses the shortest root regardless of dictionary insertion order.
 
+## Why It Is Correct
+
+For each sentence word, the Trie walk visits prefixes from shortest to longest.
+The first node marked as a dictionary word must therefore represent the
+shortest valid root, so returning immediately makes the required replacement.
+If an edge is missing, no longer root can match because every longer prefix
+would need that same edge. If no end marker is reached, keeping the original
+word is correct.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -109,6 +118,22 @@ Then:
 - Output and temporary word storage also use space proportional to the sentence.
 
 The search often stops before reading a whole word because it finds a root or missing path early.
+
+## Assumptions to Say Aloud
+
+- Dictionary roots are nonempty and words use exact, case-sensitive characters.
+- The shortest matching root must be chosen when several roots match.
+- The sentence uses normal single-space separation; `split()` and `join()`
+  would normalize repeated whitespace.
+- Words without a matching root remain unchanged.
+
+## Edge Cases
+
+- An empty dictionary or sentence.
+- A sentence word is exactly a dictionary root.
+- Several roots match, such as `a`, `ab`, and `abc`.
+- No root matches a word.
+- Several dictionary roots share most of their path.
 
 ## Common Mistakes
 
@@ -143,6 +168,13 @@ result = "a a a b"
 ```
 
 The first complete marker always wins.
+
+## Test Aloud
+
+With roots `cat`, `bat`, and `rat`, walking `cattle` reaches the end marker after
+`cat` and stops before reading the remaining letters. `battery` similarly
+becomes `bat`, while `the` encounters a missing first edge and stays unchanged.
+Also test roots `a` and `aa`: `aaaa` must become the shorter root `a`.
 
 ## Check Your Understanding
 

@@ -86,3 +86,6 @@ if __name__ == "__main__":
         ["mouse", "mousepad"],
         ["mouse", "mousepad"],
     ]
+    assert solution.suggestedProducts([], "hi") == [[], []]
+    assert solution.suggestedProducts(["apple"], "az") == [["apple"], []]
+    assert solution.suggestedProducts(["a", "ab"], "") == []

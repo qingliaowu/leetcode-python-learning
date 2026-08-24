@@ -1,6 +1,6 @@
 # LeetCode Python Learning
 
-A beginner-first path from forgotten Python syntax to explaining coding and system design interview solutions clearly and confidently.
+A beginner-first path from forgotten Python syntax to coding, system design, AI engineering, and Forward Deployed Engineer interviews.
 
 This repository assumes nothing. Python syntax, algorithm ideas, system architecture, complexity, edge cases, tests, and interview reasoning are explained in plain language.
 
@@ -9,11 +9,13 @@ This repository assumes nothing. Python syntax, algorithm ideas, system architec
 | Material | Count | Purpose |
 | --- | ---: | --- |
 | Python 3 lessons | 11 | Relearn Python from `print` through recursion and Big-O |
-| Coding interview problems | 26 | Practice the patterns most often used in coding interviews |
-| System design case studies | 1 | Design a production image-generation platform from requirements through operations |
-| Guided self-check questions | 54 | Transfer each coding or design pattern, then reveal a detailed answer |
+| Coding interview problems | 33 | Practice core patterns plus an FDE-oriented pattern extension |
+| System design lessons | 4 | Learn reusable patterns and design rate limiting, URL shortening, and image generation |
+| FDE interview lessons | 4 | Prepare role knowledge, customer solutioning, cloud architecture, and behavioral stories |
+| AI engineering lessons | 3 | Learn LLM products, RAG, model delivery, evaluation, and monitoring |
+| Guided self-check questions | 88 | Transfer coding, design, AI, and customer skills, then reveal a detailed answer |
 | Interview study schedules | 5 | Choose a 5-, 10-, 14-, 30-, or 60-day preparation plan |
-| Course guides | 11 | Navigate Python foundations, nine coding topics, and system design |
+| Course guides | 14 | Navigate Python, ten coding topics, system design, FDE, and AI engineering |
 | Progress tracker | 1 | Record lessons, problem scores, review dates, and mock results |
 | External packages | 0 | Everything runs with the Python standard library |
 
@@ -28,6 +30,8 @@ Choose the row that sounds most like you:
 | "My interview is in 5-60 days." | [Choose an Interview Study Plan](./INTERVIEW_STUDY_PLANS.md) |
 | "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
 | "I need to prepare for a system design interview." | [System Design for Beginners](./system_design/) |
+| "I am targeting a Forward Deployed Engineer role." | [FDE Interview Track](./fde_interview/) |
+| "I need AI engineering fundamentals." | [AI Engineering for Beginners](./ai_engineering/) |
 | "I want one checklist for everything." | [Open the Learning Progress Tracker](./PROGRESS_TRACKER.md) |
 | "I am ready to solve problems." | [Interview Roadmap](#interview-roadmap) |
 
@@ -92,9 +96,15 @@ Repeat difficult problems after one day and again after one week.
 
 ### Phase 4: Practice System Design
 
-If your target role includes system design, study [Design an Image-Generation Platform](./system_design/image_generation_platform.md). It shows how to turn a broad product question into requirements, estimates, APIs, durable state, architecture, deep dives, failures, metrics, and tradeoffs.
+If your target role includes system design, begin with [Foundational System Design Patterns](./system_design/foundational_patterns.md), then practice the [rate limiter](./system_design/rate_limiter.md), [URL shortener](./system_design/url_shortener.md), and [image-generation platform](./system_design/image_generation_platform.md).
 
-Run the case aloud in 45 minutes. Redraw it without notes, change one assumption, and use the [system design scorecard](./system_design/image_generation_platform.md#28-system-design-mock-scorecard) to find the next area to repair.
+Run each case aloud in 45 minutes. Redraw it without notes, change one assumption, and use the [system design scorecard](./system_design/image_generation_platform.md#28-system-design-mock-scorecard) to find the next area to repair.
+
+### Phase 5: Add FDE and AI Engineering
+
+For a customer-facing engineering role, use the [FDE Interview Track](./fde_interview/) to practice role mapping, customer discovery, cloud architecture, and truthful behavioral stories. Complete [AI Engineering for Beginners](./ai_engineering/) when the role includes LLM, retrieval, model delivery, or evaluation depth.
+
+The FDE extension also adds seven coding patterns after the original 15-problem core. Keep the core first when time is short.
 
 ## What Each Lesson Contains
 
@@ -103,7 +113,8 @@ Run the case aloud in 45 minutes. Redraw it without notes, change one assumption
 | Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, interview explanation, follow-ups, and two self-checks with detailed answers |
 | Solution `.py` | Readable Python 3 code, focused comments, type hints, and executable assertions |
 | Topic `README.md` | Shared navigation, prerequisites, recommended order, pattern recognition, and a move-on checkpoint |
-| System design case | Requirements, assumptions, estimates, API and data model, architecture, production deep dives, failures, testing, follow-ups, scorecard, and two transfer designs |
+| System design lesson | Requirements, assumptions, estimates, architecture patterns, failures, testing, follow-ups, scorecard, and detailed transfer designs |
+| FDE or AI lesson | Plain-language concepts, decision frameworks, customer context, production risks, mock scorecards, and detailed exercises |
 
 ## Core 15-Problem Checklist
 
@@ -127,22 +138,25 @@ This requested interview set is fully included. Use the links to open each begin
 
 ## Interview Roadmap
 
-The order below moves from common collection patterns toward specialized structures, dynamic programming, and a production system design case.
+The order below moves from common collection patterns toward specialized structures, production architecture, and customer-facing engineering.
 
 | Order | Topic | Lessons | Guide |
 | ---: | --- | ---: | --- |
-| 1 | Arrays, strings, hash maps, sliding window | 3 | [Open](./arrays_strings/) |
-| 2 | Stacks and queues | 1 | [Open](./stacks_queues/) |
-| 3 | Intervals, sorting, binary search | 4 | [Open](./intervals_search/) |
-| 4 | Data structure design | 2 | [Open](./design_data_structures/) |
-| 5 | Trees and graphs | 3 | [Open](./trees_graphs/) |
-| 6 | Heaps and top-k | 3 | [Open](./heaps/) |
-| 7 | Prefix sums and backtracking | 2 | [Open](./prefix_recursion/) |
-| 8 | Trie | 5 | [Open](./trie/) |
-| 9 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
-| 10 | System design | 1 | [Open](./system_design/) |
+| 1 | Arrays, strings, hash maps, sliding window, two pointers | 4 | [Open](./arrays_strings/) |
+| 2 | Stacks and queues | 2 | [Open](./stacks_queues/) |
+| 3 | Linked lists | 1 | [Open](./linked_lists/) |
+| 4 | Intervals, sorting, binary search | 5 | [Open](./intervals_search/) |
+| 5 | Data structure design | 2 | [Open](./design_data_structures/) |
+| 6 | Trees and graphs | 6 | [Open](./trees_graphs/) |
+| 7 | Heaps and top-k | 3 | [Open](./heaps/) |
+| 8 | Prefix sums and backtracking | 2 | [Open](./prefix_recursion/) |
+| 9 | Trie | 5 | [Open](./trie/) |
+| 10 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
+| 11 | System design | 4 | [Open](./system_design/) |
+| 12 | FDE interview preparation | 4 | [Open](./fde_interview/) |
+| 13 | AI engineering | 3 | [Open](./ai_engineering/) |
 
-## Complete Problem Index
+## Complete Learning Index
 
 ### Arrays, Strings, and Hash Maps
 
@@ -151,12 +165,20 @@ The order below moves from common collection patterns toward specialized structu
 | 1 | [Two Sum](./arrays_strings/0001_two_sum.md) | Complement hash map | [Python](./arrays_strings/0001_two_sum.py) |
 | 49 | [Group Anagrams](./arrays_strings/0049_group_anagrams.md) | Immutable grouping key | [Python](./arrays_strings/0049_group_anagrams.py) |
 | 3 | [Longest Substring Without Repeating Characters](./arrays_strings/0003_longest_substring_without_repeating_characters.md) | Sliding window | [Python](./arrays_strings/0003_longest_substring_without_repeating_characters.py) |
+| 15 | [3Sum](./arrays_strings/0015_3sum.md) | Sorting and two pointers | [Python](./arrays_strings/0015_3sum.py) |
 
 ### Stacks and Queues
 
 | LeetCode | Problem | Main Pattern | Solution |
 | ---: | --- | --- | --- |
 | 394 | [Decode String](./stacks_queues/0394_decode_string.md) | Stack of paused nested states | [Python](./stacks_queues/0394_decode_string.py) |
+| 739 | [Daily Temperatures](./stacks_queues/0739_daily_temperatures.md) | Monotonic decreasing stack | [Python](./stacks_queues/0739_daily_temperatures.py) |
+
+### Linked Lists
+
+| LeetCode | Problem | Main Pattern | Solution |
+| ---: | --- | --- | --- |
+| 206 | [Reverse Linked List](./linked_lists/0206_reverse_linked_list.md) | Three-pointer rewiring | [Python](./linked_lists/0206_reverse_linked_list.py) |
 
 ### Intervals and Binary Search
 
@@ -166,6 +188,7 @@ The order below moves from common collection patterns toward specialized structu
 | 253 | [Meeting Rooms II](./intervals_search/0253_meeting_rooms_ii.md) | Min-heap of end times | [Python](./intervals_search/0253_meeting_rooms_ii.py) |
 | 704 | [Binary Search](./intervals_search/0704_binary_search.md) | Discard half of a sorted array | [Python](./intervals_search/0704_binary_search.py) |
 | 33 | [Search in Rotated Sorted Array](./intervals_search/0033_search_in_rotated_sorted_array.md) | Modified binary search | [Python](./intervals_search/0033_search_in_rotated_sorted_array.py) |
+| 875 | [Koko Eating Bananas](./intervals_search/0875_koko_eating_bananas.md) | Binary search on the answer | [Python](./intervals_search/0875_koko_eating_bananas.py) |
 
 ### Data Structure Design
 
@@ -178,8 +201,11 @@ The order below moves from common collection patterns toward specialized structu
 
 | LeetCode | Problem | Main Pattern | Solution |
 | ---: | --- | --- | --- |
+| 102 | [Binary Tree Level Order Traversal](./trees_graphs/0102_binary_tree_level_order_traversal.md) | Tree BFS by level | [Python](./trees_graphs/0102_binary_tree_level_order_traversal.py) |
 | 200 | [Number of Islands](./trees_graphs/0200_number_of_islands.md) | Grid DFS | [Python](./trees_graphs/0200_number_of_islands.py) |
+| 994 | [Rotting Oranges](./trees_graphs/0994_rotting_oranges.md) | Multi-source BFS | [Python](./trees_graphs/0994_rotting_oranges.py) |
 | 133 | [Clone Graph](./trees_graphs/0133_clone_graph.md) | BFS and clone map | [Python](./trees_graphs/0133_clone_graph.py) |
+| 684 | [Redundant Connection](./trees_graphs/0684_redundant_connection.md) | Union-find | [Python](./trees_graphs/0684_redundant_connection.py) |
 | 207 | [Course Schedule](./trees_graphs/0207_course_schedule.md) | Topological sort | [Python](./trees_graphs/0207_course_schedule.py) |
 
 ### Heaps and Top-K
@@ -217,13 +243,33 @@ The order below moves from common collection patterns toward specialized structu
 
 ### System Design
 
-| Case Study | Main Production Concerns |
+| Lesson | Main Interview Skill |
 | --- | --- |
+| [Foundational System Design Patterns](./system_design/foundational_patterns.md) | Requirements, estimates, APIs, storage, caching, queues, reliability, security, observability, and cost |
+| [Design a Rate Limiter](./system_design/rate_limiter.md) | Algorithms, atomic counters, distributed enforcement, hot keys, and fail-open versus fail-closed behavior |
+| [Design a URL Shortener](./system_design/url_shortener.md) | Key generation, redirects, caching, storage, abuse prevention, analytics, and expiration |
 | [Design an Image-Generation Platform](./system_design/image_generation_platform.md) | Long-running jobs, safety, idempotency, billing, scheduling, tenant isolation, storage, model rollout, evaluation, observability, and cost |
+
+### FDE Interview Preparation
+
+| Lesson | Main Interview Skill |
+| --- | --- |
+| [Role and Interview Map](./fde_interview/01_role_and_interview_map.md) | Translate an ambiguous role description into evidence you must demonstrate |
+| [Customer Discovery and Solutioning](./fde_interview/02_customer_discovery_and_solutioning.md) | Discover the real outcome, constraints, stakeholders, risks, and acceptance test |
+| [Cloud Architecture Fundamentals](./fde_interview/03_cloud_architecture_fundamentals.md) | Explain portable cloud building blocks and their tradeoffs without hiding behind service names |
+| [Behavioral Story Workbook](./fde_interview/04_behavioral_story_workbook.md) | Build truthful STAR-L stories about ownership, ambiguity, conflict, failure, and customer impact |
+
+### AI Engineering
+
+| Lesson | Main Interview Skill |
+| --- | --- |
+| [LLM Product Fundamentals](./ai_engineering/01_llm_product_fundamentals.md) | Choose prompting, retrieval, tools, or fine-tuning and place policy around probabilistic output |
+| [Retrieval-Augmented Generation](./ai_engineering/02_rag_systems.md) | Design ingestion, tenant-safe retrieval, citations, evaluation, and failure handling |
+| [Model Delivery and Evaluation](./ai_engineering/03_model_delivery_and_evaluation.md) | Version, test, release, monitor, roll back, and control the cost of model changes |
 
 ## Test Everything
 
-Each Python file contains assertions for normal examples and important edge cases. The verifier first checks required root files, topic guides, the system design case, filename conventions, and every Markdown/Python lesson pair. It then runs all examples in learning order:
+Each Python file contains assertions for normal examples and important edge cases. The verifier first checks required root files, topic guides, documentation lessons, filename conventions, and every Markdown/Python lesson pair. It then runs all examples in learning order:
 
 ```bash
 python3 verify_solutions.py
@@ -232,13 +278,14 @@ python3 verify_solutions.py
 A successful run ends with:
 
 ```text
-37/37 Python files passed.
+44/44 Python files passed.
 ```
 
 Run one lesson or solution directly while studying:
 
 ```bash
 python3 python_basics/05_dictionaries_and_sets.py
+python3 linked_lists/0206_reverse_linked_list.py
 python3 trie/0208_implement_trie.py
 python3 dynamic_programming/0322_coin_change.py
 ```
@@ -248,16 +295,19 @@ python3 dynamic_programming/0322_coin_change.py
 ```text
 .
 ├── python_basics/          # 11 beginner Python lessons
-├── arrays_strings/         # hash maps and sliding window
-├── stacks_queues/          # nested parsing with a stack
-├── intervals_search/       # intervals, sorting, binary search
+├── arrays_strings/         # hash maps, sliding window, two pointers
+├── stacks_queues/          # nested parsing and monotonic stacks
+├── linked_lists/           # pointer updates on linked nodes
+├── intervals_search/       # intervals and two forms of binary search
 ├── design_data_structures/ # stateful APIs and operation guarantees
-├── trees_graphs/           # DFS, BFS, topological sort, graph copying
+├── trees_graphs/           # DFS, BFS, union-find, graph copying
 ├── heaps/                  # top-k and multiway merging
 ├── prefix_recursion/       # prefix sums and backtracking
 ├── trie/                   # prefix-tree design and applications
 ├── dynamic_programming/    # saved-state recurrence patterns
-├── system_design/          # production architecture case studies
+├── system_design/          # foundations and production design cases
+├── fde_interview/          # role, customer, cloud, and behavioral skills
+├── ai_engineering/         # LLM, RAG, delivery, and evaluation skills
 ├── INTERVIEW_PLAYBOOK.md   # solve-aloud interview process
 ├── INTERVIEW_STUDY_PLANS.md # 5/10/14/30/60-day preparation tracks
 ├── PROGRESS_TRACKER.md     # lesson, review, and mock checklist
@@ -280,7 +330,7 @@ Keep new material consistent with the beginner-first style:
 8. Add the problem to its topic guide, the progress tracker, this index, and the ordered `COURSE_SECTIONS` entry in `verify_solutions.py`.
 9. Run `python3 verify_solutions.py` to check naming, file pairing, and assertions.
 
-## Adding Another System Design Case
+## Adding Another Documentation Lesson
 
 1. Begin with the customer, outcome, scope, and explicit assumptions.
 2. Estimate request rate, concurrent work, storage, and dominant cost.
@@ -289,7 +339,7 @@ Keep new material consistent with the beginner-first style:
 5. Deep-dive on the hardest reliability, security, and scaling decisions.
 6. Explain policy, tenant isolation, observability, evaluation, and operations where relevant.
 7. Include failures, edge cases, tradeoffs, an interview summary, follow-ups, and two transfer exercises with detailed answers.
-8. Add the case to its course guide, this index, the progress tracker, and `SYSTEM_DESIGN_SECTIONS` in `verify_solutions.py`.
+8. Add the lesson to its course guide, this index, the progress tracker, and `DOCUMENTATION_SECTIONS` in `verify_solutions.py`.
 9. Run `python3 verify_solutions.py` and the Markdown integrity checks.
 
 Clarity is the goal. A beginner should understand not only what the code or architecture does, but why each step and design decision exists.

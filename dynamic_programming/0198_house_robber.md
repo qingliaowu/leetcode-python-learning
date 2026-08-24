@@ -119,6 +119,13 @@ Let `N` be the number of houses.
 
 An explicit `dp` list would use `O(N)` space. The two-variable version keeps the same time and answer with less memory.
 
+## Assumptions to Say Aloud
+
+- House amounts are nonnegative.
+- Two adjacent houses cannot both be selected.
+- The answer is the maximum amount, not the selected indexes.
+- Choosing no house is allowed for an empty list, and the input is not modified.
+
 ## Edge Cases
 
 - Empty list: return `0`.

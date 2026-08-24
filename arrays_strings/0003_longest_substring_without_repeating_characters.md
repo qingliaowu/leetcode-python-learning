@@ -61,12 +61,36 @@ The check `last_seen[char] >= left` matters. An old occurrence before `left` is 
 
 Without the `>= left` condition, the last step would incorrectly move `left` backward from `2` to `1`.
 
+## Why It Is Correct
+
+At every `right` index, `left` moves past the previous copy of the new
+character only when that copy is inside the current window. The window
+`s[left:right + 1]` therefore has no duplicate characters. It is also the
+longest valid window ending at `right`, because moving `left` farther would
+only shorten it. Taking the maximum over every ending index produces the
+longest valid substring in the whole string.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
 
 - Time: `O(N)`. `right` visits every character once, and `left` only moves forward.
 - Space: `O(U)`, where `U` is the number of distinct characters stored in the dictionary.
+
+## Assumptions to Say Aloud
+
+- A substring must be continuous; characters cannot be skipped.
+- Character comparison is case-sensitive, so `A` and `a` are different.
+- The answer is a length, not the substring itself.
+- An empty string is allowed and has answer `0`.
+
+## Edge Cases
+
+- The empty string.
+- One character or a string made of one repeated character.
+- Every character is unique.
+- A stale duplicate outside the current window, such as the final `a` in
+  `abba`; `left` must never move backward.
 
 ## Common Mistakes
 
@@ -88,6 +112,13 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I maintain a sliding window with no duplicate characters. A map stores each character's latest index. When the current character already appears inside the window, I jump the left boundary past that occurrence. Each character is processed once, so the solution runs in linear time.
+
+## Test Aloud
+
+For `abba`, the first three characters move `left` to index `2` and keep the
+best length at `2`. At the final `a`, its previous index `0` is outside the
+current window, so `left` stays at `2`. The final answer remains `2`. Also test
+`""`, which skips the loop and returns the initialized value `0`.
 
 ## Check Your Understanding
 

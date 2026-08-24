@@ -99,6 +99,15 @@ Reading `"mouse"` simply visits these nodes and returns their saved lists.
 
 If the next typed character were `"z"`, the `mousez` path would be missing. That result and every longer result would be `[]`.
 
+## Why It Is Correct
+
+Products are inserted in lexicographic order. Every product passing through a
+Trie node shares that node's prefix, so the first three products stored there
+are exactly the three lexicographically smallest matches for that prefix.
+During search, following each typed character reaches the node for the current
+prefix and returns its cached list. Once a prefix path is missing, no longer
+prefix can match, so all remaining answers are correctly empty.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -117,6 +126,21 @@ Then:
 - Space: `O(T)` Trie nodes. Each node saves at most three product references, so this is still `O(T)`.
 
 String comparisons during sorting can inspect multiple characters, but `O(N log N)` is the usual interview-level statement unless the interviewer requests a tighter analysis.
+
+## Assumptions to Say Aloud
+
+- Product names are distinct and compared with Python's lexicographic order.
+- At most three suggestions are needed for each nonempty typed prefix.
+- This implementation sorts `products` in place.
+- The result contains one inner list for every character in `searchWord`.
+
+## Edge Cases
+
+- No products or an empty search word.
+- Fewer than three products match a prefix.
+- A product name exactly equals the current prefix.
+- A short prefix matches, but a later character makes the path fail.
+- More than three products share a long prefix.
 
 ## Common Mistakes
 
@@ -148,6 +172,13 @@ Think through these cases:
 - No product matches the first character.
 - One product is itself a prefix of another product.
 - All products share a long prefix.
+
+## Test Aloud
+
+For the sample products and `mouse`, the sorted products beginning with `m`
+start with `mobile`, `moneypot`, and `monitor`, so those are cached first.
+At prefix `mou`, only `mouse` and `mousepad` remain. Also test search word `z`:
+the first path is absent, so its only suggestion list is empty.
 
 ## Check Your Understanding
 

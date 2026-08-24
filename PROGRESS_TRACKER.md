@@ -1,6 +1,6 @@
 # Learning Progress Tracker
 
-[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md) | [Run checks](./verify_solutions.py)
+[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md) | [Run checks](./verify_solutions.py)
 
 Use this page with the study plan matching your deadline. A checked box means you completed the work without copying the answer. Record a problem score using the [0-4 scoring guide](./INTERVIEW_STUDY_PLANS.md#score-every-problem).
 
@@ -37,12 +37,20 @@ Use these columns consistently:
 | [1 Two Sum](./arrays_strings/0001_two_sum.md) | Core | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 | [49 Group Anagrams](./arrays_strings/0049_group_anagrams.md) | Core | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 | [3 Longest Substring](./arrays_strings/0003_longest_substring_without_repeating_characters.md) | Core | [ ] | [ ] | [ ] | [ ] |  /4 |  |
+| [15 3Sum](./arrays_strings/0015_3sum.md) | FDE Extension | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 
 ### Stacks and Queues
 
 | Problem | Track | Learn | Solve | Checks | Follow-up | Score | Next Review |
 | --- | --- | :---: | :---: | :---: | :---: | :---: | --- |
 | [394 Decode String](./stacks_queues/0394_decode_string.md) | Core | [ ] | [ ] | [ ] | [ ] |  /4 |  |
+| [739 Daily Temperatures](./stacks_queues/0739_daily_temperatures.md) | FDE Extension | [ ] | [ ] | [ ] | [ ] |  /4 |  |
+
+### Linked Lists
+
+| Problem | Track | Learn | Solve | Checks | Follow-up | Score | Next Review |
+| --- | --- | :---: | :---: | :---: | :---: | :---: | --- |
+| [206 Reverse Linked List](./linked_lists/0206_reverse_linked_list.md) | FDE Extension | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 
 ### Intervals and Binary Search
 
@@ -52,6 +60,7 @@ Use these columns consistently:
 | [253 Meeting Rooms II](./intervals_search/0253_meeting_rooms_ii.md) | Expansion | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 | [704 Binary Search](./intervals_search/0704_binary_search.md) | Core | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 | [33 Search Rotated Array](./intervals_search/0033_search_in_rotated_sorted_array.md) | Expansion | [ ] | [ ] | [ ] | [ ] |  /4 |  |
+| [875 Koko Eating Bananas](./intervals_search/0875_koko_eating_bananas.md) | FDE Extension | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 
 ### Data Structure Design
 
@@ -64,8 +73,11 @@ Use these columns consistently:
 
 | Problem | Track | Learn | Solve | Checks | Follow-up | Score | Next Review |
 | --- | --- | :---: | :---: | :---: | :---: | :---: | --- |
+| [102 Tree Level Order](./trees_graphs/0102_binary_tree_level_order_traversal.md) | FDE Extension | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 | [200 Number of Islands](./trees_graphs/0200_number_of_islands.md) | Core | [ ] | [ ] | [ ] | [ ] |  /4 |  |
+| [994 Rotting Oranges](./trees_graphs/0994_rotting_oranges.md) | FDE Extension | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 | [133 Clone Graph](./trees_graphs/0133_clone_graph.md) | Core | [ ] | [ ] | [ ] | [ ] |  /4 |  |
+| [684 Redundant Connection](./trees_graphs/0684_redundant_connection.md) | FDE Extension | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 | [207 Course Schedule](./trees_graphs/0207_course_schedule.md) | Core | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 
 ### Heaps and Top-K
@@ -103,10 +115,13 @@ Use these columns consistently:
 
 ## System Design
 
-Use the [10-point system design scorecard](./system_design/image_generation_platform.md#28-system-design-mock-scorecard). A complete attempt includes a normal request, duplicate request, unsafe output, worker failure, traffic spike, and changed assumption.
+Learn the [foundational patterns](./system_design/foundational_patterns.md), then use the [10-point system design scorecard](./system_design/image_generation_platform.md#28-system-design-mock-scorecard). A complete case attempt includes a normal request, duplicate or repeated request, dependency failure, traffic spike, security concern, and changed assumption.
 
 | Case | Clarify | Estimate | Architecture | Deep Dives | Failure Test | Score | Next Review |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | --- |
+| [Foundational Patterns](./system_design/foundational_patterns.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
+| [Rate Limiter](./system_design/rate_limiter.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
+| [URL Shortener](./system_design/url_shortener.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
 | [Image-Generation Platform](./system_design/image_generation_platform.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
 
 ### System Design Mock Log
@@ -117,6 +132,23 @@ Use the [10-point system design scorecard](./system_design/image_generation_plat
 | 2 |  |  |  |  |  |
 | 3 |  |  |  |  |  |
 | 4 |  |  |  |  |  |
+
+## FDE Interview Preparation
+
+| Lesson | Read | Complete Exercise | Explain Without Notes | Next Review |
+| --- | :---: | :---: | :---: | --- |
+| [Role and Interview Map](./fde_interview/01_role_and_interview_map.md) | [ ] | [ ] | [ ] |  |
+| [Customer Discovery and Solutioning](./fde_interview/02_customer_discovery_and_solutioning.md) | [ ] | [ ] | [ ] |  |
+| [Cloud Architecture Fundamentals](./fde_interview/03_cloud_architecture_fundamentals.md) | [ ] | [ ] | [ ] |  |
+| [Behavioral Story Workbook](./fde_interview/04_behavioral_story_workbook.md) | [ ] | [ ] | [ ] |  |
+
+## AI Engineering
+
+| Lesson | Read | Complete Exercise | Explain Without Notes | Next Review |
+| --- | :---: | :---: | :---: | --- |
+| [LLM Product Fundamentals](./ai_engineering/01_llm_product_fundamentals.md) | [ ] | [ ] | [ ] |  |
+| [Retrieval-Augmented Generation](./ai_engineering/02_rag_systems.md) | [ ] | [ ] | [ ] |  |
+| [Model Delivery and Evaluation](./ai_engineering/03_model_delivery_and_evaluation.md) | [ ] | [ ] | [ ] |  |
 
 ## Coding Mock Interview Log
 
@@ -142,6 +174,8 @@ Use the [45-minute format and 10-point scorecard](./INTERVIEW_STUDY_PLANS.md#how
 - [ ] I test normal, smallest, boundary, duplicate, and missing-result cases when relevant.
 - [ ] I justify time and extra space in complete sentences.
 - [ ] I can adapt a known solution to one follow-up requirement.
-- [ ] If my role includes system design, I can clarify, estimate, draw, deep-dive, and failure-test the image platform in 45 minutes.
+- [ ] If my role includes system design, I can clarify, estimate, draw, deep-dive, and failure-test at least one case in 45 minutes.
 - [ ] I can explain idempotency, asynchronous work, tenant isolation, and useful outcome metrics in plain language.
+- [ ] If I am targeting an FDE role, I can discover a customer's outcome, propose a scoped solution, and tell four truthful STAR-L stories.
+- [ ] If the role includes AI, I can describe retrieval, evaluation, model rollout, monitoring, safety, and cost tradeoffs.
 - [ ] I can recover calmly after a mistake or hint.

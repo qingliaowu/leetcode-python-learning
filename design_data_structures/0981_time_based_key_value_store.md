@@ -109,6 +109,15 @@ Let `M` be the number of values stored for the requested key and `S` the total n
 - `get`: `O(log M)` time because binary search halves one key's history.
 - Extra stored space: `O(S)` across all keys.
 
+## Assumptions to Say Aloud
+
+- Timestamps supplied to `set` are strictly increasing for each key, so each
+  history list stays sorted without insertion work.
+- `get` returns the value at the greatest timestamp less than or equal to the
+  query timestamp.
+- A missing key or a query earlier than its first value returns `""`.
+- Different keys have independent histories.
+
 ## Edge Cases
 
 - Missing key: return `""`.

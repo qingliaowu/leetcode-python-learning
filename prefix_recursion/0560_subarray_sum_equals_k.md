@@ -84,12 +84,36 @@ For `[1, 1, 1]`, `k = 2`:
 
 For `[1, -1, 0]` and `k = 0`, prefix sum `0` appears multiple times. Its stored count lets the algorithm count all three valid subarrays.
 
+## Why It Is Correct
+
+For a subarray ending at the current index to sum to `k`, its earlier prefix
+must equal `running_sum - k`. `prefix_counts` stores how many such earlier
+prefixes exist, so adding that count includes every valid start for the current
+end. The current prefix is saved only afterward, which prevents counting an
+empty subarray. Summing this contribution at every ending index counts every
+valid continuous subarray exactly once.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
 
 - Time: `O(N)` average because each element performs constant-time dictionary work.
 - Space: `O(N)` for prefix sums in the worst case.
+
+## Assumptions to Say Aloud
+
+- A subarray is continuous and may contain negative values or zeros.
+- The answer is the number of index ranges, not the ranges themselves.
+- Different ranges count separately even when they contain equal values.
+- The input list is not modified.
+
+## Edge Cases
+
+- An empty list.
+- `k = 0`.
+- Negative numbers, which prevent a normal sliding-window solution.
+- Several zero-sum ranges end at the same index.
+- The entire array is one valid subarray.
 
 ## Common Mistakes
 
@@ -112,6 +136,13 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > A subarray sum is the difference between two prefix sums. At each position, I need an earlier prefix equal to the current sum minus `k`. A hash map stores how many times each earlier sum occurred, so I can count all matching starts in constant average time and finish in `O(N)`.
+
+## Test Aloud
+
+For `[1, -1, 0]` and `k = 0`, prefix sum `0` is initially recorded once.
+After `1`, no range is added. After `-1`, the running sum is `0`, so one range
+is found. At the final `0`, prefix sum `0` has appeared twice, adding two more
+ranges. The result is `3`. An empty list performs no updates and returns `0`.
 
 ## Check Your Understanding
 

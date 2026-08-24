@@ -47,3 +47,5 @@ if __name__ == "__main__":
     )
     assert normalized == expected
     assert solution.groupAnagrams([""]) == [[""]]
+    assert solution.groupAnagrams([]) == []
+    assert solution.groupAnagrams(["a", "a"]) == [["a", "a"]]

@@ -125,6 +125,15 @@ app:   2
 total: 4
 ```
 
+## Why It Is Correct
+
+Each Trie node's `total` equals the sum of current values for all complete keys
+passing through that prefix. A new key contributes its full value. Replacing a
+key contributes only `new - old`, which removes the old contribution and adds
+the new one without double-counting. That difference is applied to the root
+and every node on the key path, so the invariant remains true. Following a
+prefix and returning its cached total is therefore correct.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -136,6 +145,23 @@ Let `L` be the key length and `P` be the prefix length.
 - Space: `O(T)` for Trie nodes plus `O(K)` for exact key values, where `T` is total inserted character count and `K` is the number of distinct keys.
 
 This design makes both operations fast by doing the sum maintenance during insertion.
+
+## Assumptions to Say Aloud
+
+- Inserting an existing key replaces its value rather than creating another
+  entry.
+- Prefix matching is exact and case-sensitive.
+- A missing prefix has sum `0`.
+- This implementation allows an empty prefix, whose answer is the sum of every
+  stored key.
+
+## Edge Cases
+
+- Replace a key with a larger, smaller, or zero value.
+- One key is a prefix of another.
+- Query a missing prefix.
+- Query the complete key as a prefix.
+- Query the empty prefix if the contract permits it.
 
 ## Common Mistakes
 
@@ -173,6 +199,13 @@ insert("car", 1)
 sum("ca")       -> 6
 sum("dog")      -> 0
 ```
+
+## Test Aloud
+
+Insert `apple = 3`; every node on `apple` receives `+3`, so `sum('ap')` is `3`.
+Insert `app = 2`; the shared nodes receive `+2`, producing `5`. Replacing
+`apple` with `2` applies a difference of `-1`, so the same prefix total becomes
+`4` instead of incorrectly becoming `7`.
 
 ## Check Your Understanding
 

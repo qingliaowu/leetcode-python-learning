@@ -1,12 +1,12 @@
 # Interview Problem-Solving Playbook
 
-[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md)
+[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md)
 
 An interview is not only a test of whether the final code works. The interviewer is also evaluating how you clarify uncertainty, improve an initial idea, explain tradeoffs, and verify your own work.
 
 Use this process for every problem in the repository.
 
-For architecture interviews, use [System Design for Beginners](./system_design/). It applies the same habits of stating assumptions, explaining tradeoffs, and testing edge cases to a production image-generation platform.
+For architecture interviews, use [System Design for Beginners](./system_design/). It applies the same habits of stating assumptions, explaining tradeoffs, and testing failures to foundational patterns and three production cases. For customer-facing engineering interviews, add the [FDE Interview Track](./fde_interview/) and [AI Engineering for Beginners](./ai_engineering/) where relevant.
 
 If you have a fixed interview date, first choose the matching [5-, 10-, 14-, 30-, or 60-day study plan](./INTERVIEW_STUDY_PLANS.md). The schedule tells you when to learn, review, and run mock interviews; this playbook tells you how to perform each attempt.
 
@@ -73,16 +73,23 @@ Use clues in the question rather than memorizing code:
 | Two Sum | Pair reaches a target | Map earlier values to indexes; current item only pairs with earlier items | `O(N)` |
 | Group Anagrams | Group equivalent rearrangements | Sorted characters form one immutable group key | `O(N * K log K)` |
 | Longest Substring | Longest continuous valid range | Sliding window contains no duplicate; left never moves backward | `O(N)` |
+| 3Sum | Find unique triples reaching zero | Sort, fix one value, move two pointers, and skip duplicate values | `O(N^2)` |
 | Decode String | Nested count-and-bracket encoding | Stack saves the outer text and repeat count until inner text closes | Output-dependent |
+| Daily Temperatures | Next warmer value to the right | Stack contains unresolved indexes with decreasing temperatures | `O(N)` |
+| Reverse Linked List | Reverse every next pointer | `previous` is the head of the already reversed prefix | `O(N)` |
 | Time Based Key-Value Store | Historical value at or before a time | Each key has sorted history; binary search for rightmost valid time | `O(log M)` get |
 | LRU Cache | Constant-time lookup and recency eviction | Map finds nodes; doubly linked list orders least to most recent | `O(1)` average operations |
+| Tree Level Order | Return tree values grouped by depth | Queue holds one complete frontier; process its saved size | `O(N)` |
 | Number of Islands | Count connected grid regions | Each DFS marks one complete component visited | `O(R * C)` |
+| Rotting Oranges | Simultaneous shortest-time spread | Queue starts with every source; one BFS layer is one minute | `O(R * C)` |
 | Course Schedule | Directed prerequisites may cycle | Queue zero-in-degree nodes; completed count proves acyclic graph | `O(V + E)` |
 | Clone Graph | Deep-copy a cyclic structure | One map entry and one clone per original node | `O(V + E)` |
+| Redundant Connection | Edge creates an undirected cycle | Union-find tracks components; same-root endpoints reveal the cycle | Near `O(E)` |
 | Merge Intervals | Combine overlapping ranges | After sorting, compare only with the last merged interval | `O(N log N)` |
 | Meeting Rooms II | Maximum simultaneous intervals | Min-heap exposes the earliest reusable room | `O(N log N)` |
 | Binary Search | Find target in sorted data | Inclusive range contains every possible target index | `O(log N)` |
 | Rotated Array Search | Sorted data, rotation, logarithmic requirement | At least one half around the midpoint is sorted | `O(log N)` |
+| Koko Eating Bananas | Minimum value satisfying a deadline | Feasibility is monotonic; keep the first feasible speed | `O(N log M)` |
 | Kth Largest | Keep only the best `k` values | Size-`k` min-heap contains the largest values seen | `O(N log K)` |
 | Top K Frequent | Rank values by occurrence count | Count first; size-`k` heap keeps highest frequencies | `O(N log K)` |
 | Merge K Lists | Merge several sorted streams | Heap holds one smallest available node per list | `O(N log K)` |

@@ -68,12 +68,36 @@ Input after sorting: `[[1, 3], [2, 6], [8, 10], [15, 18]]`
 
 For a contained interval such as `[2, 3]` after `[1, 10]`, `max(10, 3)` keeps the end at `10`.
 
+## Why It Is Correct
+
+After sorting by start time, no later interval can begin before the interval
+currently being processed. The `merged` list covers exactly the intervals seen
+so far and has no overlaps. If the next start is after the last merged end,
+there is a real gap, so a new interval is required. Otherwise they overlap, and
+extending the last end to the larger end preserves exactly the same covered
+points. This keeps the invariant true through the final interval.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
 
 - Time: `O(N log N)` for sorting, followed by an `O(N)` scan.
 - Space: `O(N)` for the result and sorting storage.
+
+## Assumptions to Say Aloud
+
+- Every interval is valid: `start <= end`.
+- Intervals are closed, so `[1, 4]` and `[4, 5]` overlap at `4`.
+- The result should be sorted by start and contain no overlaps.
+- This implementation sorts a copy, so it does not reorder the input list.
+
+## Edge Cases
+
+- No intervals or one interval.
+- Touching endpoints.
+- One interval completely contains another.
+- Input arrives in reverse or arbitrary order.
+- Every interval overlaps into one final interval, or none overlap.
 
 ## Common Mistakes
 
@@ -95,6 +119,13 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I sort by start time, which makes all overlapping ranges adjacent. I keep a result of already merged intervals. Each new interval either starts after the last result ends, so it is appended, or overlaps, so I extend the last end. Sorting dominates at `O(N log N)`.
+
+## Test Aloud
+
+For `[[1, 4], [4, 5]]`, sorting keeps the order. Since the second start `4` is
+not greater than the current end `4`, the code extends the end to `5` and
+returns `[[1, 5]]`. Then test `[[2, 3], [1, 10]]`: sorting puts `[1, 10]`
+first, and the nested interval does not shorten it.
 
 ## Check Your Understanding
 

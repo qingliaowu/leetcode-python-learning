@@ -1,8 +1,8 @@
 # Coding Interview Study Plans: 5, 10, 14, 30, or 60 Days
 
-[Repository home](./README.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md)
+[Repository home](./README.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md)
 
-Choose the plan that matches the number of full study days before your interview. Each plan uses the same Python course, 26 problem lessons, self-check exercises, and [solve-aloud interview process](./INTERVIEW_PLAYBOOK.md). Roles with a system design round should also use the [system design add-on](#system-design-add-on).
+Choose the plan that matches the number of full study days before your interview. Each plan uses the same Python course, a 15-problem core, 11 expansion problems, self-check exercises, and [solve-aloud interview process](./INTERVIEW_PLAYBOOK.md). The repository also includes a [7-problem FDE coding extension](#the-7-problem-fde-coding-extension), a [system design add-on](#system-design-add-on), and an [FDE and AI add-on](#fde-and-ai-engineering-add-on).
 
 No schedule can guarantee an offer. Interview results also depend on the questions, role, communication, and hiring process. These plans are designed to maximize readiness with the time available.
 
@@ -13,8 +13,8 @@ No schedule can guarantee an offer. Interview results also depend on the questio
 | [5 days](#5-day-emergency-plan) | 4-6 hours | Emergency coverage of the 15 core problems | Interview is this week |
 | [10 days](#10-day-core-plan) | 3-4 hours | Learn the core set and complete three transfer problems | You know basic Python but need pattern practice |
 | [14 days](#14-day-intensive-plan) | 3-4 hours | Give all 26 problems one serious pass | You can study intensely for two weeks |
-| [30 days](#30-day-balanced-plan) | 90-150 minutes | Learn all patterns with review days and four mocks | Recommended balanced plan |
-| [60 days](#60-day-beginner-to-interview-plan) | 60-120 minutes | Relearn Python, complete all problems, repeat them, and run regular mocks | Best plan for a rusty Python beginner |
+| [30 days](#30-day-balanced-plan) | 90-150 minutes | Learn all base patterns with review days and four mocks | Recommended balanced plan |
+| [60 days](#60-day-beginner-to-interview-plan) | 60-120 minutes | Relearn Python, complete the full 33-problem curriculum, repeat it, and run regular mocks | Best plan for a rusty Python beginner |
 
 Do not choose a longer plan and try to compress it. Use the plan matching the actual days available.
 
@@ -74,29 +74,67 @@ Longer plans add these problems to broaden pattern coverage.
 | Trie variations | [211 Add and Search Words](./trie/0211_design_add_and_search_words.md), [648 Replace Words](./trie/0648_replace_words.md), [677 Map Sum Pairs](./trie/0677_map_sum_pairs.md) |
 | Dynamic programming | [198 House Robber](./dynamic_programming/0198_house_robber.md), [322 Coin Change](./dynamic_programming/0322_coin_change.md), [300 Longest Increasing Subsequence](./dynamic_programming/0300_longest_increasing_subsequence.md) |
 
+## The 7-Problem FDE Coding Extension
+
+These lessons fill common pattern gaps after the original 26-problem curriculum. Finish the 15-problem core first when time is short.
+
+| Pattern | Extension Problem |
+| --- | --- |
+| Sorting and two pointers | [15 3Sum](./arrays_strings/0015_3sum.md) |
+| Monotonic stack | [739 Daily Temperatures](./stacks_queues/0739_daily_temperatures.md) |
+| Linked-list pointers | [206 Reverse Linked List](./linked_lists/0206_reverse_linked_list.md) |
+| Binary search on an answer | [875 Koko Eating Bananas](./intervals_search/0875_koko_eating_bananas.md) |
+| Tree BFS | [102 Binary Tree Level Order](./trees_graphs/0102_binary_tree_level_order_traversal.md) |
+| Multi-source BFS | [994 Rotting Oranges](./trees_graphs/0994_rotting_oranges.md) |
+| Union-find | [684 Redundant Connection](./trees_graphs/0684_redundant_connection.md) |
+
+Use this schedule only after the day's core work is stable:
+
+| Plan | Extension Schedule |
+| --- | --- |
+| 5 days | Skip the extension unless the job description names one of these patterns; then study that one lesson on Day 5. |
+| 10 days | Add 3Sum, Daily Temperatures, and Tree Level Order on Days 8-10 after core review. |
+| 14 days | Add one extension lesson per day on Days 7-13. |
+| 30 days | Add one extension lesson every fourth day, replacing a repeated problem only when its score is already `3` or `4`. |
+| 60 days | Add the seven lessons on Days 13, 20, 26, 34, 42, 48, and 55; use the following day for recall. |
+
 ## System Design Add-On
 
-Use this add-on when the target role includes a system design round. Study [Design an Image-Generation Platform](./system_design/image_generation_platform.md), then practice from the prompt without looking at its diagram.
+Use this add-on when the target role includes a system design round. Learn [Foundational System Design Patterns](./system_design/foundational_patterns.md), practice [Rate Limiter](./system_design/rate_limiter.md) and [URL Shortener](./system_design/url_shortener.md), then use [Image-Generation Platform](./system_design/image_generation_platform.md) as the deeper production case.
 
 | Plan | Add-On Schedule | Required Result |
 | --- | --- | --- |
-| 5 days | Read the case after Day 3; give one 30-minute verbal walkthrough on Day 4. | Explain the asynchronous job flow, idempotency, safety, and one failure. |
-| 10 days | Read on Day 6; run a 45-minute mock on Day 9. | Score at least `6/10` and repair the two missed scorecard areas. |
-| 14 days | Read on Day 8; redraw on Day 10; mock on Day 13. | Recalculate capacity and handle one changed assumption. |
-| 30 days | Learn during Days 18-20; run mocks during Days 24 and 29. | Score at least `7/10` on the second mock. |
-| 60 days | Learn during Days 36-40; revisit on Day 50; run two final-week mocks. | Score at least `7/10` twice with different assumptions. |
+| 5 days | Read the foundations after Day 3; give one 30-minute image-platform walkthrough on Day 4. | Explain asynchronous jobs, idempotency, safety, and one failure. |
+| 10 days | Learn foundations and rate limiting by Day 6; run an image-platform mock on Day 9. | Score at least `6/10` and repair the two missed scorecard areas. |
+| 14 days | Learn foundations on Day 6, both small cases by Day 10, and mock the image platform on Day 13. | Recalculate capacity and handle one changed assumption. |
+| 30 days | Learn all four lessons during Days 18-24; run image-platform mocks on Days 26 and 29. | Score at least `7/10` on the second mock. |
+| 60 days | Learn all four during Days 36-42; revisit one small case on Day 50; run two final-week mocks. | Score at least `7/10` twice with different assumptions. |
 
 For each attempt:
 
 1. Clarify the customer, outcome, requirements, and scope.
 2. State scale assumptions and calculate throughput, concurrent work, and storage.
 3. Define APIs, durable state, and the normal request flow.
-4. Deep-dive on slow inference, duplicate work and billing, policy, and tenant isolation.
-5. Test worker failure, unsafe output, cancellation, and a traffic spike aloud.
-6. Cover model rollout, usefulness metrics, observability, and cost.
+4. Deep-dive on the design's hardest reliability, consistency, security, and scaling decisions.
+5. Test a dependency failure, duplicate request, abusive request, and traffic spike aloud.
+6. Cover success metrics, observability, rollout controls, and cost.
 7. Record the [10-point score](./system_design/image_generation_platform.md#28-system-design-mock-scorecard) in the [progress tracker](./PROGRESS_TRACKER.md).
 
 Do not memorize the finished diagram. Change candidate count, latency, tenant isolation, retention, or traffic in every later attempt and adapt the design.
+
+## FDE and AI Engineering Add-On
+
+Use this track when the role combines coding with customer discovery, deployment, cloud architecture, or AI systems. The [FDE track guide](./fde_interview/README.md) gives the complete reading order and a role-specific checklist.
+
+| Plan | Add-On Schedule | Required Result |
+| --- | --- | --- |
+| 5 days | Read the role map and customer discovery lesson; prepare two behavioral stories. | Explain the customer's outcome, one scoped solution, and truthful evidence of ownership. |
+| 10 days | Add cloud fundamentals and the behavioral workbook; read the AI overview if relevant. | Run one 30-minute discovery mock and tell four concise STAR-L stories. |
+| 14 days | Complete all FDE lessons plus LLM product fundamentals and RAG. | Defend one customer architecture and one AI evaluation plan. |
+| 30 days | Complete all FDE and AI lessons, one exercise every 3-4 days, and two solutioning mocks. | Connect requirements, architecture, rollout, metrics, and customer value without notes. |
+| 60 days | Complete the track slowly, revisit each exercise twice, and run four mixed FDE mocks. | Handle discovery, coding, architecture, AI, and behavioral rounds as one coherent interview loop. |
+
+Do not invent customer outcomes or behavioral evidence. State missing information, ask focused questions, and use examples from your real work, study, volunteering, or personal projects.
 
 ## Daily Study Method
 
@@ -432,14 +470,16 @@ Write the **first** mistake, not every symptom that followed it. Fixing the earl
 You are reasonably prepared to interview when most of these statements are true:
 
 - I can write loops, functions, dictionaries, sets, classes, queues, stacks, and `heapq` operations without repeatedly searching for syntax.
-- I can recognize hash map, sliding window, binary search, interval, DFS/BFS, heap, Trie, backtracking, prefix-sum, and basic DP patterns.
+- I can recognize hash map, sliding window, two pointers, monotonic stack, linked-list pointers, both forms of binary search, interval, DFS/BFS, union-find, heap, Trie, backtracking, prefix-sum, and basic DP patterns.
 - I can solve at least 10-12 core problems independently in 35 minutes.
 - I state an invariant or DP state before coding.
 - I test empty or smallest input, normal input, duplicates, missing answers, and relevant boundary behavior.
 - I justify both time and extra space instead of naming Big-O without explanation.
 - I can adapt at least one known solution when an assumption changes.
-- If my role includes system design, I can design the image-generation platform in 45 minutes and score at least `7/10` twice.
+- If my role includes system design, I can design at least one case in 45 minutes and score at least `7/10` twice.
 - I can explain asynchronous jobs, idempotency, policy enforcement, tenant isolation, evaluation, and cost without hiding behind service names.
+- If I am targeting an FDE role, I can discover requirements, scope a solution, explain cloud tradeoffs, and tell truthful behavioral stories.
+- If the role includes AI, I can explain retrieval, offline and online evaluation, model rollout, monitoring, safety, and cost.
 - At least two of my last three mock scores are `7/10` or higher.
 - I can recover calmly after a hint or mistake.
 

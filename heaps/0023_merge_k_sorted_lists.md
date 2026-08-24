@@ -74,6 +74,15 @@ For heads `1`, `1`, and `2`:
 
 At every step, the heap contains the smallest unmerged node from each non-empty list, so its minimum is the smallest remaining node overall.
 
+## Why It Is Correct
+
+The heap contains the first not-yet-output node from every list that still has
+nodes. Because each input list is sorted, the smallest value anywhere in the
+remaining input must be one of those candidates, so popping the heap chooses
+the correct next output node. Pushing that node's successor restores the same
+invariant. Repeating until the heap is empty outputs every node exactly once in
+nondecreasing order.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -84,6 +93,22 @@ Let `N` be the total number of nodes and `K` the number of lists.
 - Each heap operation costs `O(log K)`.
 - Time: `O(N log K)`.
 - Extra space: `O(K)` for the heap, excluding the output links.
+
+## Assumptions to Say Aloud
+
+- Every input linked list is already sorted in nondecreasing order.
+- Existing nodes may be relinked into the result; new value nodes are not
+  required.
+- Equal values are allowed.
+- The input collection may be empty or contain `None` lists.
+
+## Edge Cases
+
+- No lists or every list is empty.
+- One list, which is already the answer.
+- Lists have very different lengths.
+- Several current nodes have the same value.
+- Negative values and duplicate values.
 
 ## Common Mistakes
 
@@ -106,6 +131,13 @@ Let `N` be the total number of nodes and `K` the number of lists.
 ## Interview Explanation
 
 > Each sorted list exposes its smallest remaining node at its head. I keep those at most `K` candidates in a min-heap, pop the smallest into the result, and replace it with its successor. A dummy head simplifies result construction. Every node performs `O(log K)` heap work, for `O(N log K)` total time.
+
+## Test Aloud
+
+For `[1, 4]`, `[1, 3]`, and `[2]`, the heap begins with values `1`, `1`, and
+`2`. Popping either `1` and pushing its successor still leaves the smallest
+available node at the top. Continuing yields `1, 1, 2, 3, 4`. Then test an
+empty list of lists: the heap stays empty and the dummy node's `next` is `None`.
 
 ## Check Your Understanding
 

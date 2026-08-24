@@ -90,3 +90,6 @@ if __name__ == "__main__":
     )
 
     assert result == "the cat was rat by the bat"
+    assert solution.replaceWords([], "keep every word") == "keep every word"
+    assert solution.replaceWords(["a", "aa"], "aaaa") == "a"
+    assert solution.replaceWords(["cat"], "cat") == "cat"

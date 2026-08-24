@@ -84,3 +84,5 @@ if __name__ == "__main__":
 
     assert to_values(solution.mergeKLists(lists)) == [1, 1, 2, 3, 4, 4, 5, 6]
     assert solution.mergeKLists([]) is None
+    assert solution.mergeKLists([None, None]) is None
+    assert to_values(solution.mergeKLists([build_list([1, 2, 3])])) == [1, 2, 3]

@@ -1,16 +1,19 @@
 # System Design for Beginners
 
-[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md) | [FDE track](../fde_interview/README.md) | [AI engineering](../ai_engineering/README.md)
 
 System design interviews ask how many pieces of software work together. You are
 not expected to guess one perfect architecture. You are expected to clarify the
 goal, make reasonable assumptions, explain tradeoffs, and notice failure cases.
 
-## Case Study
+## Learning Path
 
-| Order | Design Question | Main Ideas |
+| Order | Lesson or Design Question | Main Ideas |
 | ---: | --- | --- |
-| 1 | [Design an Image-Generation Platform](./image_generation_platform.md) | Asynchronous jobs, safety, idempotency, scheduling, tenant isolation, storage, evaluation, model rollout, and cost |
+| 1 | [Foundational System Design Patterns](./foundational_patterns.md) | Caches, partitions, queues, outbox, idempotency, backpressure, resilience, and consistency |
+| 2 | [Design a Distributed Rate Limiter](./rate_limiter.md) | Token bucket, atomic state, hot keys, global limits, fairness, and failure policy |
+| 3 | [Design a URL Shortener](./url_shortener.md) | Key generation, redirect cache, analytics, abuse, expiration, and multi-region consistency |
+| 4 | [Design an Image-Generation Platform](./image_generation_platform.md) | Asynchronous jobs, safety, billing, scheduling, tenant isolation, storage, evaluation, model rollout, and cost |
 
 ## Before You Start
 
@@ -21,6 +24,7 @@ It helps to understand these lessons first:
 3. [LRU Cache](../design_data_structures/0146_lru_cache.md) for state, invariants, and operation guarantees.
 4. [Course Schedule](../trees_graphs/0207_course_schedule.md) for dependencies and work ordering.
 5. [Heaps and Top-K](../heaps/README.md) for priority scheduling.
+6. [Cloud Architecture Fundamentals](../fde_interview/03_cloud_architecture_fundamentals.md) for common infrastructure categories.
 
 You do not need cloud certification or machine-learning expertise. Every new
 system term is defined before it is used.
@@ -66,14 +70,15 @@ clear. Architecture choices only make sense after the requirements are known.
 
 ## Recommended Study Method
 
-1. Read the prompt and spend five minutes writing clarifying questions.
-2. Compare your assumptions with the case study.
-3. Redraw the architecture from memory using no more than ten boxes.
-4. Explain the normal request flow aloud.
-5. Explain a duplicate request, worker crash, unsafe output, and traffic spike.
-6. Recalculate capacity after changing one scale assumption.
-7. Attempt both transfer designs before opening their answers.
-8. Run a 45-minute mock and record the result in the [progress tracker](../PROGRESS_TRACKER.md).
+1. Read the foundational patterns once, then choose one design prompt.
+2. Spend five minutes writing clarifying questions before reading its answer.
+3. Compare your assumptions with the case study.
+4. Redraw the architecture from memory using no more than ten boxes.
+5. Explain the normal request flow aloud.
+6. Explain a duplicate request, dependency failure, and traffic spike.
+7. Recalculate capacity after changing one scale assumption.
+8. Attempt the transfer questions before opening their answers.
+9. Run a 45-minute mock and record the result in the [progress tracker](../PROGRESS_TRACKER.md).
 
 ## Ready to Move On
 
@@ -82,12 +87,13 @@ You are ready for another system design case when you can:
 - begin with customers and requirements instead of technology names,
 - state assumptions and perform simple throughput and storage estimates,
 - explain why long-running work belongs behind a durable queue,
-- prevent a retry from creating duplicate work or duplicate billing,
+- prevent a retry from creating duplicate logical effects or billing,
 - keep one tenant from reading or consuming another tenant's resources,
-- describe safety checks before and after model inference,
+- choose cache, queue, partition, resilience, and consistency patterns from stated requirements,
+- describe safety checks before and after model inference when the design uses a model,
 - identify useful product, reliability, safety, and cost metrics,
 - test the design with failures and changed requirements,
 - explain at least three tradeoffs without claiming there is one perfect answer.
 
-After this case, practice it beside normal coding mocks. System design improves
+After these cases, practice beside normal coding mocks. System design improves
 through repeated explanation and revision, not through memorizing one diagram.

@@ -64,6 +64,14 @@ Keep the original word in the output. The sorted form is only an internal groupi
 
 An empty string has an empty tuple key `()`, so empty strings correctly group together.
 
+## Why It Is Correct
+
+Two words are anagrams exactly when they contain the same characters with the
+same counts. Sorting both words therefore produces the same character sequence
+exactly in that case. The tuple made from that sequence is one dictionary key,
+so every anagram enters the same list and a non-anagram enters a different
+list. Because every input word is appended once, no word is lost.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -75,6 +83,21 @@ Let `N` be the number of words and `K` the maximum word length.
 - Space is `O(N * K)` for keys and grouped words.
 
 A character-count key can reduce sorting work to `O(N * K)`, but the sorted-key solution is often the clearest first interview solution.
+
+## Assumptions to Say Aloud
+
+- Group order and word order inside a group do not affect correctness unless
+  the interviewer requests a specific order.
+- Duplicate input words remain duplicate entries in their group.
+- Empty strings are valid and all share the empty tuple key.
+- Characters are compared exactly, including case and punctuation.
+
+## Edge Cases
+
+- An empty input list.
+- One empty string or several empty strings.
+- One word with no anagram partner.
+- Duplicate words and words that differ only by character count.
 
 ## Common Mistakes
 
@@ -95,6 +118,13 @@ A character-count key can reduce sorting work to `O(N * K)`, but the sorted-key 
 ## Interview Explanation
 
 > Anagrams become identical when their characters are sorted. I use that immutable sorted tuple as a hash-map key and append each original word to the corresponding list. The solution is dominated by sorting each word, giving `O(N * K log K)` time.
+
+## Test Aloud
+
+For `['eat', 'tea', 'tan', 'ate']`, the first, second, and fourth words all
+produce `('a', 'e', 't')`, while `tan` produces `('a', 'n', 't')`. The result
+therefore has groups `['eat', 'tea', 'ate']` and `['tan']`. Then test two empty
+strings; both use the empty tuple and stay in one group.
 
 ## Check Your Understanding
 

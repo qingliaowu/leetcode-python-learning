@@ -62,6 +62,15 @@ Two rooms were allocated, so the answer is `2`.
 
 For `[1,5]` followed by `[5,8]`, end `5 <= start 5`, so one room is enough.
 
+## Why It Is Correct
+
+Meetings are processed by start time. The heap keeps one availability time for
+each room allocated so far, and its smallest value is the room available
+earliest. If that time is at most the next start, one existing room can be
+reused: pop its old availability and push the new end. Otherwise every room is
+still busy, so a new heap entry and therefore a new room are necessary. The
+final heap size is exactly the minimum number of rooms that had to be allocated.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -70,6 +79,22 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Each heap push or pop: `O(log N)`.
 - Total time: `O(N log N)`.
 - Space: `O(N)` in the worst case when all meetings overlap.
+
+## Assumptions to Say Aloud
+
+- A meeting ending at time `t` frees its room for one starting at `t`.
+- Every interval has `start < end`.
+- Only the minimum room count is required, not a room assignment.
+- This implementation sorts `intervals` in place, so I would copy it first if
+  the caller requires the original order.
+
+## Edge Cases
+
+- No meetings or one meeting.
+- Meetings touch but do not overlap.
+- Every meeting overlaps.
+- Several meetings share a start time or end time.
+- One long meeting contains many shorter sequential meetings.
 
 ## Common Mistakes
 
@@ -92,6 +117,13 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I process meetings in start-time order and keep allocated room end times in a min-heap. The smallest end tells me whether any room can be reused. If it can, I replace that end with the current meeting's end; otherwise I add another room. The final heap size is the minimum room count.
+
+## Test Aloud
+
+For `[[0, 30], [5, 10], [15, 20]]`, the second meeting cannot reuse the room
+ending at `30`, so the heap grows to two rooms. At start `15`, the room ending
+at `10` is reused, and the heap remains size `2`. Then test `[[2, 4], [4, 7]]`:
+the `<=` condition reuses one room, so the answer is `1`.
 
 ## Check Your Understanding
 

@@ -123,6 +123,14 @@ Let `N` be the number of values.
 
 There is an `O(N log N)` solution using a `tails` list and binary search. It is an excellent follow-up optimization, but the `O(N²)` version here makes the dynamic-programming state and recurrence easier to learn and is accepted for the standard problem constraints.
 
+## Assumptions to Say Aloud
+
+- Increasing means strictly increasing, so equal values cannot extend a
+  subsequence.
+- A subsequence preserves order but does not need to be continuous.
+- The answer is a length, not the sequence itself.
+- This lesson intentionally uses the beginner-friendly `O(N^2)` DP solution.
+
 ## Edge Cases
 
 - Empty list: return `0`.

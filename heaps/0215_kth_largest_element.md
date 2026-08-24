@@ -54,6 +54,14 @@ For `[3, 2, 1, 5, 6, 4]`, `k = 2`:
 
 `heap[0]` is `5`, the second largest.
 
+## Why It Is Correct
+
+After each input value, the heap contains the largest `k` values seen so far,
+or all seen values when fewer than `k` exist. Pushing a new value considers it
+for that set; if the heap becomes too large, removing its smallest value leaves
+exactly the best `k`. After all values, the heap therefore contains the array's
+`k` largest values. Its smallest member, `heap[0]`, is the kth largest overall.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -63,6 +71,21 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Space: `O(K)`.
 
 Sorting the whole array is simpler but costs `O(N log N)` time.
+
+## Assumptions to Say Aloud
+
+- `1 <= k <= len(nums)`.
+- Duplicate values count as separate positions when ranking.
+- Only the kth value is required, not the sorted top `k` values.
+- The input list is not modified.
+
+## Edge Cases
+
+- `k = 1`, which asks for the maximum.
+- `k` equals the list length, which asks for the minimum.
+- One input value.
+- Duplicate largest values.
+- Negative values.
 
 ## Common Mistakes
 
@@ -85,6 +108,13 @@ Sorting the whole array is simpler but costs `O(N log N)` time.
 ## Interview Explanation
 
 > I maintain a min-heap containing the largest `k` values seen. Whenever its size exceeds `k`, I remove the smallest. At the end, the heap's minimum is the kth largest overall. This uses `O(N log K)` time and `O(K)` space.
+
+## Test Aloud
+
+For `[3, 2, 1, 5, 6, 4]` and `k = 2`, the heap never keeps more than two
+values. After the full scan it contains `5` and `6`, so its root is `5`, the
+second largest. Then test `[2, 2, 1]` with `k = 2`; duplicates count, so the
+answer is `2`.
 
 ## Check Your Understanding
 

@@ -122,6 +122,14 @@ For every amount from `1` through `A`, the algorithm tries all `C` coins.
 
 This is pseudo-polynomial time because it depends on the numeric amount, not only the number of digits used to write that amount. In most interviews, clearly stating `O(amount * number_of_coins)` is sufficient.
 
+## Assumptions to Say Aloud
+
+- Coin denominations are positive integers and each denomination may be reused
+  any number of times.
+- The amount is nonnegative.
+- Only the minimum coin count is required, not the chosen coins.
+- Return `-1` when no combination reaches the amount exactly.
+
 ## Edge Cases
 
 - Amount `0`: return `0` without using a coin.

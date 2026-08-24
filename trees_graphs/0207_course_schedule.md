@@ -79,6 +79,15 @@ For `[[1, 0], [2, 0], [3, 1], [3, 2]]`:
 
 For `0 -> 1 -> 0`, no node starts with in-degree zero. The queue is empty and completed remains zero, so return `False`.
 
+## Why It Is Correct
+
+The queue contains exactly the courses with no remaining prerequisites. Taking
+one is safe, and reducing the in-degree of each dependent course models
+finishing that prerequisite. In an acyclic graph, this process eventually
+unlocks and completes every course. A directed cycle never reaches in-degree
+zero, so at least its courses remain uncompleted. Therefore `completed ==
+numCourses` is true exactly when all courses can be finished.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -87,6 +96,23 @@ Let `V` be courses and `E` be prerequisite pairs.
 
 - Time: `O(V + E)` because each course and edge is processed once.
 - Space: `O(V + E)` for the graph, counts, and queue.
+
+## Assumptions to Say Aloud
+
+- Courses are numbered from `0` through `numCourses - 1`.
+- Each pair is `[course, prerequisite]`, which creates a directed edge from the
+  prerequisite to the course.
+- Only feasibility is required, not one valid course order.
+- Input course IDs are valid; duplicate edges, if allowed, are counted and
+  removed consistently.
+
+## Edge Cases
+
+- Zero courses or courses with no prerequisites.
+- One self-dependency.
+- A two-course or longer directed cycle.
+- Several disconnected dependency chains.
+- Many courses depend on the same prerequisite.
 
 ## Common Mistakes
 
@@ -108,6 +134,13 @@ Let `V` be courses and `E` be prerequisite pairs.
 ## Interview Explanation
 
 > This is cycle detection in a directed graph. I use Kahn's topological sort: count each course's prerequisites, queue all zero-in-degree courses, and remove edges as courses complete. If I process every node, no cycle blocks the schedule.
+
+## Test Aloud
+
+For two courses and `[[1, 0]]`, course `0` starts in the queue. Completing it
+reduces course `1` to in-degree zero, so both courses finish and the result is
+`True`. Add `[0, 1]`; now neither course starts at zero in-degree, the queue is
+empty, and the result is `False`.
 
 ## Check Your Understanding
 

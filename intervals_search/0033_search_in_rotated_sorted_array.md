@@ -59,6 +59,16 @@ Search for `0` in `[4, 5, 6, 7, 0, 1, 2]`:
 4. Left half `[0,1]` is sorted, and `0` is in its range. Move `right` to `4`.
 5. `middle=4`, value `0`. Return index `4`.
 
+## Why It Is Correct
+
+The inclusive range from `left` through `right` always contains every index
+where the target could still be. With distinct values, at least one side of
+`middle` is normally sorted. If the target's value lies inside that side's
+boundaries, the algorithm keeps that side; otherwise it safely discards it and
+keeps the other side. Each update excludes `middle`, which was already checked.
+The target is returned when found, or the range becomes empty only when it is
+absent.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -67,6 +77,21 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 - Space: `O(1)` because only a few index variables are stored.
 
 The distinct-values condition makes the sorted-half decision unambiguous.
+
+## Assumptions to Say Aloud
+
+- The values were strictly increasing before one possible rotation.
+- Values are distinct; duplicates make the sorted-half test ambiguous and need
+  additional handling.
+- The function returns an index, or `-1` when the target is absent.
+- The input may be empty and is not modified.
+
+## Edge Cases
+
+- An empty array or one value.
+- An array that was not rotated.
+- Rotation immediately after the first value or before the final value.
+- The target is the pivot, the first value, the final value, or absent.
 
 ## Common Mistakes
 
@@ -88,6 +113,13 @@ The distinct-values condition makes the sorted-half decision unambiguous.
 ## Interview Explanation
 
 > I use binary search. Rotation breaks global ordering, but one side of the midpoint is always sorted. I identify that side, test whether the target lies in its value range, and keep either that half or the other half. Each step discards half the candidates, so the time is logarithmic.
+
+## Test Aloud
+
+For `[4, 5, 6, 7, 0, 1, 2]` and target `0`, the first middle value is `7`.
+The left side is sorted, but `0` is not in its value range, so `left` moves to
+index `4`; that index is then returned. Repeat with target `3`: both possible
+ranges are discarded and the function returns `-1`.
 
 ## Check Your Understanding
 

@@ -122,6 +122,13 @@ Let `N` be the number of values.
 
 For about one million sorted values, binary search needs only about 20 comparisons in the worst case.
 
+## Assumptions to Say Aloud
+
+- The input is sorted in nondecreasing order before the search begins.
+- The function returns an index, or `-1` when the target is absent.
+- If duplicates are allowed, returning any matching index is acceptable.
+- The input list may be empty and is not modified.
+
 ## Edge Cases
 
 - One value that matches.

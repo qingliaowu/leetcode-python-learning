@@ -66,3 +66,5 @@ if __name__ == "__main__":
     ]
     assert solution.numIslands(grid) == 3
     assert solution.numIslands([["0"]]) == 0
+    assert solution.numIslands([["1"]]) == 1
+    assert solution.numIslands([["1", "0"], ["0", "1"]]) == 2

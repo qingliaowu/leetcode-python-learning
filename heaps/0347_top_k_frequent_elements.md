@@ -61,6 +61,15 @@ For frequencies `{1: 3, 2: 2, 3: 1}` and `k = 2`:
 - Push `(1, 3)`. Size is now three, so pop the smallest frequency `(1, 3)`.
 - Values `1` and `2` remain.
 
+## Why It Is Correct
+
+The dictionary first records the exact occurrence count for every distinct
+value. While those pairs are processed, the heap keeps at most the `k` pairs
+with greatest frequencies seen so far: whenever it grows to `k + 1`, popping
+the smallest frequency removes a pair that cannot belong above the current
+top `k`. At the end, the numbers in the heap are exactly `k` most frequent
+values, with any permitted order or tie choice.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -71,6 +80,22 @@ Let `N` be input length and `U` be unique values.
 - Heap work: `O(U log K)`.
 - Total time: `O(N log K)` as a simple upper bound because `U <= N`.
 - Space: `O(U + K)`.
+
+## Assumptions to Say Aloud
+
+- `1 <= k <=` the number of distinct values.
+- The answer may be returned in any order.
+- When equal frequencies cross the cutoff, any valid tied values are acceptable
+  unless the interviewer gives a tie-break rule.
+- Negative numbers and duplicate input values are allowed.
+
+## Edge Cases
+
+- One distinct value.
+- `k = 1` or `k` equals the number of distinct values.
+- Several values have equal frequencies.
+- Negative values.
+- One value dominates the entire input.
 
 ## Common Mistakes
 
@@ -93,6 +118,13 @@ Let `N` be input length and `U` be unique values.
 ## Interview Explanation
 
 > First I count values with a hash map. Then I keep a min-heap of at most `k` `(frequency, value)` pairs. If the heap grows too large, I remove its smallest frequency. The remaining values are the top `k`, using `O(N log K)` time.
+
+## Test Aloud
+
+For `[1, 1, 1, 2, 2, 3]` and `k = 2`, the frequency map is `{1: 3, 2: 2,
+3: 1}`. Once all pairs are considered, the size-two heap keeps frequencies `2`
+and `3`, so the returned set is `{1, 2}`. Also test `[1]` with `k = 1`, which
+returns `[1]`.
 
 ## Check Your Understanding
 

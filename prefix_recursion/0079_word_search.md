@@ -88,6 +88,15 @@ Starting at top-left `A`:
 
 A wrong direction returns `False`, then another direction is tried from the previous call.
 
+## Why It Is Correct
+
+`dfs(row, col, index)` returns true exactly when a path starting at that cell
+can spell `word[index:]`. It rejects out-of-bounds cells and wrong characters,
+then temporarily marks a matching cell so the same path cannot use it twice.
+The four recursive calls try every legal next direction. Restoring the cell
+afterward leaves the board correct for other starting paths. Trying DFS from
+every cell therefore finds a valid path if and only if one exists.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -100,6 +109,21 @@ Let `L` be word length.
 - Recursion stack space: `O(L)`.
 
 The no-reuse rule reduces actual branching after the first step, and mismatches often stop paths early.
+
+## Assumptions to Say Aloud
+
+- Consecutive letters must be horizontally or vertically adjacent, not diagonal.
+- One board cell cannot be reused within the same path.
+- The board is rectangular and mutable; `#` is not a valid board character.
+- This implementation treats an empty word as found.
+
+## Edge Cases
+
+- An empty word or empty board.
+- One board cell and a one-letter word.
+- The word is longer than the number of cells.
+- Repeated letters tempt the search to reuse a cell.
+- A failed early path must not block a later valid path.
 
 ## Common Mistakes
 
@@ -123,6 +147,14 @@ The no-reuse rule reduces actual branching after the first step, and mismatches 
 ## Interview Explanation
 
 > I try each cell as a starting point and use DFS to match one word character per step. I temporarily mark a matched cell so the current path cannot reuse it, explore four neighbors, and restore it while backtracking. The recursion depth is at most the word length.
+
+## Test Aloud
+
+On the sample board, trace `ABCCED`: mark each chosen cell, move only to an
+adjacent matching cell, and restore all marks as recursive calls return. Then
+test `ABCB`; reaching the final `B` would require reusing the first row's `B`,
+which is marked, so the result is `False`. Confirm the board matches its
+original contents after both searches.
 
 ## Check Your Understanding
 

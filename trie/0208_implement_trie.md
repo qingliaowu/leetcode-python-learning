@@ -103,6 +103,15 @@ Now consider three queries:
 
 After inserting `app`, its final `p` node is marked, so `search("app")` becomes `True`. No nodes need to be rebuilt.
 
+## Why It Is Correct
+
+`insert` creates or follows one edge for each character and marks only the node
+after the complete word. `_find_node` returns the final node exactly when every
+requested character edge exists. Therefore, `startsWith` is true exactly when
+the prefix path exists, while `search` is true only when that same path also
+ends at a node marked as a complete inserted word. Shared prefixes safely reuse
+the same nodes.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -115,6 +124,22 @@ Let `L` be the length of the word or prefix.
 - Space: `O(T)`, where `T` is the total number of inserted characters in the worst case.
 
 Shared prefixes reduce the number of nodes in practice. For example, `app` and `apple` share the first three character nodes.
+
+## Assumptions to Say Aloud
+
+- Character matching is exact and case-sensitive.
+- Inserting the same word again does not need to store a duplicate count.
+- A path may be a valid prefix without being a complete word.
+- This implementation supports the empty string: inserting it marks the root,
+  and every Trie starts with the empty prefix.
+
+## Edge Cases
+
+- Search for a prefix that was never inserted as a complete word.
+- One word is a prefix of another, such as `app` and `apple`.
+- A missing character appears near the end of a query.
+- Duplicate insertions.
+- Empty-word and empty-prefix behavior if the interviewer allows them.
 
 ## Common Mistakes
 
@@ -152,6 +177,13 @@ trie.search("ca")        # False
 trie.startsWith("ca")    # True
 trie.search("care")      # False
 ```
+
+## Test Aloud
+
+Insert `apple`. `search('apple')` follows the full path and sees an end marker,
+while `search('app')` reaches a node without one and returns `False`.
+`startsWith('app')` needs only the path, so it returns `True`. After inserting
+`app`, exact search for `app` becomes true without changing the longer word.
 
 ## Check Your Understanding
 

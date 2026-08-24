@@ -68,12 +68,35 @@ Python allows chained comparisons. The expression means the row and column are b
 - The bottom-right `1` is still unvisited, so it starts island 2.
 - Final answer: `2`.
 
+## Why It Is Correct
+
+When the outer scan finds a `"1"`, that cell has not belonged to any previously
+counted island, so it starts one new island. DFS visits every horizontally or
+vertically connected land cell and changes it to `"0"`. Those cells can never
+start another count later. Every island has at least one first cell in the scan,
+so every island is counted once and only once.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
 
 - Time: `O(ROWS * COLS)` because each cell is processed at most a constant number of times.
 - Space: up to `O(ROWS * COLS)` for the stack when one island is very large.
+
+## Assumptions to Say Aloud
+
+- Land connects only up, down, left, and right, not diagonally.
+- The grid is rectangular and uses strings `"1"` and `"0"`.
+- This implementation may modify the grid to record visited cells.
+- An empty grid or an empty first row has zero islands.
+
+## Edge Cases
+
+- An empty grid, all water, or all land.
+- One cell.
+- Land cells touch only diagonally and are separate islands.
+- A long one-row or one-column island.
+- Several disconnected regions with holes of water.
 
 ## Common Mistakes
 
@@ -96,6 +119,13 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I scan the grid. Each unvisited land cell begins a new connected component, so I increment the answer and run DFS to mark its entire island. Every cell is visited at most once, giving linear time in the grid size.
+
+## Test Aloud
+
+For `[["1", "0"], ["0", "1"]]`, the first land cell starts one DFS but cannot
+reach the diagonal land cell. The scan later finds that second cell and returns
+`2`. Then test `[["0"]]`, which never enters DFS and returns `0`. Mention that
+visited land is changed to water, so the same grid should not be reused.
 
 ## Check Your Understanding
 

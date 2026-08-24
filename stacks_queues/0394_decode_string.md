@@ -147,6 +147,15 @@ Space is `O(N + D)` for paused stack buffers and decoded characters. The final o
 
 State which interpretation you are using. For most interviews, emphasizing that work and memory must include decoded output size is the important point.
 
+## Assumptions to Say Aloud
+
+- The encoded string is well formed: brackets match and every repeat count is
+  followed by a bracketed section.
+- Repeat counts are positive integers and may have more than one digit.
+- Digits belong to counts rather than literal output text.
+- The decoded result fits in memory; runtime must include the size of that
+  produced output.
+
 ## Edge Cases
 
 - Text with no encoded section stays unchanged.

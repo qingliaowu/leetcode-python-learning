@@ -70,12 +70,35 @@ For `[3, 2, 4]` with target `6`:
 
 For `[3, 3]`, the first `3` is saved. The second `3` finds it, so the answer correctly uses two different indexes.
 
+## Why It Is Correct
+
+Before index `i`, `seen` contains only values from earlier indexes. If
+`target - nums[i]` is in `seen`, the saved value and `nums[i]` add to the
+target, and their indexes must be different. If the needed value is absent,
+saving the current value makes it available to every later index. Therefore,
+when a valid pair exists, the scan eventually returns one.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
 
 - Time: `O(N)` because the list is scanned once.
 - Space: `O(N)` in the worst case for the dictionary.
+
+## Assumptions to Say Aloud
+
+- Values may repeat, but one array position cannot be used twice.
+- The requested answer contains indexes, not the two values.
+- The problem guarantees one valid pair; this implementation returns `[]` if
+  that guarantee is removed and no pair exists.
+- The input list does not need to be sorted and is not modified.
+
+## Edge Cases
+
+- Two equal values at different indexes, such as `[3, 3]` with target `6`.
+- Negative numbers or zero.
+- The valid pair appears at the beginning or at the final index.
+- An empty or one-item list when the guarantee is removed.
 
 ## Common Mistakes
 
@@ -96,6 +119,13 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > As I scan the array, I keep a hash map from each previous value to its index. For the current value, I compute the complement needed to reach the target. If that complement is already stored, I return the two indexes. This uses linear time and linear extra space.
+
+## Test Aloud
+
+Trace `[3, 2, 4]` with target `6`. After two iterations, `seen` is
+`{3: 0, 2: 1}`. At index `2`, the needed value is `2`, so the code returns
+`[1, 2]`. Then test `[3, 3]`: checking before saving the current value lets the
+second `3` find the first without reusing one index.
 
 ## Check Your Understanding
 

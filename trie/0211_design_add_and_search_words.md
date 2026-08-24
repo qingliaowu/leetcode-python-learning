@@ -93,6 +93,15 @@ Because one branch succeeded, DFS does not need to try `dad` or `mad`.
 
 For `.at`, DFS may try several first letters, but every branch eventually fails because no matching final path is stored.
 
+## Why It Is Correct
+
+For a normal letter, DFS follows the only Trie edge that could match it. For a
+dot, DFS tries every child because each child represents one possible character
+for that position. When all pattern characters are consumed, returning
+`node.is_word` accepts complete words and rejects mere prefixes. The recursion
+therefore explores exactly every stored word with the same length that matches
+all literal and wildcard positions.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
@@ -106,6 +115,21 @@ Let `L` be the word or pattern length.
 - Recursive call stack: up to `O(L)` during a search.
 
 The actual search is usually smaller because the Trie contains only paths for saved words.
+
+## Assumptions to Say Aloud
+
+- A dot matches exactly one character, not zero or several characters.
+- Other characters are matched literally and case-sensitively.
+- Duplicate additions do not need a stored count.
+- A matching Trie path is insufficient unless it ends at a complete word.
+
+## Edge Cases
+
+- A pattern with no dots, one dot, or all dots.
+- A pattern shorter or longer than every stored word.
+- A prefix exists but is not a complete word.
+- No child branch matches a wildcard.
+- Empty-word behavior if the input contract allows it.
 
 ## Common Mistakes
 
@@ -140,6 +164,13 @@ search("a..")  -> True
 search("..")   -> True
 search("....") -> False
 ```
+
+## Test Aloud
+
+After adding `bad`, `dad`, and `mad`, `pad` fails on its first exact edge.
+Pattern `.ad` branches from the root and succeeds on any of the three matching
+children. Pattern `b..` follows `b`, then branches twice, and accepts only when
+all three positions end at `bad`'s end marker.
 
 ## Check Your Understanding
 

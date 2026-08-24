@@ -74,12 +74,37 @@ LeetCode supplies the `Node` class. This repository includes it so the file can 
 
 The constructor avoids `neighbors=[]` as a default argument because a mutable default list would be shared by multiple objects.
 
+## Why It Is Correct
+
+The `clones` dictionary creates exactly one new node for each original object.
+BFS reaches every node connected to the starting node. Whenever the algorithm
+examines an original edge `current -> neighbor`, it appends the corresponding
+clone edge `clones[current] -> clones[neighbor]`. Cycles cannot create duplicate
+nodes because an original already in the dictionary is never created or queued
+again. The returned graph therefore has the same reachable nodes and edges but
+shares no node objects with the original.
+
 ## Complexity
 
 New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11_time_and_space_complexity.md).
 
 - Time: `O(V + E)` because each node and edge is processed once.
 - Space: `O(V)` for the map and BFS queue, excluding the required cloned output.
+
+## Assumptions to Say Aloud
+
+- Returning the component reachable from the supplied node is sufficient.
+- The graph may contain cycles, and node values are not used as unique IDs.
+- Neighbor order should be preserved by the copy.
+- `None` represents an empty graph and should return `None`.
+
+## Edge Cases
+
+- An empty graph.
+- One node with no neighbors.
+- A self-loop or a two-node cycle.
+- Several paths reach the same node; they must point to one shared clone.
+- Different node objects happen to have the same value.
 
 ## Common Mistakes
 
@@ -102,6 +127,13 @@ New to Big-O? Read [Time and Space Complexity for Beginners](../python_basics/11
 ## Interview Explanation
 
 > I run BFS over the original graph and keep a map from each original node to its single clone. When I inspect an edge, I create the neighbor clone if necessary, then connect the two cloned nodes. The map also prevents cycles from causing repeated work.
+
+## Test Aloud
+
+Build `1 <-> 2`. The map first contains only `1 -> clone1`. Processing node
+`1` creates `clone2` and connects `clone1` to it; processing node `2` reuses
+`clone1` for the back edge. Confirm that both clone objects differ from the
+originals and that following two neighbor links returns to `clone1`.
 
 ## Check Your Understanding
 

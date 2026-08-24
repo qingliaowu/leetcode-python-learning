@@ -131,6 +131,14 @@ Let `C` be cache capacity.
 - `put`: `O(1)` average lookup, insertion, movement, and at most one eviction.
 - Space: `O(C)` for at most `C` dictionary entries and real nodes.
 
+## Assumptions to Say Aloud
+
+- Capacity is a positive integer and does not change after construction.
+- `get` returns `-1` for a missing key; stored values follow the problem's
+  contract so that sentinel is unambiguous.
+- Both a successful `get` and an update make the key most recently used.
+- Operations are single-threaded unless the interviewer adds concurrency.
+
 ## Edge Cases
 
 - Missing key returns `-1` without changing order.
