@@ -4,6 +4,8 @@ An interview is not only a test of whether the final code works. The interviewer
 
 Use this process for every problem in the repository.
 
+If you have a fixed interview date, first choose the matching [5-, 10-, 14-, 30-, or 60-day study plan](./INTERVIEW_STUDY_PLANS.md). The schedule tells you when to learn, review, and run mock interviews; this playbook tells you how to perform each attempt.
+
 ## 1. Restate the Problem
 
 Before solving, say the input, required output, and important rule in your own words.
@@ -304,6 +306,8 @@ If any syntax in this checklist feels unfamiliar, complete the [Python 3 Basics 
 - Keep platform-required names such as `startsWith`, even when they are not standard Python style.
 
 ## How to Practice This Repository
+
+Use the [interview study plans](./INTERVIEW_STUDY_PLANS.md) when you want a complete daily schedule.
 
 For each problem:
 

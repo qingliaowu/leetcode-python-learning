@@ -11,6 +11,7 @@ This repository assumes nothing. Python syntax, algorithm ideas, time and space 
 | Python 3 lessons | 11 | Relearn Python from `print` through recursion and Big-O |
 | Interview problems | 26 | Practice the patterns most often used in coding interviews |
 | Guided self-check questions | 52 | Transfer each pattern to a new example, then reveal a detailed answer |
+| Interview study schedules | 5 | Choose a 5-, 10-, 14-, 30-, or 60-day preparation plan |
 | Topic guides | 9 | Learn how related problems connect |
 | External packages | 0 | Everything runs with the Python standard library |
 
@@ -22,6 +23,7 @@ Choose the row that sounds most like you:
 | --- | --- |
 | "I forgot most Python syntax." | [Python 3 Basics for Complete Beginners](./python_basics/) |
 | "I can code, but Big-O is confusing." | [Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) |
+| "My interview is in 5-60 days." | [Choose an Interview Study Plan](./INTERVIEW_STUDY_PLANS.md) |
 | "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
 | "I am ready to solve problems." | [Interview Problem Roadmap](#interview-problem-roadmap) |
 
@@ -68,7 +70,7 @@ Do not memorize finished code. For each problem:
 8. Explain time and space complexity in complete sentences.
 9. Attempt both self-check questions before opening their answers.
 
-The [Interview Playbook](./INTERVIEW_PLAYBOOK.md) provides sentence templates for every step.
+The [Interview Playbook](./INTERVIEW_PLAYBOOK.md) provides sentence templates for every step. The [5-, 10-, 14-, 30-, and 60-day study plans](./INTERVIEW_STUDY_PLANS.md) turn this process into a daily schedule.
 
 ### Phase 3: Practice Without Notes
 
@@ -237,6 +239,7 @@ python3 dynamic_programming/0322_coin_change.py
 ├── prefix_recursion/       # prefix sums and backtracking
 ├── trie/                   # prefix-tree design and applications
 ├── dynamic_programming/    # saved-state recurrence patterns
+├── INTERVIEW_STUDY_PLANS.md # 5/10/14/30/60-day preparation tracks
 ├── INTERVIEW_PLAYBOOK.md   # solve-aloud interview process
 ├── verify_solutions.py     # runs every executable example
 └── README.md
