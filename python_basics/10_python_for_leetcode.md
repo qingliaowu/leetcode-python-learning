@@ -150,6 +150,24 @@ Use the full [Interview Problem-Solving Playbook](../INTERVIEW_PLAYBOOK.md) for 
 
 Always explain why, not only the notation.
 
+## Try It
+
+Trace `containsDuplicate([4, 1, 4])`. What does `seen` contain immediately
+before the function returns, and what are the time and extra-space costs?
+
+<details>
+<summary>Show answer and explanation</summary>
+
+The first `4` is absent, so the set becomes `{4}`. The value `1` is absent, so
+the set becomes `{1, 4}`. The final `4` is already present, so the function
+returns `True` before adding it again.
+
+Let `N` be the number of values. Each value is visited at most once, and set
+lookup is `O(1)` on average, so time is `O(N)`. If all values are distinct, the
+set grows to `N` items, so extra space is `O(N)`.
+
+</details>
+
 ## Common Mistakes
 
 - Printing an answer instead of returning it.
@@ -173,3 +191,7 @@ You can now read the syntax used throughout this repository:
 - standard LeetCode class format.
 
 Next, complete [Time and Space Complexity](./11_time_and_space_complexity.md). Then start with [Two Sum](../arrays_strings/0001_two_sum.md) and follow the interview roadmap in the main README.
+
+---
+
+[Previous: Lesson 9, Recursion](./09_recursion.md) | [Next: Lesson 11, Time and Space Complexity](./11_time_and_space_complexity.md)

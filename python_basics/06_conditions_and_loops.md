@@ -143,7 +143,19 @@ for number in [2, 4, 6]:
         total += number
 ```
 
-Answer: `10`, because only `4` and `6` are added.
+<details>
+<summary>Show answer and explanation</summary>
+
+The result is `10`.
+
+- `2 > 2` is false, so `2` is skipped.
+- `4 > 2` is true, so total becomes `4`.
+- `6 > 2` is true, so total becomes `10`.
+
+The loop visits every value, but the indented update runs only when the
+condition is true.
+
+</details>
 
 ## Common Mistakes
 
@@ -157,3 +169,7 @@ Answer: `10`, because only `4` and `6` are added.
 ## Remember
 
 Conditions choose a path. `for` visits items. `while` repeats based on a condition. Indentation defines every block.
+
+---
+
+[Previous: Lesson 5, Dictionaries and Sets](./05_dictionaries_and_sets.md) | [Next: Lesson 7, Functions](./07_functions.md)

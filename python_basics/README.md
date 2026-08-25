@@ -1,33 +1,55 @@
 # Python 3 Basics for Complete Beginners
 
-[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Progress tracker](../PROGRESS_TRACKER.md) | [System design](../system_design/README.md) | [FDE track](../fde_interview/README.md) | [AI engineering](../ai_engineering/README.md)
+[Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Interview playbook](../INTERVIEW_PLAYBOOK.md) | [Python cheat sheet](../PYTHON_CHEAT_SHEET.md) | [Pattern map](../ALGORITHM_PATTERN_MAP.md) | [Progress tracker](../PROGRESS_TRACKER.md) | [System design](../system_design/README.md) | [FDE track](../fde_interview/README.md) | [AI engineering](../ai_engineering/README.md)
 
-This course assumes you have forgotten Python or have never used it. It teaches only one small group of ideas at a time, using examples related to LeetCode.
+This course assumes you have forgotten Python or have never used it. It teaches
+one small group of ideas at a time, using examples related to coding interviews.
 
-You do not need to install any package. Python 3 and a terminal are enough.
+You need Python `3.10` or newer and a terminal. You do not need to install any
+package.
 
 ## Before You Start
 
-From the repository root, check Python:
+Begin with [Lesson 0: Setup, Running Files, and Reading Errors](./00_setup_and_errors.md).
+It explains what a terminal command is, how to find the repository root, what
+successful assertions look like, and how to read a traceback.
+
+From the repository root, run its check:
 
 ```bash
-python3 --version
+python3 python_basics/00_setup_and_errors.py
 ```
 
-You should see `Python 3` followed by a version number. Run the first lesson:
+On Windows PowerShell, use:
 
-```bash
-python3 python_basics/01_first_program.py
+```powershell
+py -3 python_basics/00_setup_and_errors.py
 ```
 
-The file prints examples and checks its answers with `assert`. If no error appears, the checks passed.
+The check reports your Python version and confirms that the repository files are
+visible. If an error appears, Lesson 0 explains the next step.
+
+## Your First 90 Minutes
+
+Do only this on the first session:
+
+1. Complete Lesson 0 and run its file.
+2. Read Lesson 1, predict every printed line, then run it.
+3. Read Lesson 2 and change one variable in its runnable file.
+4. Open the [Python Interview Cheat Sheet](../PYTHON_CHEAT_SHEET.md) and notice
+   where strings, lists, dictionaries, loops, and functions are located.
+5. Stop. On the next session, continue with Lesson 3.
+
+The cheat sheet is a lookup tool. You are not expected to memorize it.
 
 ## Learning Path
 
-Complete the lessons in order. Most should take about 15 to 25 minutes. Lesson 11 is longer, so its page divides the material into three short passes.
+Complete the 12 lessons in order. Most should take about 15 to 25 minutes.
+Lesson 11 is longer, so its page divides the material into three short passes.
 
 | Lesson | Read | Run | You Will Learn |
 | ---: | --- | --- | --- |
+| 0 | [Setup and Reading Errors](./00_setup_and_errors.md) | [Code](./00_setup_and_errors.py) | Python version, terminal commands, assertions, and tracebacks |
 | 1 | [Your First Program](./01_first_program.md) | [Code](./01_first_program.py) | `print`, comments, and running a file |
 | 2 | [Variables and Basic Values](./02_variables_and_values.md) | [Code](./02_variables_and_values.py) | Numbers, booleans, `None`, and operators |
 | 3 | [Strings](./03_strings.md) | [Code](./03_strings.py) | Text, indexes, slices, and string methods |
@@ -52,6 +74,10 @@ For every lesson:
 6. Explain the example in your own words.
 
 Do not try to memorize every method. Learn what each data type is good for, then look up exact syntax when needed.
+
+When you forget syntax during a problem, use the
+[Python Interview Cheat Sheet](../PYTHON_CHEAT_SHEET.md), then return to the
+problem. A short lookup is part of learning, not a failed attempt.
 
 ## Tiny Symbol Guide
 
@@ -79,7 +105,11 @@ You are ready to start the problem folders when you can:
 - trace a short recursive function,
 - explain how time and memory grow as input grows.
 
-Record your progress in the [tracker](../PROGRESS_TRACKER.md), then continue to [Arrays, Strings, Hash Maps, and Sliding Window](../arrays_strings/README.md). Use the [Interview Problem-Solving Playbook](../INTERVIEW_PLAYBOOK.md) to practice solving aloud.
+Record your progress in the [tracker](../PROGRESS_TRACKER.md), open the
+[Algorithm Pattern Map](../ALGORITHM_PATTERN_MAP.md), then continue to
+[Arrays, Strings, Hash Maps, and Sliding Window](../arrays_strings/README.md).
+Use the [Interview Problem-Solving Playbook](../INTERVIEW_PLAYBOOK.md) to
+practice solving aloud.
 
 ## Getting Help From Errors
 
@@ -89,4 +119,7 @@ An error is information, not failure. Read the last line first:
 NameError: name 'score' is not defined
 ```
 
-This usually means the variable name is misspelled or used before assignment. The lines above it show the file and line number. Fix one error, run again, and repeat.
+This usually means the variable name is misspelled or used before assignment.
+The lines above it show the file and line number. Fix one error, run again, and
+repeat. For the complete error decoder and debugging loop, return to
+[Lesson 0](./00_setup_and_errors.md).

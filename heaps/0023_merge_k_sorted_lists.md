@@ -16,6 +16,26 @@ becomes
 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6
 ```
 
+## Python Used Here
+
+This lesson combines four Python ideas:
+
+- a class object whose `next` attribute refers to another node,
+- `None` for an empty list or the end of a list,
+- `enumerate(lists)` for both a list index and its current node,
+- `heapq` tuples whose first item controls priority.
+
+```python
+for list_index, node in enumerate(lists):
+    if node is not None:
+        heapq.heappush(min_heap, (node.val, list_index, node))
+```
+
+The integer `list_index` breaks ties before Python reaches the custom node
+object. Review [Classes and Objects](../python_basics/08_classes_and_objects.md)
+or the [Python cheat sheet](../PYTHON_CHEAT_SHEET.md) if references or heap
+tuples feel unfamiliar.
+
 ## Linked-List Refresher
 
 Each node stores a value and a reference to the next node:

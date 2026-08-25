@@ -96,12 +96,19 @@ print("LeetCode", 1 + 2)
 print(10 - 4)
 ```
 
-Answer:
+<details>
+<summary>Show answer and explanation</summary>
 
 ```text
 LeetCode 3
 6
 ```
+
+Python evaluates each arithmetic expression before `print` displays it. The
+comma in the first call separates two displayed values, so Python places a
+space between `LeetCode` and `3`.
+
+</details>
 
 ## Common Mistakes
 
@@ -113,3 +120,7 @@ LeetCode 3
 ## Remember
 
 Python runs from top to bottom. `print` displays a value. `#` starts a comment. `assert` checks an expected result.
+
+---
+
+[Previous: Lesson 0, Setup and Errors](./00_setup_and_errors.md) | [Next: Lesson 2, Variables and Values](./02_variables_and_values.md)

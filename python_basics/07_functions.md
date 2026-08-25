@@ -113,7 +113,16 @@ def larger(a, b):
 larger(4, 7)
 ```
 
-Answer: `7`.
+<details>
+<summary>Show answer and explanation</summary>
+
+The function returns `7`.
+
+The call assigns `a = 4` and `b = 7`. Because `4 > 7` is false, Python skips
+the first `return` and reaches `return b`. A `return` sends the value back to
+the caller and stops the function.
+
+</details>
 
 ## Common Mistakes
 
@@ -127,3 +136,7 @@ Answer: `7`.
 ## Remember
 
 A function has a name, parameters, a body, and usually a return value. Small functions make logic easier to test and explain.
+
+---
+
+[Previous: Lesson 6, Conditions and Loops](./06_conditions_and_loops.md) | [Next: Lesson 8, Classes and Objects](./08_classes_and_objects.md)

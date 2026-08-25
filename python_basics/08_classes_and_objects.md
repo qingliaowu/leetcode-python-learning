@@ -112,7 +112,16 @@ box = Box(5)
 box.value += 2
 ```
 
-Answer: `7`.
+<details>
+<summary>Show answer and explanation</summary>
+
+`box.value` is `7`.
+
+`Box(5)` creates one object and `__init__` stores `5` in that object's `value`
+attribute. The `+= 2` update reads `5`, adds `2`, and stores `7` back on the
+same object.
+
+</details>
 
 ## Common Mistakes
 
@@ -125,3 +134,7 @@ Answer: `7`.
 ## Remember
 
 A class defines behavior and stored attributes. An object is one instance. `self` refers to the current instance.
+
+---
+
+[Previous: Lesson 7, Functions](./07_functions.md) | [Next: Lesson 9, Recursion](./09_recursion.md)

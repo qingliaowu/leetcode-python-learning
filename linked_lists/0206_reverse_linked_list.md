@@ -96,7 +96,7 @@ Reverse `1 -> 2 -> 3 -> None`:
 
 Return node 3.
 
-## Python References in Plain Language
+## Python Used Here: References in Plain Language
 
 ```python
 previous = current

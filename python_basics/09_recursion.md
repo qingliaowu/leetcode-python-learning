@@ -93,7 +93,24 @@ def power(base, exponent):
     return base * power(base, exponent - 1)
 ```
 
-Answer: `8`, from `2 * 2 * 2 * 1`.
+<details>
+<summary>Show answer and explanation</summary>
+
+The answer is `8`:
+
+```text
+power(2, 3)
+= 2 * power(2, 2)
+= 2 * 2 * power(2, 1)
+= 2 * 2 * 2 * power(2, 0)
+= 2 * 2 * 2 * 1
+= 8
+```
+
+Every call reduces `exponent` by one. At zero, the base case returns `1` and
+the waiting multiplications complete.
+
+</details>
 
 ## Common Mistakes
 
@@ -115,3 +132,7 @@ Write down each call's argument. Ask:
 ## Remember
 
 Recursion solves a problem using a smaller version of the same problem. It must have a stopping rule and make progress toward it.
+
+---
+
+[Previous: Lesson 8, Classes and Objects](./08_classes_and_objects.md) | [Next: Lesson 10, Python for LeetCode](./10_python_for_leetcode.md)

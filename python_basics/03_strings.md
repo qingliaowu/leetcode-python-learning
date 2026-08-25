@@ -123,7 +123,17 @@ text[0:5]
 len(text)
 ```
 
-Answer: `"i"`, `"w"`, `"inter"`, and `9`.
+<details>
+<summary>Show answer and explanation</summary>
+
+The answers are `"i"`, `"w"`, `"inter"`, and `9`.
+
+- Index `0` is the first character.
+- Index `-1` is the final character.
+- Slice `0:5` includes indexes `0` through `4`; the stop index `5` is excluded.
+- `interview` contains nine characters.
+
+</details>
 
 ## Common Mistakes
 
@@ -136,3 +146,7 @@ Answer: `"i"`, `"w"`, `"inter"`, and `9`.
 ## Remember
 
 Strings are ordered and immutable. Indexes read one character. Slices read a range. String methods return useful new values.
+
+---
+
+[Previous: Lesson 2, Variables and Values](./02_variables_and_values.md) | [Next: Lesson 4, Lists and Tuples](./04_lists_and_tuples.md)

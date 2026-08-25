@@ -106,7 +106,15 @@ is_even = number % 2 == 0
 half = number // 2
 ```
 
-Answer: `is_even` is `False`, and `half` is `5`.
+<details>
+<summary>Show answer and explanation</summary>
+
+`is_even` is `False`. `11 % 2` leaves remainder `1`, and `1 == 0` is false.
+
+`half` is `5`. Whole-number division `11 // 2` keeps the whole-number floor and
+does not round up to `6`.
+
+</details>
 
 ## Common Mistakes
 
@@ -119,3 +127,7 @@ Answer: `is_even` is `False`, and `half` is `5`.
 ## Remember
 
 Variables name values. Every value has a type. Comparisons create booleans. `None` represents no value.
+
+---
+
+[Previous: Lesson 1, First Program](./01_first_program.md) | [Next: Lesson 3, Strings](./03_strings.md)

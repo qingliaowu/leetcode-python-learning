@@ -1,8 +1,15 @@
 # Coding Interview Study Plans: 5, 10, 14, 30, or 60 Days
 
-[Repository home](./README.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md)
+[Repository home](./README.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) | [Pattern map](./ALGORITHM_PATTERN_MAP.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md)
 
-Choose the plan that matches the number of full study days before your interview. Each plan uses the same Python course, a 15-problem core, 11 expansion problems, self-check exercises, and [solve-aloud interview process](./INTERVIEW_PLAYBOOK.md). The repository also includes a [7-problem FDE coding extension](#the-7-problem-fde-coding-extension), a [system design add-on](#system-design-add-on), and an [FDE and AI add-on](#fde-and-ai-engineering-add-on).
+Choose the plan that matches the number of full study days before your
+interview. Every plan draws from the same Python course, 15-problem core, 11
+expansion problems, self-check exercises, and
+[solve-aloud interview process](./INTERVIEW_PLAYBOOK.md). Longer plans cover
+more of that material. The repository also includes a
+[7-problem FDE coding extension](#the-7-problem-fde-coding-extension), a
+[system design add-on](#system-design-add-on), and an
+[FDE and AI add-on](#fde-and-ai-engineering-add-on).
 
 No schedule can guarantee an offer. Interview results also depend on the questions, role, communication, and hiring process. These plans are designed to maximize readiness with the time available.
 
@@ -169,6 +176,8 @@ If syntax prevents you from expressing the algorithm, stop for at most 20 minute
 
 | Missing Skill | Lesson |
 | --- | --- |
+| Running files or understanding an error | [00 Setup and Reading Errors](./python_basics/00_setup_and_errors.md) |
+| One quick syntax lookup | [Python Interview Cheat Sheet](./PYTHON_CHEAT_SHEET.md) |
 | Strings and slicing | [03 Strings](./python_basics/03_strings.md) |
 | Lists and tuples | [04 Lists and Tuples](./python_basics/04_lists_and_tuples.md) |
 | Dictionaries and sets | [05 Dictionaries and Sets](./python_basics/05_dictionaries_and_sets.md) |
@@ -178,6 +187,10 @@ If syntax prevents you from expressing the algorithm, stop for at most 20 minute
 | Recursion | [09 Recursion](./python_basics/09_recursion.md) |
 | Interview syntax | [10 Python for LeetCode](./python_basics/10_python_for_leetcode.md) |
 | Big-O | [11 Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) |
+
+If syntax is clear but the algorithm family is not, spend five minutes with the
+[Algorithm Pattern Map](./ALGORITHM_PATTERN_MAP.md). State the candidate state
+and invariant, then return to the problem without opening its solution.
 
 Return to the problem immediately after the refresher. Avoid turning a short syntax repair into an entire day of passive reading unless you are following the 60-day plan.
 
@@ -189,7 +202,7 @@ Return to the problem immediately after the refresher. Avoid turning a short syn
 
 | Day | New Work | Required Review and Checkpoint |
 | ---: | --- | --- |
-| 1 | Read [Python for LeetCode](./python_basics/10_python_for_leetcode.md) and the [Big-O lesson](./python_basics/11_time_and_space_complexity.md). Solve Two Sum, Group Anagrams, and Longest Substring. | Re-code Two Sum and Longest Substring from memory. Say why each is `O(N)` or not. |
+| 1 | Run the [setup check](./python_basics/00_setup_and_errors.md), then read [Python for LeetCode](./python_basics/10_python_for_leetcode.md) and the [Big-O lesson](./python_basics/11_time_and_space_complexity.md). Solve Two Sum, Group Anagrams, and Longest Substring. | Re-code Two Sum and Longest Substring from memory. Say why each is `O(N)` or not. |
 | 2 | Solve Binary Search, Merge Intervals, and Decode String. | Spend 20 minutes redoing the weakest Day 1 problem. Trace boundary changes and stack state aloud. |
 | 3 | Solve Number of Islands, Clone Graph, and Course Schedule. | Draw the graph state for each: visited cells, clone map, or in-degree list. Re-code one traversal without notes. |
 | 4 | Solve Kth Largest, Top K Frequent, Implement Trie, and Search Suggestions. | Compare what each heap or Trie node stores. Complete every self-check before reading its answer. |
@@ -212,7 +225,7 @@ Return to the problem immediately after the refresher. Avoid turning a short syn
 
 | Day | New Work | Review |
 | ---: | --- | --- |
-| 1 | Python syntax diagnostic, Interview Playbook, Two Sum, Binary Search | Re-code both with no notes. |
+| 1 | Setup check, Python syntax diagnostic, Interview Playbook, Two Sum, Binary Search | Re-code both with no notes. |
 | 2 | Group Anagrams, Longest Substring | Retry Two Sum; compare dictionary roles across all three array problems. |
 | 3 | Merge Intervals, Decode String | Retry Binary Search and explain every boundary or stack invariant. |
 | 4 | Number of Islands, Clone Graph | Redo the Day 2 self-check coding questions. |
@@ -233,7 +246,7 @@ Return to the problem immediately after the refresher. Avoid turning a short syn
 
 | Day | Problems and Focus | Required Recall |
 | ---: | --- | --- |
-| 1 | Python diagnostic, Interview Playbook, Two Sum | Re-code Two Sum and explain complement lookup. |
+| 1 | Setup check, Python diagnostic, Interview Playbook, Two Sum | Re-code Two Sum and explain complement lookup. |
 | 2 | Group Anagrams, Longest Substring | Recall Day 1 before starting; finish both self-checks. |
 | 3 | Binary Search, Search in Rotated Sorted Array | State the search invariant before every boundary update. |
 | 4 | Merge Intervals, Meeting Rooms II | Compare sorting plus merging with sorting plus a heap. |
@@ -258,7 +271,7 @@ Return to the problem immediately after the refresher. Avoid turning a short syn
 
 | Day | Main Work | Review Target |
 | ---: | --- | --- |
-| 1 | Python lessons 1-5 diagnostic and exercises | Record every syntax gap. |
+| 1 | Setup check plus Python lessons 1-5 diagnostic and exercises | Record every syntax gap. |
 | 2 | Python lessons 6-11, Interview Playbook, Two Sum | Re-code Two Sum once. |
 | 3 | Group Anagrams | Review Two Sum. |
 | 4 | Longest Substring | Review Group Anagrams. |
@@ -314,9 +327,9 @@ A retry means solving from the problem summary, not rereading the finished solut
 
 | Day | Work |
 | ---: | --- |
-| 1 | Complete Python lessons 1-2 and run every example. |
-| 2 | Complete lessons 3-4; practice string, list, tuple, and index operations. |
-| 3 | Complete lesson 5; write small dictionary and set examples without copying. |
+| 1 | Complete setup Lesson 0 and Lesson 1; run both files and read one sample traceback. |
+| 2 | Complete lessons 2-3; practice values, strings, indexes, and slices. |
+| 3 | Complete lessons 4-5; write small list, dictionary, and set examples without copying. |
 | 4 | Complete lessons 6-7; practice loops and functions. |
 | 5 | Complete lessons 8-9; trace an object and one recursive call stack. |
 | 6 | Complete lesson 10 and write the common LeetCode syntax from memory. |

@@ -1,6 +1,6 @@
 # Interview Problem-Solving Playbook
 
-[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md)
+[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) | [Pattern map](./ALGORITHM_PATTERN_MAP.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md)
 
 An interview is not only a test of whether the final code works. The interviewer is also evaluating how you clarify uncertainty, improve an initial idea, explain tradeoffs, and verify your own work.
 
@@ -66,7 +66,11 @@ Do not spend most of the interview coding a baseline that clearly misses the con
 
 ## 5. Choose the Pattern
 
-Use clues in the question rather than memorizing code:
+Use clues in the question rather than memorizing code. The
+[Algorithm Pattern Map](./ALGORITHM_PATTERN_MAP.md) provides a shorter decision
+path and comparisons when two patterns look similar.
+
+The table below connects every coding lesson to its main invariant:
 
 | Question | Recognition clue | Pattern and key invariant | Target complexity |
 | --- | --- | --- | --- |
@@ -305,6 +309,8 @@ Do not silently think for a long stretch. If stuck, return to a small example an
 
 If any syntax in this checklist feels unfamiliar, complete the [Python 3 Basics course](./python_basics/) first.
 
+- Confirm the environment uses Python `3.10` or newer for this repository.
+- Use the [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) for a short syntax lookup.
 - Import standard-library tools before using them: `deque`, `heapq`, and `List`.
 - Remember that `=` assigns and `==` compares.
 - Use `is None` for `None` checks.

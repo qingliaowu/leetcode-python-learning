@@ -1,6 +1,6 @@
 # Learning Progress Tracker
 
-[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Python basics](./python_basics/README.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md) | [Run checks](./verify_solutions.py)
+[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Python basics](./python_basics/README.md) | [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) | [Pattern map](./ALGORITHM_PATTERN_MAP.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md) | [Run checks](./verify_solutions.py)
 
 Use this page with the study plan matching your deadline. A checked box means you completed the work without copying the answer. Record a problem score using the [0-4 scoring guide](./INTERVIEW_STUDY_PLANS.md#score-every-problem).
 
@@ -8,6 +8,7 @@ Use this page with the study plan matching your deadline. A checked box means yo
 
 | Lesson | Read | Run | Explain Without Notes |
 | --- | :---: | :---: | :---: |
+| [00 Setup and Reading Errors](./python_basics/00_setup_and_errors.md) | [ ] | [ ] | [ ] |
 | [01 First Program](./python_basics/01_first_program.md) | [ ] | [ ] | [ ] |
 | [02 Variables and Values](./python_basics/02_variables_and_values.md) | [ ] | [ ] | [ ] |
 | [03 Strings](./python_basics/03_strings.md) | [ ] | [ ] | [ ] |
@@ -167,6 +168,9 @@ Use the [45-minute format and 10-point scorecard](./INTERVIEW_STUDY_PLANS.md#how
 
 ## Final Readiness Check
 
+- [ ] I can run one lesson, read a traceback from the bottom, and locate the reported line.
+- [ ] I can use the Python cheat sheet without losing the algorithm I was explaining.
+- [ ] I can choose a candidate pattern and state its stored state and invariant before coding.
 - [ ] I score at least `3/4` on 10-12 core problems.
 - [ ] I score at least `7/10` on two of my last three mocks.
 - [ ] I state assumptions before coding.

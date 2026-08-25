@@ -407,7 +407,12 @@ Do not only say "It is linear." Explain what is visited, how often, and what is 
 return numbers[0]
 ```
 
-Answer: `O(1)`. One direct access does not grow with list length.
+<details>
+<summary>Show answer</summary>
+
+`O(1)`. One direct access does not grow with list length.
+
+</details>
 
 ### Example 2
 
@@ -416,7 +421,12 @@ for number in numbers:
     print(number)
 ```
 
-Answer: `O(N)`. Every number is visited once.
+<details>
+<summary>Show answer</summary>
+
+`O(N)`. Every number is visited once.
+
+</details>
 
 ### Example 3
 
@@ -426,7 +436,13 @@ for first in numbers:
         print(first, second)
 ```
 
-Answer: `O(N²)`. There are `N * N` ordered pairs.
+<details>
+<summary>Show answer</summary>
+
+`O(N²)`. For each of `N` first values, the inner loop visits all `N` second
+values, creating `N * N` ordered pairs.
+
+</details>
 
 ### Example 4
 
@@ -436,7 +452,13 @@ for number in numbers:
     print(number)
 ```
 
-Answer: `O(N log N)`. Sorting dominates the later `O(N)` loop.
+<details>
+<summary>Show answer</summary>
+
+`O(N log N)`. Sorting costs `O(N log N)`, then the loop costs `O(N)`.
+Consecutive work adds, and the faster-growing term dominates.
+
+</details>
 
 ### Example 5
 
@@ -445,7 +467,13 @@ while size > 1:
     size //= 2
 ```
 
-Answer: `O(log N)`. The remaining size is cut in half each time.
+<details>
+<summary>Show answer</summary>
+
+`O(log N)`. The remaining size is cut in half each time, so only about
+`log2(N)` iterations occur before it reaches one.
+
+</details>
 
 ## Practice: Name the Extra Space
 
@@ -457,7 +485,13 @@ for number in numbers:
     total += number
 ```
 
-Answer: `O(1)` extra space. Only one total and one loop variable are needed, regardless of `N`.
+<details>
+<summary>Show answer</summary>
+
+`O(1)` extra space. Only one total and one loop variable are needed, regardless
+of `N`.
+
+</details>
 
 ### Example 2
 
@@ -467,7 +501,12 @@ for number in numbers:
     copied.append(number)
 ```
 
-Answer: `O(N)` extra space. The new list grows to contain `N` items.
+<details>
+<summary>Show answer</summary>
+
+`O(N)` extra space. The new list grows to contain `N` items.
+
+</details>
 
 ### Example 3
 
@@ -478,7 +517,13 @@ def visit(node):
     visit(node.next)
 ```
 
-Answer: `O(N)` call-stack space in the worst case for a chain of `N` nodes.
+<details>
+<summary>Show answer</summary>
+
+`O(N)` call-stack space in the worst case. A chain of `N` nodes creates `N`
+waiting recursive calls before the base case returns.
+
+</details>
 
 ## Common Beginner Mistakes
 
@@ -505,3 +550,7 @@ When asked for complexity:
 7. Explain the reason in plain English.
 
 You do not need advanced math. You need a clear count of what grows.
+
+---
+
+[Previous: Lesson 10, Python for LeetCode](./10_python_for_leetcode.md) | [Next: Algorithm Pattern Map](../ALGORITHM_PATTERN_MAP.md)

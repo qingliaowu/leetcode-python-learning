@@ -14,6 +14,24 @@ answer = 4
 
 The sorted-input guarantee is what makes binary search possible.
 
+## Python Used Here
+
+```python
+left = 0
+right = len(nums) - 1
+middle = (left + right) // 2
+```
+
+- `len(nums)` is the number of values.
+- The final valid index is one less than the length.
+- `// 2` produces a whole-number middle index.
+- A `while` loop repeats while possible indexes remain.
+- `return -1` is the problem's signal for "not found."
+
+Review [Variables and Basic Values](../python_basics/02_variables_and_values.md),
+[Conditions and Loops](../python_basics/06_conditions_and_loops.md), or the
+[Python cheat sheet](../PYTHON_CHEAT_SHEET.md) if those lines feel unfamiliar.
+
 ## The Main Idea
 
 Look at the middle value:

@@ -113,7 +113,16 @@ stack.append("b")
 item = stack.pop()
 ```
 
-Answer: `item` is `"b"`, and `stack` is `["a"]`.
+<details>
+<summary>Show answer and explanation</summary>
+
+`item` is `"b"`, and `stack` is `["a"]`.
+
+The two appends place `"a"` and then `"b"` at the list's end. `pop()` removes
+and returns the final item, which is why a list works as a last-in-first-out
+stack.
+
+</details>
 
 ## Common Mistakes
 
@@ -126,3 +135,7 @@ Answer: `item` is `"b"`, and `stack` is `["a"]`.
 ## Remember
 
 Lists are ordered and mutable. Tuples are ordered and immutable. Both use zero-based indexes.
+
+---
+
+[Previous: Lesson 3, Strings](./03_strings.md) | [Next: Lesson 5, Dictionaries and Sets](./05_dictionaries_and_sets.md)

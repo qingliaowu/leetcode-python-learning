@@ -121,7 +121,16 @@ for number in [2, 2, 3]:
     counts[number] = counts.get(number, 0) + 1
 ```
 
-Answer: `{2: 2, 3: 1}`.
+<details>
+<summary>Show answer and explanation</summary>
+
+The result is `{2: 2, 3: 1}`.
+
+The first `2` uses default count `0` and stores `1`. The second `2` reads `1`
+and stores `2`. The value `3` is new, so it also begins from default `0` and
+stores `1`.
+
+</details>
 
 ## Common Mistakes
 
@@ -134,3 +143,7 @@ Answer: `{2: 2, 3: 1}`.
 ## Remember
 
 A dictionary stores key-value relationships. A set stores unique values. Both provide fast average membership lookup.
+
+---
+
+[Previous: Lesson 4, Lists and Tuples](./04_lists_and_tuples.md) | [Next: Lesson 6, Conditions and Loops](./06_conditions_and_loops.md)

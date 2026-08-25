@@ -1,21 +1,26 @@
 # LeetCode Python Learning
 
-A beginner-first path from forgotten Python syntax to coding, system design, AI engineering, and Forward Deployed Engineer interviews.
+A beginner-first path from installing and running Python to coding, system
+design, AI engineering, and Forward Deployed Engineer interviews.
 
-This repository assumes nothing. Python syntax, algorithm ideas, system architecture, complexity, edge cases, tests, and interview reasoning are explained in plain language.
+This repository assumes nothing. Terminal commands, Python syntax, algorithm
+ideas, system architecture, complexity, edge cases, tests, and interview
+reasoning are explained in plain language. The code requires Python `3.10` or
+newer and uses no external packages.
 
 ## What Is Included
 
 | Material | Count | Purpose |
 | --- | ---: | --- |
-| Python 3 lessons | 11 | Relearn Python from `print` through recursion and Big-O |
+| Python 3 lessons | 12 | Start, debug, and relearn Python from `print` through recursion and Big-O |
 | Coding interview problems | 33 | Practice core patterns plus an FDE-oriented pattern extension |
 | System design lessons | 4 | Learn reusable patterns and design rate limiting, URL shortening, and image generation |
 | FDE interview lessons | 4 | Prepare role knowledge, customer solutioning, cloud architecture, and behavioral stories |
 | AI engineering lessons | 3 | Learn LLM products, RAG, model delivery, evaluation, and monitoring |
-| Guided self-check questions | 88 | Transfer coding, design, AI, and customer skills, then reveal a detailed answer |
+| Guided practice prompts | 100+ | Practice Python, coding, design, AI, and customer skills, then reveal detailed answers |
 | Interview study schedules | 5 | Choose a 5-, 10-, 14-, 30-, or 60-day preparation plan |
 | Course guides | 14 | Navigate Python, ten coding topics, system design, FDE, and AI engineering |
+| Quick references | 2 | Look up Python syntax or choose an algorithm pattern without rereading a course |
 | Progress tracker | 1 | Record lessons, problem scores, review dates, and mock results |
 | External packages | 0 | Everything runs with the Python standard library |
 
@@ -25,8 +30,11 @@ Choose the row that sounds most like you:
 
 | Your Situation | Start With |
 | --- | --- |
+| "I do not know how to run the files." | [Setup, Running Files, and Reading Errors](./python_basics/00_setup_and_errors.md) |
 | "I forgot most Python syntax." | [Python 3 Basics for Complete Beginners](./python_basics/) |
+| "I need one Python syntax page." | [Python Interview Cheat Sheet](./PYTHON_CHEAT_SHEET.md) |
 | "I can code, but Big-O is confusing." | [Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) |
+| "I understand the question but cannot choose a pattern." | [Algorithm Pattern Map](./ALGORITHM_PATTERN_MAP.md) |
 | "My interview is in 5-60 days." | [Choose an Interview Study Plan](./INTERVIEW_STUDY_PLANS.md) |
 | "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
 | "I need to prepare for a system design interview." | [System Design for Beginners](./system_design/) |
@@ -35,21 +43,23 @@ Choose the row that sounds most like you:
 | "I want one checklist for everything." | [Open the Learning Progress Tracker](./PROGRESS_TRACKER.md) |
 | "I am ready to solve problems." | [Interview Roadmap](#interview-roadmap) |
 
-No package installation is needed. Check Python and run the first lesson:
+No package installation is needed. Run the setup check from the repository root:
 
 ```bash
-python3 --version
-python3 python_basics/01_first_program.py
+python3 python_basics/00_setup_and_errors.py
 ```
+
+Windows PowerShell users can replace `python3` with `py -3`.
 
 ## Recommended Learning Path
 
 ### Phase 1: Relearn Python
 
-Complete the [11 Python lessons](./python_basics/) in order:
+Complete the [12 Python lessons](./python_basics/) in order:
 
 ```text
-first program
+setup, running files, and reading errors
+    -> first program
     -> variables and values
     -> strings
     -> lists and tuples
@@ -62,11 +72,15 @@ first program
     -> time and space complexity
 ```
 
-Every lesson has a plain-English page, runnable examples, prediction exercises, expected answers, and common mistakes.
+Every lesson has a plain-English page, runnable examples, expected answers, and
+common mistakes. Use the [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) for quick
+lookups instead of trying to memorize every method.
 
 ### Phase 2: Learn One Pattern at a Time
 
-Do not memorize finished code. For each problem:
+Open the [Algorithm Pattern Map](./ALGORITHM_PATTERN_MAP.md) when you need help
+turning question clues into a candidate approach. Do not memorize finished code.
+For each problem:
 
 1. Read the question summary and examples.
 2. Restate the input, output, and assumptions aloud.
@@ -113,6 +127,8 @@ The FDE extension also adds seven coding patterns after the original 15-problem 
 | Lesson `.md` | Problem summary, Python reminders, approach, dry run, correctness, complexity, edge cases, common mistakes, interview explanation, follow-ups, and two self-checks with detailed answers |
 | Solution `.py` | Readable Python 3 code, focused comments, type hints, and executable assertions |
 | Topic `README.md` | Shared navigation, prerequisites, recommended order, pattern recognition, and a move-on checkpoint |
+| Python cheat sheet | One-page-style lookup for syntax, collections, tools, mutation, and common operation costs |
+| Algorithm pattern map | Recognition questions, pattern comparisons, state, invariants, and a complete problem map |
 | System design lesson | Requirements, assumptions, estimates, architecture patterns, failures, testing, follow-ups, scorecard, and detailed transfer designs |
 | FDE or AI lesson | Plain-language concepts, decision frameworks, customer context, production risks, mock scorecards, and detailed exercises |
 
@@ -278,12 +294,13 @@ python3 verify_solutions.py
 A successful run ends with:
 
 ```text
-44/44 Python files passed.
+45/45 Python files passed.
 ```
 
 Run one lesson or solution directly while studying:
 
 ```bash
+python3 python_basics/00_setup_and_errors.py
 python3 python_basics/05_dictionaries_and_sets.py
 python3 linked_lists/0206_reverse_linked_list.py
 python3 trie/0208_implement_trie.py
@@ -294,7 +311,7 @@ python3 dynamic_programming/0322_coin_change.py
 
 ```text
 .
-├── python_basics/          # 11 beginner Python lessons
+├── python_basics/          # 12 beginner Python lessons
 ├── arrays_strings/         # hash maps, sliding window, two pointers
 ├── stacks_queues/          # nested parsing and monotonic stacks
 ├── linked_lists/           # pointer updates on linked nodes
@@ -311,6 +328,8 @@ python3 dynamic_programming/0322_coin_change.py
 ├── INTERVIEW_PLAYBOOK.md   # solve-aloud interview process
 ├── INTERVIEW_STUDY_PLANS.md # 5/10/14/30/60-day preparation tracks
 ├── PROGRESS_TRACKER.md     # lesson, review, and mock checklist
+├── PYTHON_CHEAT_SHEET.md   # quick syntax and standard-library reference
+├── ALGORITHM_PATTERN_MAP.md # beginner pattern-selection decision map
 ├── verify_solutions.py     # validates structure and runs every example
 ├── .gitignore              # ignores local Python and OS artifacts
 └── README.md
@@ -327,8 +346,11 @@ Keep new material consistent with the beginner-first style:
 5. Show a dry run with changing variables or data structures.
 6. Explain correctness, assumptions, edge cases, time, and extra space.
 7. Include executable assertions in the Python file.
-8. Add the problem to its topic guide, the progress tracker, this index, and the ordered `COURSE_SECTIONS` entry in `verify_solutions.py`.
-9. Run `python3 verify_solutions.py` to check naming, file pairing, and assertions.
+8. Add the problem to its topic guide, the pattern map, the progress tracker,
+   this index, and the ordered `COURSE_SECTIONS` entry in
+   `verify_solutions.py`.
+9. Run `python3 verify_solutions.py` to check navigation, Markdown structure,
+   file pairing, and assertions.
 
 ## Adding Another Documentation Lesson
 
@@ -340,6 +362,7 @@ Keep new material consistent with the beginner-first style:
 6. Explain policy, tenant isolation, observability, evaluation, and operations where relevant.
 7. Include failures, edge cases, tradeoffs, an interview summary, follow-ups, and two transfer exercises with detailed answers.
 8. Add the lesson to its course guide, this index, the progress tracker, and `DOCUMENTATION_SECTIONS` in `verify_solutions.py`.
-9. Run `python3 verify_solutions.py` and the Markdown integrity checks.
+9. Run `python3 verify_solutions.py` to check navigation, Markdown structure,
+   curriculum indexing, and every executable example.
 
 Clarity is the goal. A beginner should understand not only what the code or architecture does, but why each step and design decision exists.
