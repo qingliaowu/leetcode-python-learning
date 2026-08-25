@@ -16,9 +16,12 @@ architecture to a measurable customer outcome.
 | 2 | [Customer Discovery and Solutioning](./02_customer_discovery_and_solutioning.md) | Turn ambiguity into a phased recommendation with tradeoffs |
 | 3 | [Cloud Architecture Fundamentals](./03_cloud_architecture_fundamentals.md) | Choose compute, data, messaging, networking, and operating controls |
 | 4 | [Behavioral Story Workbook](./04_behavioral_story_workbook.md) | Build truthful stories about ownership, customers, conflict, and learning |
+| 5 | [Enterprise AI Adoption Design](./05_enterprise_ai_adoption.md) | Connect a business workflow to AI architecture, evaluation, rollout, adoption, governance, and value |
 
-Then complete the [AI Engineering for Beginners](../ai_engineering/) course and
-the [System Design for Beginners](../system_design/) cases.
+Use the enterprise adoption lesson as the capstone. It draws from the
+[AI Engineering for Beginners](../ai_engineering/) course and the
+[System Design for Beginners](../system_design/) cases, so read those supporting
+pages whenever a model or infrastructure concept feels unfamiliar.
 
 ## Coding Pattern Extension
 
@@ -41,9 +44,9 @@ Use this as an add-on to the repository's main [coding study plan](../INTERVIEW_
 
 | Time | FDE Add-On |
 | --- | --- |
-| 5 days | Read the role map and customer framework; rehearse one customer scenario and two behavioral stories. |
-| 10 days | Add cloud fundamentals, LLM fundamentals, RAG, and one system design mock. |
-| 14 days | Complete every FDE and AI lesson, three pattern-extension problems, two customer scenarios, and two design mocks. |
+| 5 days | Read the role map and customer framework; use the enterprise adoption scorecard to outline one use case; rehearse two behavioral stories. |
+| 10 days | Add cloud fundamentals, LLM fundamentals, RAG, and one enterprise AI adoption mock. |
+| 14 days | Complete every FDE and AI lesson, three pattern-extension problems, two customer scenarios, and two design mocks including enterprise adoption. |
 | 30 days | Complete all seven extension problems, all FDE/AI lessons, three design cases, four scenario mocks, and a six-story behavioral bank. |
 | 60 days | Repeat the 30-day work with spaced review, a small portfolio prototype, weekly mixed mocks, and role-specific research from primary sources. |
 
@@ -57,7 +60,8 @@ One complete practice loop has four parts:
 
 1. **Coding:** solve one problem aloud and test it.
 2. **Customer scenario:** clarify, recommend, phase, and handle an objection.
-3. **System or AI design:** estimate, draw, deep-dive, and failure-test.
+3. **System or AI adoption design:** choose a workflow, estimate, draw,
+   evaluate, failure-test, and plan rollout.
 4. **Behavioral:** answer one prompt, then handle three follow-up questions.
 
 Record the weakest observable behavior, not a vague feeling:
@@ -78,6 +82,9 @@ You are ready for an FDE-style interview when you can:
 - compare at least two options and recommend one with a migration trigger,
 - draw a secure, operable cloud architecture without relying on product names,
 - explain RAG, prompting, fine-tuning, online serving, and evaluation choices,
+- choose an enterprise AI use case from business value, feasibility, risk, and
+  adoption evidence,
+- design proof, pilot, hardening, and rollout gates tied to workflow impact,
 - solve coding patterns while translating domain language into data structures,
 - tell six truthful behavioral stories with specific personal actions and results,
 - adapt calmly when an interviewer changes budget, latency, privacy, or timeline.

@@ -107,7 +107,14 @@ Use this schedule only after the day's core work is stable:
 
 ## System Design Add-On
 
-Use this add-on when the target role includes a system design round. Learn [Foundational System Design Patterns](./system_design/foundational_patterns.md), practice [Rate Limiter](./system_design/rate_limiter.md) and [URL Shortener](./system_design/url_shortener.md), then use [Image-Generation Platform](./system_design/image_generation_platform.md) as the deeper production case.
+Use this add-on when the target role includes a system design round. Learn
+[Foundational System Design Patterns](./system_design/foundational_patterns.md),
+practice [Rate Limiter](./system_design/rate_limiter.md) and
+[URL Shortener](./system_design/url_shortener.md), then use
+[Image-Generation Platform](./system_design/image_generation_platform.md) as the
+deeper production case. For an FDE role, also practice
+[Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md),
+which begins with use-case choice and ends with adoption and measurable value.
 
 | Plan | Add-On Schedule | Required Result |
 | --- | --- | --- |
@@ -135,11 +142,11 @@ Use this track when the role combines coding with customer discovery, deployment
 
 | Plan | Add-On Schedule | Required Result |
 | --- | --- | --- |
-| 5 days | Read the role map and customer discovery lesson; prepare two behavioral stories. | Explain the customer's outcome, one scoped solution, and truthful evidence of ownership. |
-| 10 days | Add cloud fundamentals and the behavioral workbook; read the AI overview if relevant. | Run one 30-minute discovery mock and tell four concise STAR-L stories. |
-| 14 days | Complete all FDE lessons plus LLM product fundamentals and RAG. | Defend one customer architecture and one AI evaluation plan. |
-| 30 days | Complete all FDE and AI lessons, one exercise every 3-4 days, and two solutioning mocks. | Connect requirements, architecture, rollout, metrics, and customer value without notes. |
-| 60 days | Complete the track slowly, revisit each exercise twice, and run four mixed FDE mocks. | Handle discovery, coding, architecture, AI, and behavioral rounds as one coherent interview loop. |
+| 5 days | Read the role map and customer discovery lesson; use the enterprise adoption scorecard to outline one use case; prepare two behavioral stories. | Explain the customer's outcome, one scoped AI workflow, and truthful evidence of ownership. |
+| 10 days | Add cloud fundamentals, the behavioral workbook, and one 30-minute enterprise adoption mock; read the AI overview. | Connect one use case to architecture, evaluation, rollout, and adoption; tell four concise STAR-L stories. |
+| 14 days | Complete all FDE lessons plus LLM product fundamentals and RAG; run the enterprise adoption capstone once. | Defend one customer architecture, AI evaluation plan, and production adoption gate. |
+| 30 days | Complete all FDE and AI lessons, one exercise every 3-4 days, and two enterprise solutioning mocks. | Connect requirements, architecture, rollout, metrics, ownership, and customer value without notes. |
+| 60 days | Complete the track slowly, revisit each exercise twice, and run four mixed FDE mocks including two enterprise adoption prompts. | Handle discovery, coding, architecture, AI, adoption, and behavioral rounds as one coherent interview loop. |
 
 Do not invent customer outcomes or behavioral evidence. State missing information, ask focused questions, and use examples from your real work, study, volunteering, or personal projects.
 

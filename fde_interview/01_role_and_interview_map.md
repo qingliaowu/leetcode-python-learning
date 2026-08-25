@@ -1,6 +1,6 @@
 # FDE Role and Interview Map
 
-[FDE track](./README.md) | [Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+[FDE track](./README.md) | [Enterprise AI adoption](./05_enterprise_ai_adoption.md) | [Repository home](../README.md) | [Study plans](../INTERVIEW_STUDY_PLANS.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## First, Treat the Title as Ambiguous
 
@@ -65,10 +65,16 @@ An interview loop may contain some of these dimensions:
 | System design | Design a production service under scale and reliability constraints | Requirements, estimates, data flow, deep dives, failure recovery |
 | Domain depth | Explain AI, data, cloud, security, or another role-specific area | Accurate concepts, tradeoffs, production consequences |
 | Customer scenario | Advise a customer with incomplete requirements | Discovery, recommendation, phases, risks, measurable outcome |
+| Enterprise AI adoption | Choose and deliver an AI-enabled business workflow | Baseline, use-case tradeoffs, architecture, evaluation, rollout, adoption, ownership, and value |
 | Behavioral | Describe past ownership, conflict, failure, and impact | Truthful personal actions, judgment, reflection, results |
 
 The loop and scoring vary. Use this map to identify preparation categories, not
 to predict a particular company's process.
+
+The enterprise AI adoption dimension may be presented as system design, an
+ambiguous customer case, product sense, technical strategy, or an AI deep dive.
+Practice the full version in
+[Enterprise AI Adoption Design](./05_enterprise_ai_adoption.md).
 
 ## What Role-Related Knowledge Means
 
@@ -122,6 +128,7 @@ Do not prepare only descriptions of skills. Prepare evidence.
 | Production architecture |  |  |
 | Debugging and incidents |  |  |
 | AI or target domain depth |  |  |
+| AI adoption and value measurement |  |  |
 | Cross-functional delivery |  |  |
 | Explaining technical tradeoffs |  |  |
 | Handling failure and learning |  |  |

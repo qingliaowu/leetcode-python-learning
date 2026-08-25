@@ -168,6 +168,7 @@ DOCUMENTATION_SECTIONS = (
             "02_customer_discovery_and_solutioning",
             "03_cloud_architecture_fundamentals",
             "04_behavioral_story_workbook",
+            "05_enterprise_ai_adoption",
         ),
     ),
     (

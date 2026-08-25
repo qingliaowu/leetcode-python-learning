@@ -116,7 +116,13 @@ Use these columns consistently:
 
 ## System Design
 
-Learn the [foundational patterns](./system_design/foundational_patterns.md), then use the [10-point system design scorecard](./system_design/image_generation_platform.md#28-system-design-mock-scorecard). A complete case attempt includes a normal request, duplicate or repeated request, dependency failure, traffic spike, security concern, and changed assumption.
+Learn the [foundational patterns](./system_design/foundational_patterns.md), then
+use the matching 10-point scorecard for a
+[production platform](./system_design/image_generation_platform.md#28-system-design-mock-scorecard)
+or an
+[enterprise AI adoption](./fde_interview/05_enterprise_ai_adoption.md#23-enterprise-ai-adoption-scorecard)
+case. A complete attempt includes normal workflow, dependency failure, security
+concern, changed assumption, measurable outcome, and rollout decision.
 
 | Case | Clarify | Estimate | Architecture | Deep Dives | Failure Test | Score | Next Review |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | --- |
@@ -124,6 +130,7 @@ Learn the [foundational patterns](./system_design/foundational_patterns.md), the
 | [Rate Limiter](./system_design/rate_limiter.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
 | [URL Shortener](./system_design/url_shortener.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
 | [Image-Generation Platform](./system_design/image_generation_platform.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
+| [Enterprise AI Adoption](./fde_interview/05_enterprise_ai_adoption.md) | [ ] | [ ] | [ ] | [ ] | [ ] |  /10 |  |
 
 ### System Design Mock Log
 
@@ -142,6 +149,7 @@ Learn the [foundational patterns](./system_design/foundational_patterns.md), the
 | [Customer Discovery and Solutioning](./fde_interview/02_customer_discovery_and_solutioning.md) | [ ] | [ ] | [ ] |  |
 | [Cloud Architecture Fundamentals](./fde_interview/03_cloud_architecture_fundamentals.md) | [ ] | [ ] | [ ] |  |
 | [Behavioral Story Workbook](./fde_interview/04_behavioral_story_workbook.md) | [ ] | [ ] | [ ] |  |
+| [Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md) | [ ] | [ ] | [ ] |  |
 
 ## AI Engineering
 
@@ -181,5 +189,7 @@ Use the [45-minute format and 10-point scorecard](./INTERVIEW_STUDY_PLANS.md#how
 - [ ] If my role includes system design, I can clarify, estimate, draw, deep-dive, and failure-test at least one case in 45 minutes.
 - [ ] I can explain idempotency, asynchronous work, tenant isolation, and useful outcome metrics in plain language.
 - [ ] If I am targeting an FDE role, I can discover a customer's outcome, propose a scoped solution, and tell four truthful STAR-L stories.
+- [ ] I can select one enterprise AI workflow and connect its architecture,
+  evaluation, rollout, adoption, ownership, risk, and unit economics.
 - [ ] If the role includes AI, I can describe retrieval, evaluation, model rollout, monitoring, safety, and cost tradeoffs.
 - [ ] I can recover calmly after a mistake or hint.

@@ -15,7 +15,7 @@ newer and uses no external packages.
 | Python 3 lessons | 12 | Start, debug, and relearn Python from `print` through recursion and Big-O |
 | Coding interview problems | 33 | Practice core patterns plus an FDE-oriented pattern extension |
 | System design lessons | 4 | Learn reusable patterns and design rate limiting, URL shortening, and image generation |
-| FDE interview lessons | 4 | Prepare role knowledge, customer solutioning, cloud architecture, and behavioral stories |
+| FDE interview lessons | 5 | Prepare role knowledge, customer solutioning, cloud architecture, enterprise AI adoption, and behavioral stories |
 | AI engineering lessons | 3 | Learn LLM products, RAG, model delivery, evaluation, and monitoring |
 | Guided practice prompts | 100+ | Practice Python, coding, design, AI, and customer skills, then reveal detailed answers |
 | Interview study schedules | 5 | Choose a 5-, 10-, 14-, 30-, or 60-day preparation plan |
@@ -39,6 +39,7 @@ Choose the row that sounds most like you:
 | "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
 | "I need to prepare for a system design interview." | [System Design for Beginners](./system_design/) |
 | "I am targeting a Forward Deployed Engineer role." | [FDE Interview Track](./fde_interview/) |
+| "I need to design enterprise AI adoption." | [Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md) |
 | "I need AI engineering fundamentals." | [AI Engineering for Beginners](./ai_engineering/) |
 | "I want one checklist for everything." | [Open the Learning Progress Tracker](./PROGRESS_TRACKER.md) |
 | "I am ready to solve problems." | [Interview Roadmap](#interview-roadmap) |
@@ -116,7 +117,14 @@ Run each case aloud in 45 minutes. Redraw it without notes, change one assumptio
 
 ### Phase 5: Add FDE and AI Engineering
 
-For a customer-facing engineering role, use the [FDE Interview Track](./fde_interview/) to practice role mapping, customer discovery, cloud architecture, and truthful behavioral stories. Complete [AI Engineering for Beginners](./ai_engineering/) when the role includes LLM, retrieval, model delivery, or evaluation depth.
+For a customer-facing engineering role, use the [FDE Interview Track](./fde_interview/)
+to practice role mapping, customer discovery, cloud architecture, enterprise AI
+adoption, and truthful behavioral stories. Complete
+[AI Engineering for Beginners](./ai_engineering/) when the role includes LLM,
+retrieval, model delivery, or evaluation depth. Use
+[Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md) as
+the capstone that connects a business problem to production architecture,
+evaluation, rollout, user adoption, operating ownership, and measurable value.
 
 The FDE extension also adds seven coding patterns after the original 15-problem core. Keep the core first when time is short.
 
@@ -274,6 +282,7 @@ The order below moves from common collection patterns toward specialized structu
 | [Customer Discovery and Solutioning](./fde_interview/02_customer_discovery_and_solutioning.md) | Discover the real outcome, constraints, stakeholders, risks, and acceptance test |
 | [Cloud Architecture Fundamentals](./fde_interview/03_cloud_architecture_fundamentals.md) | Explain portable cloud building blocks and their tradeoffs without hiding behind service names |
 | [Behavioral Story Workbook](./fde_interview/04_behavioral_story_workbook.md) | Build truthful STAR-L stories about ownership, ambiguity, conflict, failure, and customer impact |
+| [Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md) | Select a valuable workflow and design the AI system, evaluation, governance, rollout, adoption, ownership, and economics |
 
 ### AI Engineering
 
@@ -323,7 +332,7 @@ python3 dynamic_programming/0322_coin_change.py
 ├── trie/                   # prefix-tree design and applications
 ├── dynamic_programming/    # saved-state recurrence patterns
 ├── system_design/          # foundations and production design cases
-├── fde_interview/          # role, customer, cloud, and behavioral skills
+├── fde_interview/          # role, customer, cloud, AI adoption, and behavioral skills
 ├── ai_engineering/         # LLM, RAG, delivery, and evaluation skills
 ├── INTERVIEW_PLAYBOOK.md   # solve-aloud interview process
 ├── INTERVIEW_STUDY_PLANS.md # 5/10/14/30/60-day preparation tracks

@@ -17,7 +17,13 @@ models and interview decisions first.
 | 2 | [RAG Systems](./02_rag_systems.md) | Design authorized ingestion, retrieval, generation, citations, and evaluation |
 | 3 | [Model Delivery and Evaluation](./03_model_delivery_and_evaluation.md) | Ship versions safely and monitor quality, drift, latency, reliability, and cost |
 
-Then apply the material to [Design an Image-Generation Platform](../system_design/image_generation_platform.md).
+Then apply the material to
+[Design an Image-Generation Platform](../system_design/image_generation_platform.md)
+and the FDE capstone,
+[Enterprise AI Adoption Design](../fde_interview/05_enterprise_ai_adoption.md).
+The first focuses on a production AI product platform. The second begins with an
+enterprise business workflow and carries the solution through proof, rollout,
+adoption, governance, and measurable value.
 
 ## The Product Decision Map
 

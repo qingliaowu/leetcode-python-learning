@@ -15,6 +15,12 @@ goal, make reasonable assumptions, explain tradeoffs, and notice failure cases.
 | 3 | [Design a URL Shortener](./url_shortener.md) | Key generation, redirect cache, analytics, abuse, expiration, and multi-region consistency |
 | 4 | [Design an Image-Generation Platform](./image_generation_platform.md) | Asynchronous jobs, safety, billing, scheduling, tenant isolation, storage, evaluation, model rollout, and cost |
 
+For an FDE-style design round, continue to
+[Enterprise AI Adoption Design](../fde_interview/05_enterprise_ai_adoption.md).
+That capstone starts with a business workflow and adds use-case selection,
+proof of value, human approval, change management, production adoption, and
+value realization to the architecture process.
+
 ## Before You Start
 
 It helps to understand these lessons first:
