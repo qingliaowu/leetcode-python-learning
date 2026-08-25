@@ -142,11 +142,11 @@ Use this track when the role combines coding with customer discovery, deployment
 
 | Plan | Add-On Schedule | Required Result |
 | --- | --- | --- |
-| 5 days | Read the role map and customer discovery lesson; use the enterprise adoption scorecard to outline one use case; prepare two behavioral stories. | Explain the customer's outcome, one scoped AI workflow, and truthful evidence of ownership. |
-| 10 days | Add cloud fundamentals, the behavioral workbook, and one 30-minute enterprise adoption mock; read the AI overview. | Connect one use case to architecture, evaluation, rollout, and adoption; tell four concise STAR-L stories. |
-| 14 days | Complete all FDE lessons plus LLM product fundamentals and RAG; run the enterprise adoption capstone once. | Defend one customer architecture, AI evaluation plan, and production adoption gate. |
-| 30 days | Complete all FDE and AI lessons, one exercise every 3-4 days, and two enterprise solutioning mocks. | Connect requirements, architecture, rollout, metrics, ownership, and customer value without notes. |
-| 60 days | Complete the track slowly, revisit each exercise twice, and run four mixed FDE mocks including two enterprise adoption prompts. | Handle discovery, coding, architecture, AI, adoption, and behavioral rounds as one coherent interview loop. |
+| 5 days | Read the role map and customer discovery lesson; use the enterprise adoption scorecard to outline one use case; skim the RAG accuracy decision tree; prepare two behavioral stories. | Explain the customer's outcome, one scoped AI workflow, one likely failure layer, and truthful evidence of ownership. |
+| 10 days | Add cloud fundamentals, the behavioral workbook, one 30-minute enterprise adoption mock, and the RAG trace and latency-budget sections. | Connect one use case to architecture, evaluation, rollout, and adoption; isolate one slow stage; tell four concise STAR-L stories. |
+| 14 days | Complete all FDE lessons plus LLM fundamentals, RAG systems, and the RAG troubleshooting playbook; run the enterprise adoption capstone once. | Defend one customer architecture, quality set, latency budget, and production adoption gate. |
+| 30 days | Complete all FDE and AI lessons, one exercise every 3-4 days, two RAG incidents, and two enterprise solutioning mocks. | Connect requirements, architecture, diagnosis, rollout, metrics, ownership, and customer value without notes. |
+| 60 days | Complete the track slowly, revisit each exercise twice, and run four mixed FDE mocks including an enterprise adoption prompt and a RAG incident. | Handle discovery, coding, architecture, AI troubleshooting, adoption, and behavioral rounds as one coherent interview loop. |
 
 Do not invent customer outcomes or behavioral evidence. State missing information, ask focused questions, and use examples from your real work, study, volunteering, or personal projects.
 

@@ -1,6 +1,6 @@
 # Retrieval-Augmented Generation Systems
 
-[AI engineering guide](./README.md) | [LLM fundamentals](./01_llm_product_fundamentals.md) | [Customer solutioning](../fde_interview/02_customer_discovery_and_solutioning.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+[AI engineering guide](./README.md) | [LLM fundamentals](./01_llm_product_fundamentals.md) | [Accuracy and latency playbook](./04_rag_accuracy_latency_playbook.md) | [Customer solutioning](../fde_interview/02_customer_discovery_and_solutioning.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What RAG Solves
 
@@ -383,6 +383,10 @@ research and explicit feedback.
 | Cost rises | context growth, retrieval count, retries, model routing, repeated unanswerable questions |
 
 Do not respond to every quality problem by changing the generator model.
+
+For the complete query trace, accuracy decision tree, stage latency budget, and
+incident runbook, continue with the
+[RAG Accuracy and Latency Troubleshooting Playbook](./04_rag_accuracy_latency_playbook.md).
 
 ## 18. Capacity Example
 

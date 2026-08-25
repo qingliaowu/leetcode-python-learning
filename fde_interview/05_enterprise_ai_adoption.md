@@ -1,6 +1,6 @@
 # Enterprise AI Adoption Design for FDE Interviews
 
-[FDE track](./README.md) | [Customer discovery](./02_customer_discovery_and_solutioning.md) | [Cloud fundamentals](./03_cloud_architecture_fundamentals.md) | [AI engineering](../ai_engineering/README.md) | [System design](../system_design/README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
+[FDE track](./README.md) | [Customer discovery](./02_customer_discovery_and_solutioning.md) | [Cloud fundamentals](./03_cloud_architecture_fundamentals.md) | [AI engineering](../ai_engineering/README.md) | [RAG troubleshooting](../ai_engineering/04_rag_accuracy_latency_playbook.md) | [System design](../system_design/README.md) | [Progress tracker](../PROGRESS_TRACKER.md)
 
 ## What This Interview Question Asks
 
@@ -465,6 +465,11 @@ evidence support, completeness, tone, safe escalation, and edit effort.
 | Draft is good but agent rewrites it | Tone, workflow fit, missing case fields, trust, or user incentives |
 | Offline quality is good but handle time does not improve | Latency, copy steps, ineligible cases, measurement, or adoption |
 | Overall score is good but one group fails | Segment data, permissions, language, product, or risk cohort |
+
+For a full production diagnosis process, use the
+[RAG Accuracy and Latency Troubleshooting Playbook](../ai_engineering/04_rag_accuracy_latency_playbook.md).
+It separates source, parsing, retrieval, ranking, context, generation, queue,
+and service-time failures before choosing a fix.
 
 ### Release Sequence
 

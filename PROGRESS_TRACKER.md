@@ -158,6 +158,7 @@ concern, changed assumption, measurable outcome, and rollout decision.
 | [LLM Product Fundamentals](./ai_engineering/01_llm_product_fundamentals.md) | [ ] | [ ] | [ ] |  |
 | [Retrieval-Augmented Generation](./ai_engineering/02_rag_systems.md) | [ ] | [ ] | [ ] |  |
 | [Model Delivery and Evaluation](./ai_engineering/03_model_delivery_and_evaluation.md) | [ ] | [ ] | [ ] |  |
+| [RAG Accuracy and Latency Troubleshooting](./ai_engineering/04_rag_accuracy_latency_playbook.md) | [ ] | [ ] | [ ] |  |
 
 ## Coding Mock Interview Log
 
@@ -192,4 +193,5 @@ Use the [45-minute format and 10-point scorecard](./INTERVIEW_STUDY_PLANS.md#how
 - [ ] I can select one enterprise AI workflow and connect its architecture,
   evaluation, rollout, adoption, ownership, risk, and unit economics.
 - [ ] If the role includes AI, I can describe retrieval, evaluation, model rollout, monitoring, safety, and cost tradeoffs.
+- [ ] I can trace an inaccurate or slow RAG request, identify the first failed stage, and prove a targeted repair without weakening permissions or freshness.
 - [ ] I can recover calmly after a mistake or hint.

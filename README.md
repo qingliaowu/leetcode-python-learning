@@ -16,7 +16,7 @@ newer and uses no external packages.
 | Coding interview problems | 33 | Practice core patterns plus an FDE-oriented pattern extension |
 | System design lessons | 4 | Learn reusable patterns and design rate limiting, URL shortening, and image generation |
 | FDE interview lessons | 5 | Prepare role knowledge, customer solutioning, cloud architecture, enterprise AI adoption, and behavioral stories |
-| AI engineering lessons | 3 | Learn LLM products, RAG, model delivery, evaluation, and monitoring |
+| AI engineering lessons | 4 | Learn LLM products, RAG, accuracy and latency diagnosis, model delivery, evaluation, and monitoring |
 | Guided practice prompts | 100+ | Practice Python, coding, design, AI, and customer skills, then reveal detailed answers |
 | Interview study schedules | 5 | Choose a 5-, 10-, 14-, 30-, or 60-day preparation plan |
 | Course guides | 14 | Navigate Python, ten coding topics, system design, FDE, and AI engineering |
@@ -41,6 +41,7 @@ Choose the row that sounds most like you:
 | "I am targeting a Forward Deployed Engineer role." | [FDE Interview Track](./fde_interview/) |
 | "I need to design enterprise AI adoption." | [Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md) |
 | "I need AI engineering fundamentals." | [AI Engineering for Beginners](./ai_engineering/) |
+| "My RAG system is inaccurate or slow." | [RAG Accuracy and Latency Playbook](./ai_engineering/04_rag_accuracy_latency_playbook.md) |
 | "I want one checklist for everything." | [Open the Learning Progress Tracker](./PROGRESS_TRACKER.md) |
 | "I am ready to solve problems." | [Interview Roadmap](#interview-roadmap) |
 
@@ -125,6 +126,9 @@ retrieval, model delivery, or evaluation depth. Use
 [Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md) as
 the capstone that connects a business problem to production architecture,
 evaluation, rollout, user adoption, operating ownership, and measurable value.
+Use the [RAG Accuracy and Latency Playbook](./ai_engineering/04_rag_accuracy_latency_playbook.md)
+to practice isolating retrieval, context, generation, queue, and serving failures
+without guessing.
 
 The FDE extension also adds seven coding patterns after the original 15-problem core. Keep the core first when time is short.
 
@@ -177,8 +181,8 @@ The order below moves from common collection patterns toward specialized structu
 | 9 | Trie | 5 | [Open](./trie/) |
 | 10 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
 | 11 | System design | 4 | [Open](./system_design/) |
-| 12 | FDE interview preparation | 4 | [Open](./fde_interview/) |
-| 13 | AI engineering | 3 | [Open](./ai_engineering/) |
+| 12 | FDE interview preparation | 5 | [Open](./fde_interview/) |
+| 13 | AI engineering | 4 | [Open](./ai_engineering/) |
 
 ## Complete Learning Index
 
@@ -291,6 +295,7 @@ The order below moves from common collection patterns toward specialized structu
 | [LLM Product Fundamentals](./ai_engineering/01_llm_product_fundamentals.md) | Choose prompting, retrieval, tools, or fine-tuning and place policy around probabilistic output |
 | [Retrieval-Augmented Generation](./ai_engineering/02_rag_systems.md) | Design ingestion, tenant-safe retrieval, citations, evaluation, and failure handling |
 | [Model Delivery and Evaluation](./ai_engineering/03_model_delivery_and_evaluation.md) | Version, test, release, monitor, roll back, and control the cost of model changes |
+| [RAG Accuracy and Latency Troubleshooting](./ai_engineering/04_rag_accuracy_latency_playbook.md) | Trace one failed request, isolate the broken layer, repair quality or tail latency, and prove the tradeoff |
 
 ## Test Everything
 
@@ -333,7 +338,7 @@ python3 dynamic_programming/0322_coin_change.py
 ├── dynamic_programming/    # saved-state recurrence patterns
 ├── system_design/          # foundations and production design cases
 ├── fde_interview/          # role, customer, cloud, AI adoption, and behavioral skills
-├── ai_engineering/         # LLM, RAG, delivery, and evaluation skills
+├── ai_engineering/         # LLM, RAG, troubleshooting, delivery, and evaluation skills
 ├── INTERVIEW_PLAYBOOK.md   # solve-aloud interview process
 ├── INTERVIEW_STUDY_PLANS.md # 5/10/14/30/60-day preparation tracks
 ├── PROGRESS_TRACKER.md     # lesson, review, and mock checklist

@@ -16,6 +16,7 @@ models and interview decisions first.
 | 1 | [LLM Product Fundamentals](./01_llm_product_fundamentals.md) | Explain tokens, context, embeddings, prompting, tools, and adaptation choices |
 | 2 | [RAG Systems](./02_rag_systems.md) | Design authorized ingestion, retrieval, generation, citations, and evaluation |
 | 3 | [Model Delivery and Evaluation](./03_model_delivery_and_evaluation.md) | Ship versions safely and monitor quality, drift, latency, reliability, and cost |
+| 4 | [RAG Accuracy and Latency Playbook](./04_rag_accuracy_latency_playbook.md) | Diagnose retrieval, context, generation, queue, and tail-latency failures by evidence |
 
 Then apply the material to
 [Design an Image-Generation Platform](../system_design/image_generation_platform.md)
@@ -65,9 +66,10 @@ can be evaluated against the customer outcome.
 2. Turn one customer request into a baseline, prompt, retrieval, and fine-tuning option.
 3. Draw the ingestion and query paths of a RAG system separately.
 4. Define a small evaluation set before choosing a model.
-5. Practice one model rollout and one quality incident aloud.
-6. Complete all transfer questions before reading their answers.
-7. Record a system or AI mock in the [progress tracker](../PROGRESS_TRACKER.md).
+5. Trace one inaccurate or slow RAG request to its first failing stage.
+6. Practice one model rollout and one quality incident aloud.
+7. Complete all transfer questions before reading their answers.
+8. Record a system or AI mock in the [progress tracker](../PROGRESS_TRACKER.md).
 
 ## Ready to Move On
 
@@ -78,6 +80,8 @@ You are ready when you can:
 - choose among code, prompting, RAG, tools, and fine-tuning with tradeoffs,
 - design tenant-safe retrieval with citations and deletion,
 - separate retrieval failure from generation failure,
+- allocate a latency budget and distinguish queue time from service time,
+- repair one RAG layer without weakening security, freshness, or another quality gate,
 - define offline sets, online outcomes, and safety guardrails,
 - release a model through versioning, shadowing, canary, and rollback,
 - diagnose data, model, application, infrastructure, and measurement failures,

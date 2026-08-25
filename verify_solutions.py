@@ -178,6 +178,7 @@ DOCUMENTATION_SECTIONS = (
             "01_llm_product_fundamentals",
             "02_rag_systems",
             "03_model_delivery_and_evaluation",
+            "04_rag_accuracy_latency_playbook",
         ),
     ),
 )
