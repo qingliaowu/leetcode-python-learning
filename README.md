@@ -12,7 +12,7 @@ newer and uses no external packages.
 
 | Material | Count | Purpose |
 | --- | ---: | --- |
-| Python 3 lessons | 12 | Start, debug, and relearn Python from `print` through recursion and Big-O |
+| Python 3 lessons | 13 | Start, debug, and relearn Python from `print` through data-structure choices and Big-O |
 | Coding interview problems | 33 | Practice core patterns plus an FDE-oriented pattern extension |
 | System design lessons | 4 | Learn reusable patterns and design rate limiting, URL shortening, and image generation |
 | FDE interview lessons | 5 | Prepare role knowledge, customer solutioning, cloud architecture, enterprise AI adoption, and behavioral stories |
@@ -34,6 +34,7 @@ Choose the row that sounds most like you:
 | "I forgot most Python syntax." | [Python 3 Basics for Complete Beginners](./python_basics/) |
 | "I need one Python syntax page." | [Python Interview Cheat Sheet](./PYTHON_CHEAT_SHEET.md) |
 | "I can code, but Big-O is confusing." | [Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) |
+| "I forgot which Python data structure to use." | [Python Data Structures Made Simple](./python_basics/12_python_data_structures.md) |
 | "I understand the question but cannot choose a pattern." | [Algorithm Pattern Map](./ALGORITHM_PATTERN_MAP.md) |
 | "My interview is in 5-60 days." | [Choose an Interview Study Plan](./INTERVIEW_STUDY_PLANS.md) |
 | "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
@@ -57,7 +58,7 @@ Windows PowerShell users can replace `python3` with `py -3`.
 
 ### Phase 1: Relearn Python
 
-Complete the [12 Python lessons](./python_basics/) in order:
+Complete the [13 Python lessons](./python_basics/) in order:
 
 ```text
 setup, running files, and reading errors
@@ -72,6 +73,7 @@ setup, running files, and reading errors
     -> recursion
     -> Python for LeetCode
     -> time and space complexity
+    -> choosing and combining data structures
 ```
 
 Every lesson has a plain-English page, runnable examples, expected answers, and
@@ -308,7 +310,7 @@ python3 verify_solutions.py
 A successful run ends with:
 
 ```text
-45/45 Python files passed.
+46/46 Python files passed.
 ```
 
 Run one lesson or solution directly while studying:
@@ -325,7 +327,7 @@ python3 dynamic_programming/0322_coin_change.py
 
 ```text
 .
-├── python_basics/          # 12 beginner Python lessons
+├── python_basics/          # 13 beginner Python lessons
 ├── arrays_strings/         # hash maps, sliding window, two pointers
 ├── stacks_queues/          # nested parsing and monotonic stacks
 ├── linked_lists/           # pointer updates on linked nodes

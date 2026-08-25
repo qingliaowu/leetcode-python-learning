@@ -54,6 +54,9 @@ remainder = 7 % 2         # 1
 | First-in-first-out processing | `deque` | BFS queue |
 | Repeated smallest-item access | `heapq` | Min-heap |
 
+For the beginner explanation, operation costs, and quick checks, open
+[Python Data Structures Made Simple](./python_basics/12_python_data_structures.md).
+
 ## 4. Strings
 
 ```python
@@ -405,6 +408,7 @@ Do not say only "O(N)." Name `N`, count the repeated work, and name stored data.
 | Recursion | [Lesson 9](./python_basics/09_recursion.md) |
 | LeetCode format and tools | [Lesson 10](./python_basics/10_python_for_leetcode.md) |
 | Big-O | [Lesson 11](./python_basics/11_time_and_space_complexity.md) |
+| Choosing and combining data structures | [Lesson 12](./python_basics/12_python_data_structures.md) |
 
 The goal is fluency, not perfect memory. Use the reference, write the line, and
 return to reasoning about the problem.

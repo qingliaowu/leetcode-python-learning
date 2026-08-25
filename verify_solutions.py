@@ -45,6 +45,7 @@ COURSE_SECTIONS = (
             "09_recursion",
             "10_python_for_leetcode",
             "11_time_and_space_complexity",
+            "12_python_data_structures",
         ),
     ),
     (

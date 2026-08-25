@@ -553,4 +553,4 @@ You do not need advanced math. You need a clear count of what grows.
 
 ---
 
-[Previous: Lesson 10, Python for LeetCode](./10_python_for_leetcode.md) | [Next: Algorithm Pattern Map](../ALGORITHM_PATTERN_MAP.md)
+[Previous: Lesson 10, Python for LeetCode](./10_python_for_leetcode.md) | [Next: Lesson 12, Python Data Structures](./12_python_data_structures.md)

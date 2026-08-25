@@ -20,6 +20,7 @@ Use this page with the study plan matching your deadline. A checked box means yo
 | [09 Recursion](./python_basics/09_recursion.md) | [ ] | [ ] | [ ] |
 | [10 Python for LeetCode](./python_basics/10_python_for_leetcode.md) | [ ] | [ ] | [ ] |
 | [11 Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) | [ ] | [ ] | [ ] |
+| [12 Python Data Structures](./python_basics/12_python_data_structures.md) | [ ] | [ ] | [ ] |
 
 ## Interview Problems
 

@@ -44,8 +44,8 @@ The cheat sheet is a lookup tool. You are not expected to memorize it.
 
 ## Learning Path
 
-Complete the 12 lessons in order. Most should take about 15 to 25 minutes.
-Lesson 11 is longer, so its page divides the material into three short passes.
+Complete the 13 lessons in order. Most should take about 15 to 25 minutes.
+Lessons 11 and 12 are longer, so their pages divide the material into short passes.
 
 | Lesson | Read | Run | You Will Learn |
 | ---: | --- | --- | --- |
@@ -61,6 +61,7 @@ Lesson 11 is longer, so its page divides the material into three short passes.
 | 9 | [Recursion](./09_recursion.md) | [Code](./09_recursion.py) | Base cases, recursive calls, and backtracking |
 | 10 | [Python for LeetCode](./10_python_for_leetcode.md) | [Code](./10_python_for_leetcode.py) | Solution classes, tests, and common tools |
 | 11 | [Time and Space Complexity](./11_time_and_space_complexity.md) | [Code](./11_time_and_space_complexity.py) | Big-O explained with simple counting |
+| 12 | [Python Data Structures Made Simple](./12_python_data_structures.md) | [Code](./12_python_data_structures.py) | Choose and combine lists, maps, sets, stacks, queues, heaps, and graphs |
 
 ## The Best Way to Study
 
@@ -103,7 +104,8 @@ You are ready to start the problem folders when you can:
 - write a function that returns a value,
 - explain what a class object stores,
 - trace a short recursive function,
-- explain how time and memory grow as input grows.
+- explain how time and memory grow as input grows,
+- choose a data structure from the operation the problem needs.
 
 Record your progress in the [tracker](../PROGRESS_TRACKER.md), open the
 [Algorithm Pattern Map](../ALGORITHM_PATTERN_MAP.md), then continue to

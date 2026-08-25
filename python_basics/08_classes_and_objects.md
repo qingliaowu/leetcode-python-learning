@@ -85,6 +85,9 @@ first = ListNode(1, second)
 
 Tree nodes and Trie nodes use the same idea: one object stores a value and references to other objects.
 
+[Python Data Structures Made Simple](./12_python_data_structures.md#10-linked-lists-and-trees-nodes-connected-by-references)
+later compares node structures with lists, dictionaries, sets, queues, and heaps.
+
 ## Object References
 
 ```python

@@ -194,6 +194,7 @@ If syntax prevents you from expressing the algorithm, stop for at most 20 minute
 | Recursion | [09 Recursion](./python_basics/09_recursion.md) |
 | Interview syntax | [10 Python for LeetCode](./python_basics/10_python_for_leetcode.md) |
 | Big-O | [11 Time and Space Complexity](./python_basics/11_time_and_space_complexity.md) |
+| Choosing or combining data structures | [12 Python Data Structures](./python_basics/12_python_data_structures.md) |
 
 If syntax is clear but the algorithm family is not, spend five minutes with the
 [Algorithm Pattern Map](./ALGORITHM_PATTERN_MAP.md). State the candidate state
@@ -209,7 +210,7 @@ Return to the problem immediately after the refresher. Avoid turning a short syn
 
 | Day | New Work | Required Review and Checkpoint |
 | ---: | --- | --- |
-| 1 | Run the [setup check](./python_basics/00_setup_and_errors.md), then read [Python for LeetCode](./python_basics/10_python_for_leetcode.md) and the [Big-O lesson](./python_basics/11_time_and_space_complexity.md). Solve Two Sum, Group Anagrams, and Longest Substring. | Re-code Two Sum and Longest Substring from memory. Say why each is `O(N)` or not. |
+| 1 | Run the [setup check](./python_basics/00_setup_and_errors.md), then read [Python for LeetCode](./python_basics/10_python_for_leetcode.md), the [Big-O lesson](./python_basics/11_time_and_space_complexity.md), and the [data-structure choice map](./python_basics/12_python_data_structures.md#one-minute-choice-map). Solve Two Sum, Group Anagrams, and Longest Substring. | Re-code Two Sum and Longest Substring from memory. Name the job of every list, dictionary, and set, then say why each solution is `O(N)` or not. |
 | 2 | Solve Binary Search, Merge Intervals, and Decode String. | Spend 20 minutes redoing the weakest Day 1 problem. Trace boundary changes and stack state aloud. |
 | 3 | Solve Number of Islands, Clone Graph, and Course Schedule. | Draw the graph state for each: visited cells, clone map, or in-degree list. Re-code one traversal without notes. |
 | 4 | Solve Kth Largest, Top K Frequent, Implement Trie, and Search Suggestions. | Compare what each heap or Trie node stores. Complete every self-check before reading its answer. |
