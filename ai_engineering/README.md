@@ -66,10 +66,11 @@ can be evaluated against the customer outcome.
 2. Turn one customer request into a baseline, prompt, retrieval, and fine-tuning option.
 3. Draw the ingestion and query paths of a RAG system separately.
 4. Define a small evaluation set before choosing a model.
-5. Trace one inaccurate or slow RAG request to its first failing stage.
-6. Practice one model rollout and one quality incident aloud.
-7. Complete all transfer questions before reading their answers.
-8. Record a system or AI mock in the [progress tracker](../PROGRESS_TRACKER.md).
+5. Complete the [fast RAG knowledge checks](./04_rag_accuracy_latency_playbook.md#fast-knowledge-checks) and review every missed explanation.
+6. Trace one inaccurate or slow RAG request to its first failing stage.
+7. Practice one model rollout and one quality incident aloud.
+8. Complete all transfer questions before reading their answers.
+9. Record a system or AI mock in the [progress tracker](../PROGRESS_TRACKER.md).
 
 ## Ready to Move On
 

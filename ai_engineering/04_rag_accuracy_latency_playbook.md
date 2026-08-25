@@ -62,6 +62,52 @@ approved company documents and drafts cited answers for support agents. The
 same process applies to legal research, sales enablement, technical support,
 enterprise search, and other evidence-based assistants.
 
+## Fast-Learn Mental Model
+
+Think of RAG as an open-book exam:
+
+| RAG Stage | Open-Book Exam Version |
+| --- | --- |
+| Source | The correct, current book is allowed in the library |
+| Parsing | The book is copied into readable pages |
+| Retrieval | The librarian finds pages related to the question |
+| Ranking | The most useful page is placed on top |
+| Context | The useful pages are handed to the student |
+| Generation | The student writes an answer from those pages |
+| Validation | A teacher checks the claims and page references |
+
+This analogy makes the diagnosis easier:
+
+- If the librarian never had the page, changing the student will not help.
+- If the page was found but not handed to the student, retrieval alone was not enough.
+- If the student had the correct page but answered incorrectly, inspect generation.
+- If the answer is slow, time each step instead of blaming the whole exam.
+
+### One-Minute Recall Card
+
+```text
+WRONG ANSWER
+source -> parse -> retrieve -> rank -> context -> answer
+Stop at the first broken step.
+
+SLOW ANSWER
+trace every stage -> split waiting from working -> fix the largest delay
+
+BEFORE RELEASE
+quality + permissions + freshness + p95/p99 + reliability + cost
+```
+
+### Ten-Minute Review
+
+When time is short:
+
+1. Memorize the six wrong-answer stages on the recall card.
+2. Remember that queue time means waiting and service time means working.
+3. Read the [accuracy decision tree](#the-accuracy-decision-tree).
+4. Read the [example latency budget](#example-p95-budget).
+5. Complete the [fast knowledge checks](#fast-knowledge-checks).
+6. Practice the [concise interview summary](#14-concise-interview-summary) aloud.
+
 ## 1. Define Correct and Fast Before Tuning
 
 There is no useful instruction named "make RAG accurate." Define the contract.
@@ -729,7 +775,213 @@ test. Naming the case without defining correct behavior is incomplete.
 > capacity, deadlines, and fallbacks. Every release must pass quality, security,
 > freshness, p95/p99, reliability, and cost gates, with canary and rollback.
 
-## Check Your Understanding
+## Fast Knowledge Checks
+
+Try to answer each check in one sentence before opening the explanation.
+
+### Check 1: The Source Exists but Its Text Is Missing
+
+The approved PDF exists, but the expected paragraph is absent from both parsed
+text and every chunk. Which layer failed?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** Parsing failed.
+
+The retriever searches the chunks created during ingestion. It cannot find words
+that never reached those chunks. Repair the PDF parser or OCR, rebuild a candidate
+index, and verify the paragraph before changing search or the language model.
+
+**Say it aloud:** "The source exists, but parsing lost the evidence, so I would
+repair ingestion and prove the passage reaches the index."
+
+</details>
+
+### Check 2: The Right Chunk Is Ranked Eighteenth
+
+The correct chunk is in the top 20 candidates at rank 18, but only five chunks
+enter the final context. Which layer should you inspect first?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** Inspect ranking and final-context selection.
+
+Candidate retrieval found the evidence, so candidate recall worked for this
+example. The useful chunk ranked too low to reach the model. Check the reranker,
+duplicate results, source authority, freshness, fusion, and the rule that chooses
+the final five chunks.
+
+**Say it aloud:** "Retrieval found the chunk, but ranking kept it out of context,
+so I would repair ranking rather than increase retrieval blindly."
+
+</details>
+
+### Check 3: Semantic Search Misses an Error Code
+
+A user searches for `PAY-4317`, but vector search returns conceptually similar
+payment articles instead of the article containing that exact code. What is the
+smallest sensible experiment?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** Add or strengthen keyword retrieval and test a hybrid candidate set.
+
+An error code is an exact string. Semantic similarity may not preserve that exact
+match, while keyword search is designed for it. Run keyword and vector search
+together, combine their candidates, and measure recall and latency on real codes.
+
+**Say it aloud:** "This query has an exact identifier, so I would test hybrid
+retrieval instead of assuming embeddings solve every search need."
+
+</details>
+
+### Check 4: Correct Evidence, Wrong Answer
+
+The expected passage is clearly present in the exact final model input, but the
+answer contradicts it. Which layer failed?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** Investigate generation and validation.
+
+For this example, the evidence survived source, parsing, retrieval, ranking, and
+context construction. Check conflicting context, the prompt contract, model and
+prompt versions, output truncation, citation support, and abstention behavior.
+Changing chunk size does not address the demonstrated failure.
+
+**Say it aloud:** "The model received complete evidence, so I would now inspect
+generation behavior and claim validation."
+
+</details>
+
+### Check 5: Recall at 20 Is High
+
+Recall@20 is 95%. Does that prove the RAG product is accurate?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** No.
+
+It only says the labeled evidence appeared somewhere in the first 20 candidates
+for 95% of the evaluated answerable questions. It does not prove the evidence
+entered final context, the answer used it correctly, citations support claims,
+unanswerable questions were rejected, permissions were safe, or every cohort
+performed well.
+
+**Say it aloud:** "Recall measures one retrieval step, so I also need ranking,
+context, answer, abstention, permission, freshness, and cohort checks."
+
+</details>
+
+### Check 6: Understanding p95
+
+Complete-answer p95 is 2.5 seconds. What does that mean?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** During the measured period and population, 95% of complete answers
+finished in 2.5 seconds or less; the slowest 5% took longer.
+
+It does not mean every request finishes in 2.5 seconds, and it says nothing about
+the slowest 1% unless p99 is also measured. Always name the time window, traffic,
+cohorts, and whether the measurement ends at first token or complete output.
+
+**Say it aloud:** "p95 describes the tail for a defined population, so I would
+also inspect p99 and stage timings."
+
+</details>
+
+### Check 7: Waiting Versus Working
+
+A model call takes 1.8 seconds end to end: 1.5 seconds waiting for capacity and
+300 milliseconds generating. Is the model computation the main problem?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** No. Queue time is the dominant delay.
+
+Only 300 milliseconds is active service time. The request spends five times as
+long waiting for a slot. Inspect concurrency, burst traffic, quotas, fair queues,
+autoscaling, reserved capacity, and retries before changing the model itself.
+
+**Say it aloud:** "The model is fast once it starts; capacity and scheduling are
+creating the latency."
+
+</details>
+
+### Check 8: Increasing Candidate K
+
+Recall is low. Should you immediately increase candidate K from 20 to 200?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** No. First identify why expected evidence is missing, then test a
+bounded K change as one experiment.
+
+The cause may be a parser failure, incorrect filter, poor chunk boundary, exact
+term miss, query mismatch, stale index, or unsuitable embedding. A much larger K
+can make reranking slower, increase cost, and add noisy or conflicting evidence.
+
+**Say it aloud:** "I would inspect retrieval misses first and compare K values on
+recall, answer quality, latency, and cost."
+
+</details>
+
+### Check 9: Streaming Feels Faster
+
+Does streaming reduce total model computation?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** Not by itself.
+
+Streaming lets the user see tokens before the complete answer is ready, so time
+to first visible output improves. The model may still perform the same total work.
+The design must also decide which safety checks happen before streaming and what
+happens if later validation finds a problem.
+
+**Say it aloud:** "Streaming improves perceived latency, but I would measure both
+first-token time and complete-answer time."
+
+</details>
+
+### Check 10: Caching a Private Answer
+
+Can every user share one cached answer when they ask the same question?
+
+<details>
+<summary>Show answer and easy explanation</summary>
+
+**Answer:** Usually not for private or permissioned knowledge.
+
+Two users can ask identical words while having access to different sources. A
+safe cache design must include authorization scope, source and index version,
+freshness, deletion, model and policy version, language, and relevant conversation
+state. When those rules cannot be guaranteed, do not reuse the final answer.
+
+**Say it aloud:** "The question text is not a sufficient cache key because access
+and source versions can change the correct answer."
+
+</details>
+
+### Score Your Fast Check
+
+| Correct Without Notes | Next Step |
+| ---: | --- |
+| 9-10 | Explain one failed query and one latency trace aloud |
+| 6-8 | Review the recall card, accuracy tree, and missed explanations |
+| 0-5 | Repeat the open-book analogy, then retry the checks tomorrow |
+
+## Deep Interview Checks
 
 ### Question 1: Retrieval Passes but the Product Still Fails
 
