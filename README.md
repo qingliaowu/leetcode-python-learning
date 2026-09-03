@@ -13,12 +13,13 @@ newer and uses no external packages.
 | Material | Count | Purpose |
 | --- | ---: | --- |
 | Python 3 lessons | 13 | Start, debug, and relearn Python from `print` through data-structure choices and Big-O |
-| Coding interview problems | 33 | Practice core patterns plus an FDE-oriented pattern extension |
+| Coding interview problems | 36 | Practice core patterns, practical FDE drills, and an FDE-oriented pattern extension |
 | System design lessons | 4 | Learn reusable patterns and design rate limiting, URL shortening, and image generation |
-| FDE interview lessons | 5 | Prepare role knowledge, customer solutioning, cloud architecture, enterprise AI adoption, and behavioral stories |
+| FDE interview lessons | 9 | Prepare role knowledge, customer solutioning, cloud architecture, enterprise AI adoption, behavioral stories, role-specific coding drills, and Sierra-style AI agent mastery |
 | AI engineering lessons | 4 | Learn LLM products, RAG, accuracy and latency diagnosis, model delivery, evaluation, and monitoring |
 | Guided practice prompts | 100+ | Practice Python, coding, design, AI, and customer skills, then reveal detailed answers |
 | Interview study schedules | 5 | Choose a 5-, 10-, 14-, 30-, or 60-day preparation plan |
+| Learning CLI | 1 | Ask the repository for the next task, a mock prompt, a scorecard, or the Sierra 7-day plan |
 | Course guides | 14 | Navigate Python, ten coding topics, system design, FDE, and AI engineering |
 | Quick references | 2 | Look up Python syntax or choose an algorithm pattern without rereading a course |
 | Progress tracker | 1 | Record lessons, problem scores, review dates, and mock results |
@@ -37,6 +38,8 @@ Choose the row that sounds most like you:
 | "I forgot which Python data structure to use." | [Python Data Structures Made Simple](./python_basics/12_python_data_structures.md) |
 | "I understand the question but cannot choose a pattern." | [Algorithm Pattern Map](./ALGORITHM_PATTERN_MAP.md) |
 | "My interview is in 5-60 days." | [Choose an Interview Study Plan](./INTERVIEW_STUDY_PLANS.md) |
+| "I want today's highest-value task." | Run `python3 study.py next --track sierra` |
+| "I want to be ready for both Google and Sierra." | [Google and Sierra Interview Mastery Track](./GOOGLE_SIERRA_INTERVIEW_MASTERY.md) |
 | "I need to prepare for a coding interview." | [Interview Problem-Solving Playbook](./INTERVIEW_PLAYBOOK.md) |
 | "I need to prepare for a system design interview." | [System Design for Beginners](./system_design/) |
 | "I am targeting a Forward Deployed Engineer role." | [FDE Interview Track](./fde_interview/) |
@@ -53,6 +56,14 @@ python3 python_basics/00_setup_and_errors.py
 ```
 
 Windows PowerShell users can replace `python3` with `py -3`.
+
+For guided daily practice, ask the repository what to do next:
+
+```bash
+python3 study.py next --track google_sierra
+python3 study.py mock --kind coding --seed 1
+python3 study.py scorecard --kind system
+```
 
 ## Recommended Learning Path
 
@@ -132,7 +143,10 @@ Use the [RAG Accuracy and Latency Playbook](./ai_engineering/04_rag_accuracy_lat
 to practice isolating retrieval, context, generation, queue, and serving failures
 without guessing.
 
-The FDE extension also adds seven coding patterns after the original 15-problem core. Keep the core first when time is short.
+The FDE extension also adds three high-priority practical Python drills and
+seven coding patterns after the original 15-problem core. Keep the core first
+when time is short, then use the practical drills for no-compiler interview
+rehearsal.
 
 ## What Each Lesson Contains
 
@@ -145,6 +159,8 @@ The FDE extension also adds seven coding patterns after the original 15-problem 
 | Algorithm pattern map | Recognition questions, pattern comparisons, state, invariants, and a complete problem map |
 | System design lesson | Requirements, assumptions, estimates, architecture patterns, failures, testing, follow-ups, scorecard, and detailed transfer designs |
 | FDE or AI lesson | Plain-language concepts, decision frameworks, customer context, production risks, mock scorecards, and detailed exercises |
+| `study.py` | Terminal coach for next tasks, mock prompts, scorecards, key links, and the Sierra 7-day plan |
+| Google and Sierra mastery track | One combined path for Google DS&A strength plus Sierra AI agent/product/production judgment |
 
 ## Core 15-Problem Checklist
 
@@ -183,7 +199,7 @@ The order below moves from common collection patterns toward specialized structu
 | 9 | Trie | 5 | [Open](./trie/) |
 | 10 | Dynamic programming | 3 | [Open](./dynamic_programming/) |
 | 11 | System design | 4 | [Open](./system_design/) |
-| 12 | FDE interview preparation | 5 | [Open](./fde_interview/) |
+| 12 | FDE interview preparation | 9 | [Open](./fde_interview/) |
 | 13 | AI engineering | 4 | [Open](./ai_engineering/) |
 
 ## Complete Learning Index
@@ -289,6 +305,16 @@ The order below moves from common collection patterns toward specialized structu
 | [Cloud Architecture Fundamentals](./fde_interview/03_cloud_architecture_fundamentals.md) | Explain portable cloud building blocks and their tradeoffs without hiding behind service names |
 | [Behavioral Story Workbook](./fde_interview/04_behavioral_story_workbook.md) | Build truthful STAR-L stories about ownership, ambiguity, conflict, failure, and customer impact |
 | [Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md) | Select a valuable workflow and design the AI system, evaluation, governance, rollout, adoption, ownership, and economics |
+| [Google Cloud GenAI FDE Prep Notes](./fde_interview/06_google_cloud_genai_fde_prep.md) | Map the source prep PDF to RRK, coding, GenAI, cloud, troubleshooting, and system design practice |
+| [GenAI FDE Supplemental Syllabus and System Design Questions](./fde_interview/07_genai_fde_syllabus_and_questions.md) | Practice live coding constraints, AI architecture competencies, consulting execution, and GenAI system design prompts |
+| [High-Priority Practical Coding Questions](./fde_interview/08_high_priority_practical_coding_questions.md) | Practice duplicates, word frequencies, and merged person data in English |
+| [Sierra AI Agent Interview Mastery Plan](./fde_interview/09_sierra_ai_agent_interview_mastery.md) | Master Sierra-style practical coding, debugging, AI agent system design, voice architecture, Plan-Build-Review, and behavioral stories |
+
+### Company-Specific Mastery
+
+| Track | Main Interview Skill |
+| --- | --- |
+| [Google and Sierra Interview Mastery Track](./GOOGLE_SIERRA_INTERVIEW_MASTERY.md) | Combine Google-style DS&A/system design strength with Sierra-style AI agent, product, debugging, and review judgment |
 
 ### AI Engineering
 
@@ -346,6 +372,8 @@ python3 dynamic_programming/0322_coin_change.py
 ├── PROGRESS_TRACKER.md     # lesson, review, and mock checklist
 ├── PYTHON_CHEAT_SHEET.md   # quick syntax and standard-library reference
 ├── ALGORITHM_PATTERN_MAP.md # beginner pattern-selection decision map
+├── GOOGLE_SIERRA_INTERVIEW_MASTERY.md # combined company-specific prep track
+├── study.py                # daily study queue, mock prompts, and scorecards
 ├── verify_solutions.py     # validates structure and runs every example
 ├── .gitignore              # ignores local Python and OS artifacts
 └── README.md

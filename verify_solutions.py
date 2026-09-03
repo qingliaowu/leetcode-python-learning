@@ -170,6 +170,10 @@ DOCUMENTATION_SECTIONS = (
             "03_cloud_architecture_fundamentals",
             "04_behavioral_story_workbook",
             "05_enterprise_ai_adoption",
+            "06_google_cloud_genai_fde_prep",
+            "07_genai_fde_syllabus_and_questions",
+            "08_high_priority_practical_coding_questions",
+            "09_sierra_ai_agent_interview_mastery",
         ),
     ),
     (
@@ -186,11 +190,13 @@ DOCUMENTATION_SECTIONS = (
 REQUIRED_ROOT_FILES = (
     ".gitignore",
     "ALGORITHM_PATTERN_MAP.md",
+    "GOOGLE_SIERRA_INTERVIEW_MASTERY.md",
     "INTERVIEW_PLAYBOOK.md",
     "INTERVIEW_STUDY_PLANS.md",
     "PROGRESS_TRACKER.md",
     "PYTHON_CHEAT_SHEET.md",
     "README.md",
+    "study.py",
     "verify_solutions.py",
 )
 

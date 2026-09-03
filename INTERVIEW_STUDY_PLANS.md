@@ -1,15 +1,20 @@
 # Coding Interview Study Plans: 5, 10, 14, 30, or 60 Days
 
-[Repository home](./README.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) | [Pattern map](./ALGORITHM_PATTERN_MAP.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md)
+[Repository home](./README.md) | [Google + Sierra mastery](./GOOGLE_SIERRA_INTERVIEW_MASTERY.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Progress tracker](./PROGRESS_TRACKER.md) | [Python basics](./python_basics/README.md) | [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) | [Pattern map](./ALGORITHM_PATTERN_MAP.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md)
 
 Choose the plan that matches the number of full study days before your
 interview. Every plan draws from the same Python course, 15-problem core, 11
-expansion problems, self-check exercises, and
+expansion problems, three high-priority practical FDE coding drills,
+self-check exercises, and
 [solve-aloud interview process](./INTERVIEW_PLAYBOOK.md). Longer plans cover
 more of that material. The repository also includes a
 [7-problem FDE coding extension](#the-7-problem-fde-coding-extension), a
 [system design add-on](#system-design-add-on), and an
 [FDE and AI add-on](#fde-and-ai-engineering-add-on).
+
+For a daily prompt instead of rereading the whole plan, run
+`python3 study.py next --track google_sierra`, then record the attempt in the
+[progress tracker](./PROGRESS_TRACKER.md).
 
 No schedule can guarantee an offer. Interview results also depend on the questions, role, communication, and hiring process. These plans are designed to maximize readiness with the time available.
 
@@ -21,7 +26,7 @@ No schedule can guarantee an offer. Interview results also depend on the questio
 | [10 days](#10-day-core-plan) | 3-4 hours | Learn the core set and complete three transfer problems | You know basic Python but need pattern practice |
 | [14 days](#14-day-intensive-plan) | 3-4 hours | Give all 26 problems one serious pass | You can study intensely for two weeks |
 | [30 days](#30-day-balanced-plan) | 90-150 minutes | Learn all base patterns with review days and four mocks | Recommended balanced plan |
-| [60 days](#60-day-beginner-to-interview-plan) | 60-120 minutes | Relearn Python, complete the full 33-problem curriculum, repeat it, and run regular mocks | Best plan for a rusty Python beginner |
+| [60 days](#60-day-beginner-to-interview-plan) | 60-120 minutes | Relearn Python, complete the full 33-problem curriculum plus FDE practical drills when relevant, repeat it, and run regular mocks | Best plan for a rusty Python beginner |
 
 Do not choose a longer plan and try to compress it. Use the plan matching the actual days available.
 
@@ -68,6 +73,21 @@ The short plans prioritize these problems because they cover the repository's re
 | Heaps and top-k | [215 Kth Largest](./heaps/0215_kth_largest_element.md), [347 Top K Frequent](./heaps/0347_top_k_frequent_elements.md) |
 | Trie | [208 Implement Trie](./trie/0208_implement_trie.md), [1268 Search Suggestions](./trie/1268_search_suggestions_system.md) |
 | Stateful design | [981 Time Based Key-Value Store](./design_data_structures/0981_time_based_key_value_store.md), [146 LRU Cache](./design_data_structures/0146_lru_cache.md) |
+
+## The 3 High-Priority Practical FDE Coding Drills
+
+For a GenAI FDE coding interview with a no-autocomplete and no-compiler setup,
+practice these before the broader FDE extension. They are short, practical, and
+test the basics that must feel automatic in the live editor.
+
+| Priority | Drill | Main Pattern |
+| --- | --- | --- |
+| High | [Filter Duplicates](./fde_interview/08_high_priority_practical_coding_questions.md#1-filter-duplicates) | Set membership plus stable output order |
+| High | [Count Word Frequencies](./fde_interview/08_high_priority_practical_coding_questions.md#2-count-word-frequencies) | Dictionary counting plus sorted keys |
+| High | [Merge Person Data](./fde_interview/08_high_priority_practical_coding_questions.md#3-merge-person-data) | Parse records, group by name, merge fields, format deterministically |
+
+Target: solve the first two in 20 minutes each and the third in 35 minutes
+without running code. Dry-run examples and edge cases aloud.
 
 ## The 11 Expansion Problems
 
@@ -142,13 +162,19 @@ Use this track when the role combines coding with customer discovery, deployment
 
 | Plan | Add-On Schedule | Required Result |
 | --- | --- | --- |
-| 5 days | Read the role map and customer discovery lesson; use the enterprise adoption scorecard to outline one use case; skim the RAG accuracy decision tree; prepare two behavioral stories. | Explain the customer's outcome, one scoped AI workflow, one likely failure layer, and truthful evidence of ownership. |
-| 10 days | Add cloud fundamentals, the behavioral workbook, one 30-minute enterprise adoption mock, and the RAG trace and latency-budget sections. | Connect one use case to architecture, evaluation, rollout, and adoption; isolate one slow stage; tell four concise STAR-L stories. |
-| 14 days | Complete all FDE lessons plus LLM fundamentals, RAG systems, and the RAG troubleshooting playbook; run the enterprise adoption capstone once. | Defend one customer architecture, quality set, latency budget, and production adoption gate. |
+| 5 days | Read the role map and customer discovery lesson; complete the three high-priority practical coding drills; use the enterprise adoption scorecard to outline one use case; prepare two behavioral stories. | Explain the customer's outcome, solve basic practical Python without execution help, describe one scoped AI workflow, and show truthful evidence of ownership. |
+| 10 days | Add cloud fundamentals, the behavioral workbook, the three high-priority practical coding drills, one 30-minute enterprise adoption mock, and the RAG trace and latency-budget sections. | Connect one use case to architecture, evaluation, rollout, and adoption; solve practical list/string/dictionary drills; isolate one slow stage; tell four concise STAR-L stories. |
+| 14 days | Complete all FDE lessons plus LLM fundamentals, RAG systems, the three high-priority practical coding drills, and the RAG troubleshooting playbook; run the enterprise adoption capstone once. | Defend one customer architecture, quality set, latency budget, production adoption gate, and practical Python implementation. |
 | 30 days | Complete all FDE and AI lessons, one exercise every 3-4 days, two RAG incidents, and two enterprise solutioning mocks. | Connect requirements, architecture, diagnosis, rollout, metrics, ownership, and customer value without notes. |
 | 60 days | Complete the track slowly, revisit each exercise twice, and run four mixed FDE mocks including an enterprise adoption prompt and a RAG incident. | Handle discovery, coding, architecture, AI troubleshooting, adoption, and behavioral rounds as one coherent interview loop. |
 
 Do not invent customer outcomes or behavioral evidence. State missing information, ask focused questions, and use examples from your real work, study, volunteering, or personal projects.
+
+For Sierra-specific loops, use the
+[Sierra AI Agent Interview Mastery Plan](./fde_interview/09_sierra_ai_agent_interview_mastery.md)
+after the three high-priority practical coding drills. It prioritizes practical
+debugging, customer-service agent system design, voice architecture, and
+Plan-Build-Review rehearsal.
 
 ## Daily Study Method
 

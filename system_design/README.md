@@ -20,6 +20,12 @@ For an FDE-style design round, continue to
 That capstone starts with a business workflow and adds use-case selection,
 proof of value, human approval, change management, production adoption, and
 value realization to the architecture process.
+For the Google Cloud GenAI FDE source PDF notes, see
+[Google Cloud GenAI FDE Prep Notes](../fde_interview/06_google_cloud_genai_fde_prep.md).
+For GenAI FDE practice prompts, use the
+[supplemental syllabus and system design question bank](../fde_interview/07_genai_fde_syllabus_and_questions.md#system-design-question-bank).
+For Sierra-style customer-service agent and voice-agent design, use the
+[Sierra AI Agent Interview Mastery Plan](../fde_interview/09_sierra_ai_agent_interview_mastery.md#system-design-master-prompt).
 
 ## Before You Start
 

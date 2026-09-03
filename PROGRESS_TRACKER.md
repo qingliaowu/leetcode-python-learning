@@ -1,8 +1,16 @@
 # Learning Progress Tracker
 
-[Repository home](./README.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Python basics](./python_basics/README.md) | [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) | [Pattern map](./ALGORITHM_PATTERN_MAP.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md) | [Run checks](./verify_solutions.py)
+[Repository home](./README.md) | [Google + Sierra mastery](./GOOGLE_SIERRA_INTERVIEW_MASTERY.md) | [Study plans](./INTERVIEW_STUDY_PLANS.md) | [Study CLI](./study.py) | [Interview playbook](./INTERVIEW_PLAYBOOK.md) | [Python basics](./python_basics/README.md) | [Python cheat sheet](./PYTHON_CHEAT_SHEET.md) | [Pattern map](./ALGORITHM_PATTERN_MAP.md) | [System design](./system_design/README.md) | [FDE track](./fde_interview/README.md) | [AI engineering](./ai_engineering/README.md) | [Run checks](./verify_solutions.py)
 
 Use this page with the study plan matching your deadline. A checked box means you completed the work without copying the answer. Record a problem score using the [0-4 scoring guide](./INTERVIEW_STUDY_PLANS.md#score-every-problem).
+
+When you are unsure what to practice next, run:
+
+```bash
+python3 study.py next --track google_sierra
+python3 study.py mock --kind coding
+python3 study.py scorecard --kind coding
+```
 
 ## Python Foundations
 
@@ -31,6 +39,28 @@ Use these columns consistently:
 - **Checks:** complete both self-check questions before revealing answers.
 - **Follow-up:** explain at least one changed requirement aloud.
 - **Score:** record `0-4`; aim for `3` or higher on core problems.
+
+### Google + Sierra Combined Readiness
+
+| Capability | Complete | Score | Next Review |
+| --- | :---: | :---: | --- |
+| Google coding: hash map or sliding window mock | [ ] |  /4 |  |
+| Google coding: graph, trie, or topological sort mock | [ ] |  /4 |  |
+| Google coding: DP or binary search on answer mock | [ ] |  /4 |  |
+| Google system design: scalable backend mock | [ ] |  /10 |  |
+| Sierra practical coding: parser, API, or nested data mock | [ ] |  /4 |  |
+| Sierra AI agent design: tools, context, evals, handoff | [ ] |  /10 |  |
+| Sierra voice agent design: ASR, latency, turn-taking, task success | [ ] |  /10 |  |
+| Sierra Plan-Build-Review rehearsal | [ ] |  /10 |  |
+| Behavioral: six concise stories with real evidence | [ ] |  /4 |  |
+
+### High-Priority Practical FDE Coding Drills
+
+| Problem | Track | Learn | Solve | Checks | Follow-up | Score | Next Review |
+| --- | --- | :---: | :---: | :---: | :---: | :---: | --- |
+| [Filter Duplicates](./fde_interview/08_high_priority_practical_coding_questions.md#1-filter-duplicates) | High Priority FDE | [ ] | [ ] | [ ] | [ ] |  /4 |  |
+| [Count Word Frequencies](./fde_interview/08_high_priority_practical_coding_questions.md#2-count-word-frequencies) | High Priority FDE | [ ] | [ ] | [ ] | [ ] |  /4 |  |
+| [Merge Person Data](./fde_interview/08_high_priority_practical_coding_questions.md#3-merge-person-data) | High Priority FDE | [ ] | [ ] | [ ] | [ ] |  /4 |  |
 
 ### Arrays, Strings, and Hash Maps
 
@@ -151,6 +181,23 @@ concern, changed assumption, measurable outcome, and rollout decision.
 | [Cloud Architecture Fundamentals](./fde_interview/03_cloud_architecture_fundamentals.md) | [ ] | [ ] | [ ] |  |
 | [Behavioral Story Workbook](./fde_interview/04_behavioral_story_workbook.md) | [ ] | [ ] | [ ] |  |
 | [Enterprise AI Adoption Design](./fde_interview/05_enterprise_ai_adoption.md) | [ ] | [ ] | [ ] |  |
+| [Google Cloud GenAI FDE Prep Notes](./fde_interview/06_google_cloud_genai_fde_prep.md) | [ ] | [ ] | [ ] |  |
+| [GenAI FDE Supplemental Syllabus and System Design Questions](./fde_interview/07_genai_fde_syllabus_and_questions.md) | [ ] | [ ] | [ ] |  |
+| [High-Priority Practical Coding Questions](./fde_interview/08_high_priority_practical_coding_questions.md) | [ ] | [ ] | [ ] |  |
+| [Sierra AI Agent Interview Mastery Plan](./fde_interview/09_sierra_ai_agent_interview_mastery.md) | [ ] | [ ] | [ ] |  |
+
+### Sierra Mastery Checklist
+
+| Drill | Complete | Score | Next Review |
+| --- | :---: | :---: | --- |
+| Practical coding: three high-priority drills without running code | [ ] |  /4 |  |
+| Practical coding: API retry, backoff, timeout, and idempotency | [ ] |  /4 |  |
+| Practical coding: nested JSON flatten or traversal | [ ] |  /4 |  |
+| Practical coding: connected components or dependency graph | [ ] |  /4 |  |
+| System design: customer-service AI agent | [ ] |  /10 |  |
+| System design: multilingual voice agent | [ ] |  /10 |  |
+| Plan-Build-Review mini project | [ ] |  /10 |  |
+| Behavioral: six two-minute builder stories | [ ] |  /4 |  |
 
 ## AI Engineering
 

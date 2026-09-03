@@ -17,6 +17,10 @@ architecture to a measurable customer outcome.
 | 3 | [Cloud Architecture Fundamentals](./03_cloud_architecture_fundamentals.md) | Choose compute, data, messaging, networking, and operating controls |
 | 4 | [Behavioral Story Workbook](./04_behavioral_story_workbook.md) | Build truthful stories about ownership, customers, conflict, and learning |
 | 5 | [Enterprise AI Adoption Design](./05_enterprise_ai_adoption.md) | Connect a business workflow to AI architecture, evaluation, rollout, adoption, governance, and value |
+| 6 | [Google Cloud GenAI FDE Prep Notes](./06_google_cloud_genai_fde_prep.md) | Map the source prep PDF to RRK, coding, GenAI, cloud, troubleshooting, and system design practice |
+| 7 | [GenAI FDE Supplemental Syllabus and System Design Questions](./07_genai_fde_syllabus_and_questions.md) | Practice live coding constraints, AI architecture competencies, consulting execution, and GenAI system design prompts |
+| 8 | [High-Priority Practical Coding Questions](./08_high_priority_practical_coding_questions.md) | Practice the three practical Python drills: duplicates, word frequencies, and merged person data |
+| 9 | [Sierra AI Agent Interview Mastery Plan](./09_sierra_ai_agent_interview_mastery.md) | Master Sierra-style practical coding, debugging, system design, voice agents, and Plan-Build-Review |
 
 Use the enterprise adoption lesson as the capstone. It draws from the
 [AI Engineering for Beginners](../ai_engineering/) course and the
@@ -27,6 +31,16 @@ pages whenever a model or infrastructure concept feels unfamiliar.
 
 The existing 15-problem core remains the first priority. These additional
 problems close pattern gaps that often appear inside real-world framing:
+
+If the confirmed coding round is practical Python in a no-compiler environment,
+complete the
+[three high-priority practical coding questions](./08_high_priority_practical_coding_questions.md)
+before the broader FDE extension. They are closer to the expected live editor
+constraints and emphasize clean lists, strings, dictionaries, sets, sorting, and
+simple parsing.
+For Sierra-specific preparation, use the
+[Sierra AI Agent Interview Mastery Plan](./09_sierra_ai_agent_interview_mastery.md)
+after the three practical drills.
 
 | Pattern | Lesson | Real-World Signal |
 | --- | --- | --- |
